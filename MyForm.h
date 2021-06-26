@@ -1,6 +1,7 @@
 #pragma once
 using namespace System;
 #include "MyForm1.h"
+#include "inventory.h"
 namespace SupermarketInventoryandBillingSystem {
 
 	using namespace System;
@@ -42,6 +43,7 @@ namespace SupermarketInventoryandBillingSystem {
 	private: System::Windows::Forms::TextBox^ textBox2;
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::Label^ label3;
+
 
 
 
@@ -145,9 +147,16 @@ namespace SupermarketInventoryandBillingSystem {
 			MyForm1^ admin = gcnew MyForm1(textBox1->Text);
 			admin->Visible = true;
 		}
+		else if(textBox1->Text == "admin" && textBox2->Text == "admin"){
+			inventory^ admin = gcnew inventory();
+			admin->Visible = true;
+
+		
+		}
 		else {
 			MessageBox::Show("Wrong Credentials");
 		}
 	}	
+
 };
 }
