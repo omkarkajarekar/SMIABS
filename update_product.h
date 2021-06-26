@@ -147,7 +147,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::DeepSkyBlue;
-			this->ClientSize = System::Drawing::Size(728, 424);
+			this->ClientSize = System::Drawing::Size(412, 424);
 			this->Controls->Add(this->new_data_label);
 			this->Controls->Add(this->id_label);
 			this->Controls->Add(this->new_data_txtbox);
