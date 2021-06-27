@@ -57,8 +57,8 @@ namespace SupermarketInventoryandBillingSystem {
 
 
 	private: System::Windows::Forms::Label^ label5;
-	private: System::Windows::Forms::Label^ label6;
-	private: System::Windows::Forms::TextBox^ gst_txtbox;
+
+
 	private: System::Windows::Forms::Label^ label7;
 	private: System::Windows::Forms::ComboBox^ comboBox1;
 	private: System::Windows::Forms::Label^ description_label;
@@ -88,8 +88,6 @@ namespace SupermarketInventoryandBillingSystem {
 			this->price_textbox = (gcnew System::Windows::Forms::TextBox());
 			this->qty_textbox = (gcnew System::Windows::Forms::TextBox());
 			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->gst_txtbox = (gcnew System::Windows::Forms::TextBox());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->description_label = (gcnew System::Windows::Forms::Label());
@@ -100,9 +98,9 @@ namespace SupermarketInventoryandBillingSystem {
 			// 
 			this->save_btn->Cursor = System::Windows::Forms::Cursors::Default;
 			this->save_btn->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->save_btn->Location = System::Drawing::Point(64, 410);
+			this->save_btn->Location = System::Drawing::Point(106, 374);
 			this->save_btn->Name = L"save_btn";
-			this->save_btn->Size = System::Drawing::Size(276, 23);
+			this->save_btn->Size = System::Drawing::Size(383, 23);
 			this->save_btn->TabIndex = 0;
 			this->save_btn->Text = L"Save";
 			this->save_btn->UseVisualStyleBackColor = true;
@@ -110,111 +108,93 @@ namespace SupermarketInventoryandBillingSystem {
 			// 
 			// id_textbox
 			// 
-			this->id_textbox->Location = System::Drawing::Point(164, 84);
+			this->id_textbox->Location = System::Drawing::Point(206, 82);
 			this->id_textbox->Name = L"id_textbox";
-			this->id_textbox->Size = System::Drawing::Size(176, 20);
+			this->id_textbox->Size = System::Drawing::Size(283, 20);
 			this->id_textbox->TabIndex = 1;
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(61, 88);
+			this->label1->Location = System::Drawing::Point(103, 86);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(20, 13);
+			this->label1->Size = System::Drawing::Size(19, 15);
 			this->label1->TabIndex = 2;
 			this->label1->Text = L"ID";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(61, 131);
+			this->label2->Location = System::Drawing::Point(103, 129);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(39, 13);
+			this->label2->Size = System::Drawing::Size(41, 15);
 			this->label2->TabIndex = 3;
 			this->label2->Text = L"Name";
 			// 
 			// name_textbox
 			// 
-			this->name_textbox->Location = System::Drawing::Point(164, 127);
+			this->name_textbox->Location = System::Drawing::Point(206, 125);
 			this->name_textbox->Name = L"name_textbox";
-			this->name_textbox->Size = System::Drawing::Size(176, 20);
+			this->name_textbox->Size = System::Drawing::Size(283, 20);
 			this->name_textbox->TabIndex = 4;
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(61, 270);
+			this->label3->Location = System::Drawing::Point(103, 268);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(57, 13);
+			this->label3->Size = System::Drawing::Size(55, 15);
 			this->label3->TabIndex = 7;
 			this->label3->Text = L"Category";
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label4->Location = System::Drawing::Point(61, 227);
+			this->label4->Location = System::Drawing::Point(103, 225);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(36, 13);
+			this->label4->Size = System::Drawing::Size(35, 15);
 			this->label4->TabIndex = 6;
 			this->label4->Text = L"Price";
 			// 
 			// price_textbox
 			// 
-			this->price_textbox->Location = System::Drawing::Point(164, 224);
+			this->price_textbox->Location = System::Drawing::Point(206, 222);
 			this->price_textbox->Name = L"price_textbox";
-			this->price_textbox->Size = System::Drawing::Size(176, 20);
+			this->price_textbox->Size = System::Drawing::Size(283, 20);
 			this->price_textbox->TabIndex = 5;
 			// 
 			// qty_textbox
 			// 
-			this->qty_textbox->Location = System::Drawing::Point(164, 354);
+			this->qty_textbox->Location = System::Drawing::Point(206, 318);
 			this->qty_textbox->Name = L"qty_textbox";
-			this->qty_textbox->Size = System::Drawing::Size(176, 20);
+			this->qty_textbox->Size = System::Drawing::Size(283, 20);
 			this->qty_textbox->TabIndex = 12;
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(61, 358);
+			this->label5->Location = System::Drawing::Point(103, 322);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(54, 13);
+			this->label5->Size = System::Drawing::Size(51, 15);
 			this->label5->TabIndex = 11;
 			this->label5->Text = L"Quantity";
-			// 
-			// label6
-			// 
-			this->label6->AutoSize = true;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label6->Location = System::Drawing::Point(61, 315);
-			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(81, 13);
-			this->label6->TabIndex = 10;
-			this->label6->Text = L"GST Taxable";
-			// 
-			// gst_txtbox
-			// 
-			this->gst_txtbox->Location = System::Drawing::Point(164, 311);
-			this->gst_txtbox->Name = L"gst_txtbox";
-			this->gst_txtbox->Size = System::Drawing::Size(176, 20);
-			this->gst_txtbox->TabIndex = 9;
 			// 
 			// label7
 			// 
 			this->label7->AutoSize = true;
 			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label7->Location = System::Drawing::Point(134, 40);
+			this->label7->Location = System::Drawing::Point(212, 37);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(145, 20);
 			this->label7->TabIndex = 13;
@@ -228,27 +208,27 @@ namespace SupermarketInventoryandBillingSystem {
 				L"Convenience goods", L"Shopping goods", L"Speciality goods",
 					L"Impulse goods", L"Emergancy goods", L"Raw materials", L"Installations", L"Accessory Equipments", L"Supplies", L"Services"
 			});
-			this->comboBox1->Location = System::Drawing::Point(164, 267);
+			this->comboBox1->Location = System::Drawing::Point(206, 265);
 			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(176, 21);
+			this->comboBox1->Size = System::Drawing::Size(283, 21);
 			this->comboBox1->TabIndex = 14;
 			// 
 			// description_label
 			// 
 			this->description_label->AutoSize = true;
-			this->description_label->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.5F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->description_label->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->description_label->Location = System::Drawing::Point(61, 178);
+			this->description_label->Location = System::Drawing::Point(103, 176);
 			this->description_label->Name = L"description_label";
-			this->description_label->Size = System::Drawing::Size(80, 15);
+			this->description_label->Size = System::Drawing::Size(69, 15);
 			this->description_label->TabIndex = 15;
 			this->description_label->Text = L"Description";
 			// 
 			// description_textBox
 			// 
-			this->description_textBox->Location = System::Drawing::Point(164, 175);
+			this->description_textBox->Location = System::Drawing::Point(206, 173);
 			this->description_textBox->Name = L"description_textBox";
-			this->description_textBox->Size = System::Drawing::Size(176, 20);
+			this->description_textBox->Size = System::Drawing::Size(283, 20);
 			this->description_textBox->TabIndex = 16;
 			// 
 			// add_product
@@ -256,15 +236,13 @@ namespace SupermarketInventoryandBillingSystem {
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::DeepSkyBlue;
-			this->ClientSize = System::Drawing::Size(436, 465);
+			this->ClientSize = System::Drawing::Size(588, 465);
 			this->Controls->Add(this->description_textBox);
 			this->Controls->Add(this->description_label);
 			this->Controls->Add(this->comboBox1);
 			this->Controls->Add(this->label7);
 			this->Controls->Add(this->qty_textbox);
 			this->Controls->Add(this->label5);
-			this->Controls->Add(this->label6);
-			this->Controls->Add(this->gst_txtbox);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->price_textbox);
@@ -281,8 +259,7 @@ namespace SupermarketInventoryandBillingSystem {
 		}
 
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		
-
+		float gst_array[10] = { 1.2,2.0,2.1,2.5,1.5,4.2,4.5,5,4.7,5.0 };
 		try
 		{
 			String^ constr = "Server=127.0.0.1;Uid=root;Pwd=;Database=inventory";
@@ -294,7 +271,8 @@ namespace SupermarketInventoryandBillingSystem {
 			String^ description = description_textBox->Text;
 			float product_price = float::Parse(price_textbox->Text);
 			String^ product_category = (comboBox1->SelectedItem)->ToString();
-			float product_gst = float::Parse(gst_txtbox->Text);
+			//float product_gst = float::Parse(gst_txtbox->Text);
+			float product_gst = gst_array[comboBox1->SelectedIndex];
 			int product_qty = Int32::Parse(qty_textbox->Text);
 			MySqlCommand^ cmd = gcnew MySqlCommand("insert into stock values(" + product_id + ",'" + product_name + "', '"+ description +"'," + product_price + ",'" + product_category + "'," + product_gst + "," + product_qty + ")", con);
 			MySqlDataReader^ dr;
