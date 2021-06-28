@@ -30,6 +30,9 @@
     <ClCompile Include="update_product.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
+    <ClCompile Include="Billing.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -45,6 +48,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="update_product.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Billing.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
