@@ -239,6 +239,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->Controls->Add(this->label1);
 			this->Name = L"MyForm1";
 			this->Text = L"MyForm1";
+			this->Load += gcnew System::EventHandler(this, &MyForm1::MyForm1_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->EndInit();
@@ -343,5 +344,7 @@ private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e
 	}
 }
 
+private: System::Void MyForm1_Load(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }

@@ -2,6 +2,8 @@
 using namespace System;
 #include "MyForm1.h"
 #include "inventory.h"
+#include "billing.h"
+
 namespace SupermarketInventoryandBillingSystem {
 
 	using namespace System;
@@ -151,7 +153,11 @@ namespace SupermarketInventoryandBillingSystem {
 			inventory^ admin = gcnew inventory();
 			admin->Visible = true;
 
-		
+		}
+		else if (textBox1->Text == "123" && textBox2->Text == "123") {
+			billing^ admin = gcnew billing();
+			admin->Visible = true;
+
 		}
 		else {
 			MessageBox::Show("Wrong Credentials");
