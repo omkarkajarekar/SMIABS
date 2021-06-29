@@ -47,6 +47,8 @@ namespace SupermarketInventoryandBillingSystem {
 
 	private: System::Windows::Forms::Button^ fetch_btn;
 	private: System::Windows::Forms::BindingSource^ bindingSource1;
+	private: System::Windows::Forms::ComboBox^ category_comboBox;
+
 	private: System::ComponentModel::IContainer^ components;
 
 	private:
@@ -70,6 +72,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->data_textBox = (gcnew System::Windows::Forms::TextBox());
 			this->fetch_btn = (gcnew System::Windows::Forms::Button());
 			this->bindingSource1 = (gcnew System::Windows::Forms::BindingSource(this->components));
+			this->category_comboBox = (gcnew System::Windows::Forms::ComboBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->BeginInit();
 			this->SuspendLayout();
@@ -134,12 +137,27 @@ namespace SupermarketInventoryandBillingSystem {
 			this->fetch_btn->UseVisualStyleBackColor = true;
 			this->fetch_btn->Click += gcnew System::EventHandler(this, &display_products::fetch_btn_Click);
 			// 
+			// category_comboBox
+			// 
+			this->category_comboBox->FormattingEnabled = true;
+			this->category_comboBox->Items->AddRange(gcnew cli::array< System::Object^  >(10) {
+				L"Convenience goods", L"Shopping goods",
+					L"Speciality goods", L"Impulse goods", L"Emergancy goods", L"Raw materials", L"Installations", L"Accessory Equipments", L"Supplies",
+					L"Services"
+			});
+			this->category_comboBox->Location = System::Drawing::Point(476, 135);
+			this->category_comboBox->Name = L"category_comboBox";
+			this->category_comboBox->Size = System::Drawing::Size(238, 21);
+			this->category_comboBox->TabIndex = 6;
+			this->category_comboBox->Visible = false;
+			// 
 			// display_products
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::DeepSkyBlue;
 			this->ClientSize = System::Drawing::Size(983, 472);
+			this->Controls->Add(this->category_comboBox);
 			this->Controls->Add(this->fetch_btn);
 			this->Controls->Add(this->data_textBox);
 			this->Controls->Add(this->new_data_label);
@@ -164,6 +182,7 @@ namespace SupermarketInventoryandBillingSystem {
 		{
 			String^ constr = "Server=127.0.0.1;Uid=root;Pwd=;Database=inventory";
 			MySqlConnection^ con = gcnew MySqlConnection(constr);
+			
 
 			String^ opt_selected = (comboBox1->SelectedItem)->ToString();
 			String^ sql_query;
@@ -177,7 +196,8 @@ namespace SupermarketInventoryandBillingSystem {
 				sql_query = "select * from stock where product_name='" + product_name + "'";
 			}
 			else if (opt_selected == "Search by Category") {
-				String^ category = data_textBox->Text;
+
+				String^ category = (category_comboBox->SelectedItem)->ToString();
 				sql_query = "select * from stock where product_category='" + category + "'";
 			}
 			else if (opt_selected == "Search by Quantity") {
@@ -210,6 +230,8 @@ private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, Sys
 	fetch_btn->Enabled = true;
 	data_textBox->Clear();
 	String^ opt_selected = (comboBox1->SelectedItem)->ToString();
+	data_textBox->Visible = true;
+	category_comboBox->Visible = false;
 
 	if (opt_selected == "Search by Name") {
 		new_data_label->Text = "fetch products \nof Name";
@@ -218,6 +240,8 @@ private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, Sys
 		new_data_label->Text = "fetch products \nof Description ";
 	}
 	else if (opt_selected == "Search by Category") {
+		data_textBox->Visible = false;
+		category_comboBox->Visible = true;
 		new_data_label->Text = "fetch products \nof Category ";
 	}
 	else if (opt_selected == "Search by Quantity") {
