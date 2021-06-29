@@ -85,6 +85,7 @@ namespace SupermarketInventoryandBillingSystem {
 			// 
 			// comboBox1
 			// 
+			this->comboBox1->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->comboBox1->FormattingEnabled = true;
 			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(5) {
 				L"Display All", L"Search by ID", L"Search by Name",
@@ -102,7 +103,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::DisableResizing;
 			this->dataGridView1->Location = System::Drawing::Point(66, 263);
 			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->Size = System::Drawing::Size(900, 170);
+			this->dataGridView1->Size = System::Drawing::Size(843, 170);
 			this->dataGridView1->TabIndex = 2;
 			// 
 			// new_data_label
@@ -138,7 +139,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::DeepSkyBlue;
-			this->ClientSize = System::Drawing::Size(1049, 472);
+			this->ClientSize = System::Drawing::Size(983, 472);
 			this->Controls->Add(this->fetch_btn);
 			this->Controls->Add(this->data_textBox);
 			this->Controls->Add(this->new_data_label);
