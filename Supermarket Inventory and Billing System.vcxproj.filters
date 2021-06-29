@@ -30,10 +30,6 @@
     <ClCompile Include="update_product.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="Billing.cpp">
-      <Filter>Header Files</Filter>
-    </ClCompile>
-    <ClCompile Include="New Bill.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -53,10 +49,6 @@
     <ClInclude Include="update_product.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Billing.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="New Bill.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
