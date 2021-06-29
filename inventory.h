@@ -125,7 +125,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView1->Location = System::Drawing::Point(78, 270);
 			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->Size = System::Drawing::Size(845, 140);
+			this->dataGridView1->Size = System::Drawing::Size(843, 140);
 			this->dataGridView1->TabIndex = 5;
 			// 
 			// label2
