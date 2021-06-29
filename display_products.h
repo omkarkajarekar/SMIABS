@@ -77,7 +77,7 @@ namespace SupermarketInventoryandBillingSystem {
 			// display_options_label
 			// 
 			this->display_options_label->AutoSize = true;
-			this->display_options_label->Location = System::Drawing::Point(208, 97);
+			this->display_options_label->Location = System::Drawing::Point(333, 81);
 			this->display_options_label->Name = L"display_options_label";
 			this->display_options_label->Size = System::Drawing::Size(80, 13);
 			this->display_options_label->TabIndex = 0;
@@ -86,11 +86,11 @@ namespace SupermarketInventoryandBillingSystem {
 			// comboBox1
 			// 
 			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(7) {
+			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(5) {
 				L"Display All", L"Search by ID", L"Search by Name",
-					L"Display by Category", L"Display by Price", L"Display by GST", L"Display by Quantity"
+					L"Search by Category", L"Search by Quantity"
 			});
-			this->comboBox1->Location = System::Drawing::Point(351, 94);
+			this->comboBox1->Location = System::Drawing::Point(476, 78);
 			this->comboBox1->Name = L"comboBox1";
 			this->comboBox1->Size = System::Drawing::Size(238, 21);
 			this->comboBox1->TabIndex = 1;
@@ -99,17 +99,16 @@ namespace SupermarketInventoryandBillingSystem {
 			// dataGridView1
 			// 
 			this->dataGridView1->BackgroundColor = System::Drawing::Color::DeepSkyBlue;
-			this->dataGridView1->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::DisableResizing;
 			this->dataGridView1->Location = System::Drawing::Point(66, 263);
 			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->Size = System::Drawing::Size(772, 170);
+			this->dataGridView1->Size = System::Drawing::Size(900, 170);
 			this->dataGridView1->TabIndex = 2;
 			// 
 			// new_data_label
 			// 
 			this->new_data_label->AutoSize = true;
-			this->new_data_label->Location = System::Drawing::Point(208, 154);
+			this->new_data_label->Location = System::Drawing::Point(333, 138);
 			this->new_data_label->Name = L"new_data_label";
 			this->new_data_label->Size = System::Drawing::Size(56, 13);
 			this->new_data_label->TabIndex = 3;
@@ -118,7 +117,7 @@ namespace SupermarketInventoryandBillingSystem {
 			// data_textBox
 			// 
 			this->data_textBox->Enabled = false;
-			this->data_textBox->Location = System::Drawing::Point(351, 151);
+			this->data_textBox->Location = System::Drawing::Point(476, 135);
 			this->data_textBox->Name = L"data_textBox";
 			this->data_textBox->Size = System::Drawing::Size(238, 20);
 			this->data_textBox->TabIndex = 4;
@@ -126,7 +125,7 @@ namespace SupermarketInventoryandBillingSystem {
 			// fetch_btn
 			// 
 			this->fetch_btn->Enabled = false;
-			this->fetch_btn->Location = System::Drawing::Point(211, 212);
+			this->fetch_btn->Location = System::Drawing::Point(336, 196);
 			this->fetch_btn->Name = L"fetch_btn";
 			this->fetch_btn->Size = System::Drawing::Size(378, 23);
 			this->fetch_btn->TabIndex = 5;
@@ -139,7 +138,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::DeepSkyBlue;
-			this->ClientSize = System::Drawing::Size(882, 472);
+			this->ClientSize = System::Drawing::Size(1049, 472);
 			this->Controls->Add(this->fetch_btn);
 			this->Controls->Add(this->data_textBox);
 			this->Controls->Add(this->new_data_label);
@@ -169,7 +168,7 @@ namespace SupermarketInventoryandBillingSystem {
 			String^ sql_query;
 
 			if (opt_selected == "Search by ID") {
-				int product_id = Int32::Parse(data_textBox->Text);
+				double product_id = double::Parse(data_textBox->Text);
 				sql_query = "select * from stock where product_id=" + product_id + "";
 			}
 			else if (opt_selected == "Search by Name") {
@@ -179,15 +178,6 @@ namespace SupermarketInventoryandBillingSystem {
 			else if (opt_selected == "Search by Category") {
 				String^ category = data_textBox->Text;
 				sql_query = "select * from stock where product_category='" + category + "'";
-			}
-			else if (opt_selected == "Search by Price") {
-				float price = float::Parse(data_textBox->Text);
-				sql_query = "select * from stock where product_price=" + price + "";
-			}
-			else if (opt_selected == "Search by GST") {
-				float gst = float::Parse(data_textBox->Text);
-				MessageBox::Show("entered gst:"+gst+"");
-				sql_query = "select * from stock where product_gst=" + gst + "";
 			}
 			else if (opt_selected == "Search by Quantity") {
 				int quantity = Int32::Parse(data_textBox->Text);
@@ -223,17 +213,11 @@ private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, Sys
 	if (opt_selected == "Search by Name") {
 		new_data_label->Text = "fetch products \nof Name";
 	}
-	else if (opt_selected == "Search by Price") {
-		new_data_label->Text = "fetch products \nof Price";
-	}
 	else if (opt_selected == "Search by Description") {
 		new_data_label->Text = "fetch products \nof Description ";
 	}
 	else if (opt_selected == "Search by Category") {
 		new_data_label->Text = "fetch products \nof Category ";
-	}
-	else if (opt_selected == "Search by Gst") {
-		new_data_label->Text = "fetch products \nof Gst";
 	}
 	else if (opt_selected == "Search by Quantity") {
 		new_data_label->Text = "fetch products \nof Quantity";
