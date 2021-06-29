@@ -30,7 +30,6 @@
     <ClCompile Include="update_product.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="display_products.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -50,7 +49,6 @@
     <ClInclude Include="update_product.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="display_products.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
