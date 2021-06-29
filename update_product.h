@@ -55,6 +55,8 @@ namespace SupermarketInventoryandBillingSystem {
 	private: System::Windows::Forms::Label^ after_operation_label;
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
 	private: System::Windows::Forms::BindingSource^ bindingSource2;
+	private: System::Windows::Forms::ComboBox^ category_comboBox;
+
 	private: System::ComponentModel::IContainer^ components;
 
 
@@ -92,6 +94,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->after_operation_label = (gcnew System::Windows::Forms::Label());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->bindingSource2 = (gcnew System::Windows::Forms::BindingSource(this->components));
+			this->category_comboBox = (gcnew System::Windows::Forms::ComboBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView_1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
@@ -245,12 +248,27 @@ namespace SupermarketInventoryandBillingSystem {
 			this->dataGridView1->TabIndex = 13;
 			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &update_product::dataGridView1_CellContentClick);
 			// 
+			// category_comboBox
+			// 
+			this->category_comboBox->FormattingEnabled = true;
+			this->category_comboBox->Items->AddRange(gcnew cli::array< System::Object^  >(10) {
+				L"Convenience goods", L"Shopping goods",
+					L"Speciality goods", L"Impulse goods", L"Emergancy goods", L"Raw materials", L"Installations", L"Accessory Equipments", L"Supplies",
+					L"Services"
+			});
+			this->category_comboBox->Location = System::Drawing::Point(418, 251);
+			this->category_comboBox->Name = L"category_comboBox";
+			this->category_comboBox->Size = System::Drawing::Size(274, 21);
+			this->category_comboBox->TabIndex = 14;
+			this->category_comboBox->Visible = false;
+			// 
 			// update_product
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::DeepSkyBlue;
 			this->ClientSize = System::Drawing::Size(972, 728);
+			this->Controls->Add(this->category_comboBox);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->after_operation_label);
 			this->Controls->Add(this->gridview_label);
@@ -310,6 +328,8 @@ namespace SupermarketInventoryandBillingSystem {
 	private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 		String^ opt_selected1 = (operation_comboBox->SelectedItem)->ToString();
 		String^ opt_selected = (comboBox1->SelectedItem)->ToString();
+		new_data_txtbox->Visible = true;
+		category_comboBox->Visible = false;
 
 		if (opt_selected1 == "Update") {
 			label1->Text = "Select field to \nupdate product";
@@ -344,6 +364,8 @@ namespace SupermarketInventoryandBillingSystem {
 			}
 			else if (opt_selected == "Category") {
 				new_data_label->Text = "New Category ";
+				new_data_txtbox->Visible = false;
+				category_comboBox->Visible = true;
 			}
 			else if (opt_selected == "Quantity") {
 				new_data_label->Text = "New Quantity";
@@ -361,6 +383,8 @@ namespace SupermarketInventoryandBillingSystem {
 			}
 			else if (opt_selected == "Category") {
 				new_data_label->Text = "Remove products \nof Category ";
+				new_data_txtbox->Visible = false;
+				category_comboBox->Visible = true;
 			}
 			else if (opt_selected == "Quantity") {
 				new_data_label->Text = "Remove products \nof Quantity";
@@ -404,7 +428,7 @@ namespace SupermarketInventoryandBillingSystem {
 				sql_query = "update stock set product_selling_price=" + new_data + " WHERE product_id=" + product_id + "";
 			}
 			else if (opt_selected == "Category") {
-				String^ new_data = new_data_txtbox->Text;
+				String^ new_data = (category_comboBox->SelectedItem)->ToString();
 				sql_query = "update stock set product_category='" + new_data + "' WHERE product_id=" + product_id + "";
 			}
 			else if (opt_selected == "Gst") {
@@ -456,7 +480,7 @@ namespace SupermarketInventoryandBillingSystem {
 
 			}
 			else if (opt_selected == "Category") {
-				String^ new_data = new_data_txtbox->Text;
+				String^ new_data = (category_comboBox->SelectedItem)->ToString();
 				sql_query = "delete from stock WHERE product_category='" + new_data + "'";
 				sql_query_select = "select * from stock where product_category='" + new_data + "'";
 
