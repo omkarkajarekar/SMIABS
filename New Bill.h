@@ -77,7 +77,7 @@ namespace SupermarketInventoryandBillingSystem {
 	private: System::Windows::Forms::TextBox^ textBox9;
 	private: System::Windows::Forms::Label^ label10;
 	private: System::Windows::Forms::TextBox^ textBox10;
-	private: System::Windows::Forms::Button^ button2;
+
 
 	private: System::Windows::Forms::Label^ label8;
 	private: System::Windows::Forms::TextBox^ textBox7;
@@ -89,6 +89,7 @@ namespace SupermarketInventoryandBillingSystem {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column6;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column7;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column8;
+	private: System::Windows::Forms::Button^ button2;
 
 
 	private:
@@ -105,7 +106,6 @@ namespace SupermarketInventoryandBillingSystem {
 		void InitializeComponent(void)
 		{
 			this->panel5 = (gcnew System::Windows::Forms::Panel());
-			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->panel6 = (gcnew System::Windows::Forms::Panel());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
@@ -121,6 +121,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
@@ -152,26 +153,12 @@ namespace SupermarketInventoryandBillingSystem {
 			// 
 			// panel5
 			// 
-			this->panel5->Controls->Add(this->button2);
 			this->panel5->Controls->Add(this->panel6);
 			this->panel5->Dock = System::Windows::Forms::DockStyle::Bottom;
-			this->panel5->Location = System::Drawing::Point(0, 598);
+			this->panel5->Location = System::Drawing::Point(0, 626);
 			this->panel5->Name = L"panel5";
-			this->panel5->Size = System::Drawing::Size(912, 51);
+			this->panel5->Size = System::Drawing::Size(934, 51);
 			this->panel5->TabIndex = 2;
-			// 
-			// button2
-			// 
-			this->button2->FlatAppearance->BorderSize = 0;
-			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->button2->Location = System::Drawing::Point(708, 14);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(117, 25);
-			this->button2->TabIndex = 3;
-			this->button2->Text = L"Generate Bill";
-			this->button2->UseVisualStyleBackColor = true;
 			// 
 			// panel6
 			// 
@@ -187,7 +174,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->panel1->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel1->Location = System::Drawing::Point(0, 0);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(912, 25);
+			this->panel1->Size = System::Drawing::Size(934, 25);
 			this->panel1->TabIndex = 4;
 			// 
 			// panel2
@@ -204,7 +191,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->panel3->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panel3->Location = System::Drawing::Point(0, 25);
 			this->panel3->Name = L"panel3";
-			this->panel3->Size = System::Drawing::Size(912, 59);
+			this->panel3->Size = System::Drawing::Size(934, 59);
 			this->panel3->TabIndex = 6;
 			// 
 			// panel4
@@ -220,7 +207,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->panel7->Dock = System::Windows::Forms::DockStyle::Left;
 			this->panel7->Location = System::Drawing::Point(0, 84);
 			this->panel7->Name = L"panel7";
-			this->panel7->Size = System::Drawing::Size(31, 514);
+			this->panel7->Size = System::Drawing::Size(31, 542);
 			this->panel7->TabIndex = 7;
 			// 
 			// label1
@@ -301,6 +288,7 @@ namespace SupermarketInventoryandBillingSystem {
 			// 
 			// groupBox1
 			// 
+			this->groupBox1->Controls->Add(this->button2);
 			this->groupBox1->Controls->Add(this->textBox7);
 			this->groupBox1->Controls->Add(this->label8);
 			this->groupBox1->Controls->Add(this->button1);
@@ -318,13 +306,26 @@ namespace SupermarketInventoryandBillingSystem {
 			this->groupBox1->Controls->Add(this->label3);
 			this->groupBox1->Location = System::Drawing::Point(37, 90);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Size = System::Drawing::Size(863, 111);
+			this->groupBox1->Size = System::Drawing::Size(885, 149);
 			this->groupBox1->TabIndex = 16;
 			this->groupBox1->TabStop = false;
 			// 
+			// button2
+			// 
+			this->button2->FlatAppearance->BorderSize = 0;
+			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button2->Location = System::Drawing::Point(277, 109);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(117, 25);
+			this->button2->TabIndex = 24;
+			this->button2->Text = L"Add To List";
+			this->button2->UseVisualStyleBackColor = true;
+			// 
 			// textBox7
 			// 
-			this->textBox7->Location = System::Drawing::Point(737, 47);
+			this->textBox7->Location = System::Drawing::Point(106, 114);
 			this->textBox7->Name = L"textBox7";
 			this->textBox7->ReadOnly = true;
 			this->textBox7->Size = System::Drawing::Size(93, 20);
@@ -347,26 +348,27 @@ namespace SupermarketInventoryandBillingSystem {
 			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button1->Location = System::Drawing::Point(767, 82);
+			this->button1->Location = System::Drawing::Point(665, 45);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(90, 23);
 			this->button1->TabIndex = 20;
-			this->button1->Text = L"Add To List";
+			this->button1->Text = L"Confirm";
 			this->button1->UseVisualStyleBackColor = true;
 			// 
 			// textBox6
 			// 
-			this->textBox6->Location = System::Drawing::Point(645, 47);
+			this->textBox6->Location = System::Drawing::Point(10, 114);
 			this->textBox6->Name = L"textBox6";
 			this->textBox6->Size = System::Drawing::Size(69, 20);
 			this->textBox6->TabIndex = 19;
+			this->textBox6->TextChanged += gcnew System::EventHandler(this, &NewBill::textBox6_TextChanged);
 			// 
 			// label6
 			// 
 			this->label6->AutoSize = true;
 			this->label6->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label6->Location = System::Drawing::Point(734, 16);
+			this->label6->Location = System::Drawing::Point(103, 88);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(39, 17);
 			this->label6->TabIndex = 18;
@@ -385,7 +387,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->label5->AutoSize = true;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(642, 16);
+			this->label5->Location = System::Drawing::Point(7, 85);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(30, 17);
 			this->label5->TabIndex = 16;
@@ -402,7 +404,7 @@ namespace SupermarketInventoryandBillingSystem {
 					this->Column2, this->Column3, this->Column4, this->Column5, this->Column6, this->Column7, this->Column8
 			});
 			this->dataGridView1->EnableHeadersVisualStyles = false;
-			this->dataGridView1->Location = System::Drawing::Point(42, 224);
+			this->dataGridView1->Location = System::Drawing::Point(37, 254);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersVisible = false;
 			this->dataGridView1->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
@@ -468,7 +470,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->label7->AutoSize = true;
 			this->label7->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label7->Location = System::Drawing::Point(650, 428);
+			this->label7->Location = System::Drawing::Point(643, 466);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(66, 17);
 			this->label7->TabIndex = 18;
@@ -476,7 +478,7 @@ namespace SupermarketInventoryandBillingSystem {
 			// 
 			// textBox8
 			// 
-			this->textBox8->Location = System::Drawing::Point(722, 428);
+			this->textBox8->Location = System::Drawing::Point(722, 463);
 			this->textBox8->Name = L"textBox8";
 			this->textBox8->Size = System::Drawing::Size(93, 20);
 			this->textBox8->TabIndex = 22;
@@ -486,7 +488,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->label9->AutoSize = true;
 			this->label9->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label9->Location = System::Drawing::Point(614, 476);
+			this->label9->Location = System::Drawing::Point(614, 509);
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(102, 17);
 			this->label9->TabIndex = 23;
@@ -494,7 +496,7 @@ namespace SupermarketInventoryandBillingSystem {
 			// 
 			// textBox9
 			// 
-			this->textBox9->Location = System::Drawing::Point(722, 475);
+			this->textBox9->Location = System::Drawing::Point(722, 509);
 			this->textBox9->Name = L"textBox9";
 			this->textBox9->Size = System::Drawing::Size(93, 20);
 			this->textBox9->TabIndex = 24;
@@ -504,7 +506,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->label10->AutoSize = true;
 			this->label10->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label10->Location = System::Drawing::Point(623, 542);
+			this->label10->Location = System::Drawing::Point(623, 572);
 			this->label10->Name = L"label10";
 			this->label10->Size = System::Drawing::Size(93, 16);
 			this->label10->TabIndex = 25;
@@ -512,7 +514,7 @@ namespace SupermarketInventoryandBillingSystem {
 			// 
 			// textBox10
 			// 
-			this->textBox10->Location = System::Drawing::Point(722, 538);
+			this->textBox10->Location = System::Drawing::Point(722, 572);
 			this->textBox10->Name = L"textBox10";
 			this->textBox10->Size = System::Drawing::Size(93, 20);
 			this->textBox10->TabIndex = 26;
@@ -521,7 +523,7 @@ namespace SupermarketInventoryandBillingSystem {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(912, 649);
+			this->ClientSize = System::Drawing::Size(934, 677);
 			this->Controls->Add(this->textBox10);
 			this->Controls->Add(this->label10);
 			this->Controls->Add(this->textBox9);
@@ -549,7 +551,6 @@ namespace SupermarketInventoryandBillingSystem {
 #pragma endregion
 	private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 
-		int Qty,Other_Charges;
 		try {
 			String^ constr = "Server=127.0.0.1;Uid=root;Pwd=;Database=inventory";
 			MySqlConnection^ con = gcnew MySqlConnection(constr);
@@ -577,33 +578,24 @@ namespace SupermarketInventoryandBillingSystem {
 
 			textBox5->Text = dr->GetString(3);
 			float GST = float::Parse(textBox5->Text);
-
-			textBox6->Text = "0";
-			String^ q = textBox6->Text;
-			int Qty = Int32::Parse(textBox6->Text);
-
-			float total_amount = Qty * UnitPrice;
-			total_amount = total_amount * GST / 100;
-			textBox7->Text = System::Convert::ToString(total_amount);
-
-			textBox8->Text = textBox7->Text;
-
-			textBox9->Text = "0";
-			String^ other = textBox9->Text;
-			int Other_Charges = 0;
-			Other_Charges = Int32::Parse(textBox9->Text);
-
-			float bill_amount = total_amount + Other_Charges;
-			textBox10->Text = System::Convert::ToString(bill_amount);
-
 			con->Close();
-
+			
 		}
 		catch (Exception^ ex) {
 			MessageBox::Show(ex->Message);
 		}
-		
 	}
 
+private: System::Void textBox6_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+
+		int	Qty = Int32::Parse(textBox6->Text);
+		Qty = Int32::Parse(textBox6->Text);
+
+		float total_amount = Qty * UnitPrice;
+		total_amount = total_amount * GST / 100;
+		textBox7->Text = System::Convert::ToString(total_amount);
+
+		textBox8->Text = textBox7->Text;
+}
 };
 }
