@@ -133,6 +133,7 @@
     <ClCompile Include="inventory.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="MyForm1.cpp" />
+    <ClCompile Include="signup.cpp" />
     <ClCompile Include="update_product.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -152,6 +153,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="MyForm1.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="signup.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="update_product.h">
@@ -176,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm1.resx">
       <DependentUpon>MyForm1.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="signup.resx">
+      <DependentUpon>signup.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="update_product.resx">
       <DependentUpon>update_product.h</DependentUpon>

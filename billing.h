@@ -228,7 +228,7 @@ namespace SupermarketInventoryandBillingSystem {
 		int Quantity;
 		float UnitPrice,GST,Total;
 private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	try
+	/*try
 	{
 		String^ constr = "Server=127.0.0.1;Uid=root;Pwd=;Database=inventory";
 		MySqlConnection^ con = gcnew MySqlConnection(constr);
@@ -250,10 +250,10 @@ private: System::Void textBox1_TextChanged(System::Object^ sender, System::Event
 	}
 	catch (Exception^ ex) {
 		MessageBox::Show(ex->Message);
-	}
+	}*/
 }
 private: System::Void textBox6_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	try
+	/*try
 	{
 		Quantity = Int32::Parse(textBox6->Text);
 		Total = UnitPrice * Quantity;
@@ -261,8 +261,7 @@ private: System::Void textBox6_TextChanged(System::Object^ sender, System::Event
 	}
 	catch (Exception^ ex) {
 		MessageBox::Show(ex->Message);
-	}
+	}*/
 }
-
 };
 }
