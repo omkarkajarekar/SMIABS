@@ -135,6 +135,7 @@
     <ClCompile Include="MyForm1.cpp" />
     <ClCompile Include="signup.cpp" />
     <ClCompile Include="update_product.cpp" />
+    <ClCompile Include="view_bill.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="add_product.h">
@@ -159,6 +160,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="update_product.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="view_bill.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
@@ -186,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="update_product.resx">
       <DependentUpon>update_product.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view_bill.resx">
+      <DependentUpon>view_bill.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
