@@ -395,6 +395,17 @@ namespace SupermarketInventoryandBillingSystem {
 		}
 	}
 	private: System::Void update_Click(System::Object^ sender, System::EventArgs^ e) {
+		String^ opt_selected = (comboBox1->SelectedItem)->ToString();
+		if(opt_selected == "Category"){
+			if (id_textBox->Text == "" || category_comboBox->SelectedIndex == -1) {
+				MessageBox::Show("please fill all fields");
+				return;
+			}
+		}
+		else if(id_textBox->Text == "" || new_data_txtbox->Text=="") {
+			MessageBox::Show("please fill all fields");
+			return;
+		}
 		try
 		{
 			String^ constr = "Server=127.0.0.1;Uid=root;Pwd=;Database=inventory";
@@ -405,11 +416,17 @@ namespace SupermarketInventoryandBillingSystem {
 			con->Open();
 			DataTable^ dt = gcnew DataTable();
 			cmd->Fill(dt);
-			bindingSource1->DataSource = dt;
-			dataGridView_1->DataSource = bindingSource1;
-			con->Close();
+			if (dt->Rows->Count == 0) {
+				MessageBox::Show("No data found for given ID");
+				return;
+			}
+			else {
+				bindingSource1->DataSource = dt;
+				dataGridView_1->DataSource = bindingSource1;
+				con->Close();
+			}
 			
-			String^ opt_selected = (comboBox1->SelectedItem)->ToString();
+			
 			String^ sql_query;
 			if (opt_selected == "Name") {
 				String^ new_data = new_data_txtbox->Text;
@@ -447,25 +464,46 @@ namespace SupermarketInventoryandBillingSystem {
 			con->Open();
 			DataTable^ dt1 = gcnew DataTable();
 			cmd1->Fill(dt1);
-			bindingSource2->DataSource = dt1;
-			dataGridView1->DataSource = bindingSource2;
-			MessageBox::Show("Product Updated sucessfully");
+			if (dt1->Rows->Count == 0) {
+				MessageBox::Show("No data found for given ID");
+				return;
+			}
+			else {
+				bindingSource2->DataSource = dt1;
+				dataGridView1->DataSource = bindingSource2;
+				MessageBox::Show("Product Updated sucessfully");
+			}
 			con->Close();
 
 		}
 		catch (Exception^ ex)
 		{
-			MessageBox::Show(ex->Message);
+			if (ex->Message == "Input string was not in a correct format.") {
+				MessageBox::Show("Inputs given are incorrect!");
+			}
+			else {
+				MessageBox::Show(ex->Message);
+			}
 		}
 	}
 
 	private: System::Void remove_button_Click(System::Object^ sender, System::EventArgs^ e) {
+		String^ opt_selected = (comboBox1->SelectedItem)->ToString();
+		if (opt_selected == "Category") {
+			if (category_comboBox->SelectedIndex == -1) {
+				MessageBox::Show("please fill all fields");
+				return;
+			}
+		}
+		else if (new_data_txtbox->Text == "") {
+			MessageBox::Show("please fill all fields");
+			return;
+		}
 		try
 		{
 			String^ constr = "Server=127.0.0.1;Uid=root;Pwd=;Database=inventory";
 			MySqlConnection^ con = gcnew MySqlConnection(constr);
 
-			String^ opt_selected = (comboBox1->SelectedItem)->ToString();
 			String^ sql_query;
 			String^ sql_query_select;
 			if (opt_selected == "Name") {
@@ -499,16 +537,26 @@ namespace SupermarketInventoryandBillingSystem {
 			con->Open();
 			DataTable^ dt = gcnew DataTable();
 			cmd->Fill(dt);
-			bindingSource1->DataSource = dt;
-			dataGridView_1->DataSource = bindingSource1;
-			MessageBox::Show("Product removed sucessfully");
-
+			if (dt->Rows->Count == 0) {
+				MessageBox::Show("No products found for given data");
+				return;
+			}
+			else {
+				bindingSource1->DataSource = dt;
+				dataGridView_1->DataSource = bindingSource1;
+				MessageBox::Show("Product removed sucessfully");
+			}
 			con->Close();
 
 		}
 		catch (Exception^ ex)
 		{
-			MessageBox::Show(ex->Message);
+			if (ex->Message == "Input string was not in a correct format.") {
+				MessageBox::Show("Inputs given are incorrect!");
+			}
+			else {
+				MessageBox::Show(ex->Message);
+			}
 		}
 	}
 	private: System::Void update_product_Load(System::Object^ sender, System::EventArgs^ e) {
