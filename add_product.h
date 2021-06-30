@@ -69,6 +69,7 @@ namespace SupermarketInventoryandBillingSystem {
 	private: System::Windows::Forms::Label^ sell_price_label;
 	private: System::Windows::Forms::BindingSource^ bindingSource1;
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
+	private: System::Windows::Forms::Label^ label6;
 	private: System::ComponentModel::IContainer^ components;
 	protected:
 
@@ -76,6 +77,7 @@ namespace SupermarketInventoryandBillingSystem {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
+		
 
 
 #pragma region Windows Form Designer generated code
@@ -104,6 +106,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->sell_price_label = (gcnew System::Windows::Forms::Label());
 			this->bindingSource1 = (gcnew System::Windows::Forms::BindingSource(this->components));
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->label6 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
@@ -268,10 +271,21 @@ namespace SupermarketInventoryandBillingSystem {
 			// 
 			this->dataGridView1->BackgroundColor = System::Drawing::Color::DeepSkyBlue;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(27, 504);
+			this->dataGridView1->Location = System::Drawing::Point(27, 548);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->Size = System::Drawing::Size(843, 158);
 			this->dataGridView1->TabIndex = 16;
+			// 
+			// label6
+			// 
+			this->label6->AutoSize = true;
+			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label6->Location = System::Drawing::Point(24, 518);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(145, 15);
+			this->label6->TabIndex = 17;
+			this->label6->Text = L"Data after adding product";
 			// 
 			// add_product
 			// 
@@ -279,6 +293,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::DeepSkyBlue;
 			this->ClientSize = System::Drawing::Size(912, 749);
+			this->Controls->Add(this->label6);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->sell_price_label);
 			this->Controls->Add(this->sell_price_textbox);
@@ -307,33 +322,61 @@ namespace SupermarketInventoryandBillingSystem {
 		}
 
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		//declarations
 		float gst_array[10] = { 1.2,2.0,2.1,2.5,1.5,4.2,4.5,5,4.7,5.0 };
-		try
-		{
-			String^ constr = "Server=127.0.0.1;Uid=root;Pwd=;Database=inventory";
-			MySqlConnection^ con = gcnew MySqlConnection(constr);
+		double product_id;
+		String^ product_name;
+		String^ description;
+		String^ product_category;
+		float product_purchase_price, product_sell_price, product_gst;
+		int product_qty;
 
-			//extracting input
-			double product_id = double::Parse(id_textbox->Text);
-			String^ product_name = name_textbox->Text;
-			String^ description = description_textBox->Text;
-			float product_purchase_price = float::Parse(price_textbox->Text);
-			float product_sell_price = float::Parse(sell_price_textbox->Text);
-			String^ product_category = (comboBox1->SelectedItem)->ToString();
-			//float product_gst = float::Parse(gst_txtbox->Text);
-			float product_gst = gst_array[comboBox1->SelectedIndex];
-			int product_qty = Int32::Parse(qty_textbox->Text);
-			MySqlDataAdapter^ cmd = gcnew MySqlDataAdapter("insert into stock values(" + product_id + ",'" + product_name + "', '"+ description +"'," + product_purchase_price +","+product_sell_price+ ",'" + product_category + "'," + product_gst + "," + product_qty + ");select * from stock where product_id="+product_id+"", con);
-			DataTable^ dt = gcnew DataTable();
-			cmd->Fill(dt);
-			bindingSource1->DataSource = dt;
-			dataGridView1->DataSource = bindingSource1;
-			MessageBox::Show("Product Added sucessfully");
-			con->Close();
-		}
-		catch (Exception^ ex)
+		//if to check empty textboxes
+		if (id_textbox->Text == "" || name_textbox->Text == "" || price_textbox->Text == "" || sell_price_textbox->Text == "" || qty_textbox->Text == "" || comboBox1->SelectedIndex == -1)
 		{
-			MessageBox::Show(ex->Message);
+			MessageBox::Show("Please fill all fields");
+		}
+		else {
+			try
+			{
+				String^ constr = "Server=127.0.0.1;Uid=root;Pwd=;Database=inventory";
+				MySqlConnection^ con = gcnew MySqlConnection(constr);
+
+				//extracting input and checking for inproper inputs
+				try {
+					product_id = double::Parse(id_textbox->Text);
+					product_name = name_textbox->Text;
+					description = description_textBox->Text;
+					product_purchase_price = float::Parse(price_textbox->Text);
+					product_sell_price = float::Parse(sell_price_textbox->Text);
+					product_category = (comboBox1->SelectedItem)->ToString();
+					//float product_gst = float::Parse(gst_txtbox->Text);
+					product_gst = gst_array[comboBox1->SelectedIndex];
+					product_qty = Int32::Parse(qty_textbox->Text);
+				}
+				catch (Exception^ ex) {
+					MessageBox::Show("One or more inputs are Wrong!");
+					return;
+				}
+				MySqlDataAdapter^ cmd;
+				try {
+					cmd = gcnew MySqlDataAdapter("insert into stock values(" + product_id + ",'" + product_name + "', '" + description + "'," + product_purchase_price + "," + product_sell_price + ",'" + product_category + "'," + product_gst + "," + product_qty + ");select * from stock where product_id=" + product_id + "", con);
+				}
+				catch(Exception^ ex){
+					MessageBox::Show("Unable to create sql command!");
+					return;
+				}
+				DataTable^ dt = gcnew DataTable();
+				cmd->Fill(dt);
+				bindingSource1->DataSource = dt;
+				dataGridView1->DataSource = bindingSource1;
+				MessageBox::Show("Product Added sucessfully");
+				con->Close();
+			}
+			catch (Exception^ ex)
+			{
+				MessageBox::Show(ex->Message);
+			}
 		}
 	}
 
