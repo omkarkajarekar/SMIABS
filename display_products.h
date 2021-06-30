@@ -178,14 +178,25 @@ namespace SupermarketInventoryandBillingSystem {
 	}
 	private: System::Void fetch_btn_Click(System::Object^ sender, System::EventArgs^ e)
 	{
+		String^ opt_selected = (comboBox1->SelectedItem)->ToString();
+		String^ sql_query;
+		if(opt_selected == "Search by Category") {
+			if(category_comboBox->SelectedIndex == -1){
+				MessageBox::Show("Please select one category");
+				return;
+			}
+		}
+		else if (opt_selected != "Display All") {
+			if (data_textBox->Text == "") {
+				MessageBox::Show("Please fill all fields");
+				return;
+			}
+		}
 		try
 		{
 			String^ constr = "Server=127.0.0.1;Uid=root;Pwd=;Database=inventory";
 			MySqlConnection^ con = gcnew MySqlConnection(constr);
 			
-
-			String^ opt_selected = (comboBox1->SelectedItem)->ToString();
-			String^ sql_query;
 
 			if (opt_selected == "Search by ID") {
 				double product_id = double::Parse(data_textBox->Text);
@@ -216,13 +227,24 @@ namespace SupermarketInventoryandBillingSystem {
 			con->Open();
 			DataTable^ dt = gcnew DataTable();
 			cmd->Fill(dt);
-			bindingSource1->DataSource = dt;
-			dataGridView1->DataSource = bindingSource1;
-			MessageBox::Show("Database table fetched");
-			con->Close();
+			if (dt->Rows->Count == 0) {
+				MessageBox::Show("No data found for given search");
+				return;
+			}
+			else {
+				bindingSource1->DataSource = dt;
+				dataGridView1->DataSource = bindingSource1;
+				MessageBox::Show("Database table fetched");
+				con->Close();
+			}
 		}
 		catch (Exception^ ex) {
-				   MessageBox::Show(ex->Message);
+			if (ex->Message == "Input string was not in a correct format.") {
+				MessageBox::Show("Inputs given are incorrect!");
+			}
+			else {
+				MessageBox::Show(ex->Message);
+			}
 		}
 	}
 private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
