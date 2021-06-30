@@ -36,6 +36,9 @@
     <ClCompile Include="billing.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="signup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -57,6 +60,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="billing.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="signup.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
