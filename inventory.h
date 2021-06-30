@@ -47,6 +47,7 @@ namespace SupermarketInventoryandBillingSystem {
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
 	private: System::Windows::Forms::BindingSource^ bindingSource1;
 	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::Button^ button3;
 	private: System::ComponentModel::IContainer^ components;
 
 
@@ -74,6 +75,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->bindingSource1 = (gcnew System::Windows::Forms::BindingSource(this->components));
 			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->button3 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->BeginInit();
 			this->SuspendLayout();
@@ -123,25 +125,35 @@ namespace SupermarketInventoryandBillingSystem {
 			// 
 			this->dataGridView1->BackgroundColor = System::Drawing::SystemColors::Control;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(78, 270);
+			this->dataGridView1->Location = System::Drawing::Point(78, 311);
 			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->Size = System::Drawing::Size(761, 140);
+			this->dataGridView1->Size = System::Drawing::Size(843, 140);
 			this->dataGridView1->TabIndex = 5;
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(75, 237);
+			this->label2->Location = System::Drawing::Point(75, 284);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(149, 13);
 			this->label2->TabIndex = 6;
 			this->label2->Text = L"Products running out-of-stock ";
 			// 
+			// button3
+			// 
+			this->button3->Location = System::Drawing::Point(314, 232);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(234, 23);
+			this->button3->TabIndex = 7;
+			this->button3->Text = L"View Report";
+			this->button3->UseVisualStyleBackColor = true;
+			// 
 			// inventory
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(885, 471);
+			this->ClientSize = System::Drawing::Size(994, 480);
+			this->Controls->Add(this->button3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->available_button);

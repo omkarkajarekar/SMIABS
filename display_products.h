@@ -47,6 +47,8 @@ namespace SupermarketInventoryandBillingSystem {
 
 	private: System::Windows::Forms::Button^ fetch_btn;
 	private: System::Windows::Forms::BindingSource^ bindingSource1;
+	private: System::Windows::Forms::ComboBox^ category_comboBox;
+
 	private: System::ComponentModel::IContainer^ components;
 
 	private:
@@ -70,6 +72,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->data_textBox = (gcnew System::Windows::Forms::TextBox());
 			this->fetch_btn = (gcnew System::Windows::Forms::Button());
 			this->bindingSource1 = (gcnew System::Windows::Forms::BindingSource(this->components));
+			this->category_comboBox = (gcnew System::Windows::Forms::ComboBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->BeginInit();
 			this->SuspendLayout();
@@ -77,7 +80,7 @@ namespace SupermarketInventoryandBillingSystem {
 			// display_options_label
 			// 
 			this->display_options_label->AutoSize = true;
-			this->display_options_label->Location = System::Drawing::Point(208, 97);
+			this->display_options_label->Location = System::Drawing::Point(333, 81);
 			this->display_options_label->Name = L"display_options_label";
 			this->display_options_label->Size = System::Drawing::Size(80, 13);
 			this->display_options_label->TabIndex = 0;
@@ -85,12 +88,13 @@ namespace SupermarketInventoryandBillingSystem {
 			// 
 			// comboBox1
 			// 
+			this->comboBox1->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(7) {
+			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(5) {
 				L"Display All", L"Search by ID", L"Search by Name",
-					L"Display by Category", L"Display by Price", L"Display by GST", L"Display by Quantity"
+					L"Search by Category", L"Search by Quantity"
 			});
-			this->comboBox1->Location = System::Drawing::Point(351, 94);
+			this->comboBox1->Location = System::Drawing::Point(476, 78);
 			this->comboBox1->Name = L"comboBox1";
 			this->comboBox1->Size = System::Drawing::Size(238, 21);
 			this->comboBox1->TabIndex = 1;
@@ -99,17 +103,16 @@ namespace SupermarketInventoryandBillingSystem {
 			// dataGridView1
 			// 
 			this->dataGridView1->BackgroundColor = System::Drawing::Color::DeepSkyBlue;
-			this->dataGridView1->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::DisableResizing;
 			this->dataGridView1->Location = System::Drawing::Point(66, 263);
 			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->Size = System::Drawing::Size(772, 170);
+			this->dataGridView1->Size = System::Drawing::Size(843, 170);
 			this->dataGridView1->TabIndex = 2;
 			// 
 			// new_data_label
 			// 
 			this->new_data_label->AutoSize = true;
-			this->new_data_label->Location = System::Drawing::Point(208, 154);
+			this->new_data_label->Location = System::Drawing::Point(333, 138);
 			this->new_data_label->Name = L"new_data_label";
 			this->new_data_label->Size = System::Drawing::Size(56, 13);
 			this->new_data_label->TabIndex = 3;
@@ -118,7 +121,7 @@ namespace SupermarketInventoryandBillingSystem {
 			// data_textBox
 			// 
 			this->data_textBox->Enabled = false;
-			this->data_textBox->Location = System::Drawing::Point(351, 151);
+			this->data_textBox->Location = System::Drawing::Point(476, 135);
 			this->data_textBox->Name = L"data_textBox";
 			this->data_textBox->Size = System::Drawing::Size(238, 20);
 			this->data_textBox->TabIndex = 4;
@@ -126,7 +129,7 @@ namespace SupermarketInventoryandBillingSystem {
 			// fetch_btn
 			// 
 			this->fetch_btn->Enabled = false;
-			this->fetch_btn->Location = System::Drawing::Point(211, 212);
+			this->fetch_btn->Location = System::Drawing::Point(336, 196);
 			this->fetch_btn->Name = L"fetch_btn";
 			this->fetch_btn->Size = System::Drawing::Size(378, 23);
 			this->fetch_btn->TabIndex = 5;
@@ -134,12 +137,27 @@ namespace SupermarketInventoryandBillingSystem {
 			this->fetch_btn->UseVisualStyleBackColor = true;
 			this->fetch_btn->Click += gcnew System::EventHandler(this, &display_products::fetch_btn_Click);
 			// 
+			// category_comboBox
+			// 
+			this->category_comboBox->FormattingEnabled = true;
+			this->category_comboBox->Items->AddRange(gcnew cli::array< System::Object^  >(10) {
+				L"Convenience goods", L"Shopping goods",
+					L"Speciality goods", L"Impulse goods", L"Emergancy goods", L"Raw materials", L"Installations", L"Accessory Equipments", L"Supplies",
+					L"Services"
+			});
+			this->category_comboBox->Location = System::Drawing::Point(476, 135);
+			this->category_comboBox->Name = L"category_comboBox";
+			this->category_comboBox->Size = System::Drawing::Size(238, 21);
+			this->category_comboBox->TabIndex = 6;
+			this->category_comboBox->Visible = false;
+			// 
 			// display_products
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::DeepSkyBlue;
-			this->ClientSize = System::Drawing::Size(882, 472);
+			this->ClientSize = System::Drawing::Size(983, 472);
+			this->Controls->Add(this->category_comboBox);
 			this->Controls->Add(this->fetch_btn);
 			this->Controls->Add(this->data_textBox);
 			this->Controls->Add(this->new_data_label);
@@ -160,16 +178,28 @@ namespace SupermarketInventoryandBillingSystem {
 	}
 	private: System::Void fetch_btn_Click(System::Object^ sender, System::EventArgs^ e)
 	{
+		String^ opt_selected = (comboBox1->SelectedItem)->ToString();
+		String^ sql_query;
+		if(opt_selected == "Search by Category") {
+			if(category_comboBox->SelectedIndex == -1){
+				MessageBox::Show("Please select one category");
+				return;
+			}
+		}
+		else if (opt_selected != "Display All") {
+			if (data_textBox->Text == "") {
+				MessageBox::Show("Please fill all fields");
+				return;
+			}
+		}
 		try
 		{
 			String^ constr = "Server=127.0.0.1;Uid=root;Pwd=;Database=inventory";
 			MySqlConnection^ con = gcnew MySqlConnection(constr);
-
-			String^ opt_selected = (comboBox1->SelectedItem)->ToString();
-			String^ sql_query;
+			
 
 			if (opt_selected == "Search by ID") {
-				int product_id = Int32::Parse(data_textBox->Text);
+				double product_id = double::Parse(data_textBox->Text);
 				sql_query = "select * from stock where product_id=" + product_id + "";
 			}
 			else if (opt_selected == "Search by Name") {
@@ -177,17 +207,9 @@ namespace SupermarketInventoryandBillingSystem {
 				sql_query = "select * from stock where product_name='" + product_name + "'";
 			}
 			else if (opt_selected == "Search by Category") {
-				String^ category = data_textBox->Text;
+
+				String^ category = (category_comboBox->SelectedItem)->ToString();
 				sql_query = "select * from stock where product_category='" + category + "'";
-			}
-			else if (opt_selected == "Search by Price") {
-				float price = float::Parse(data_textBox->Text);
-				sql_query = "select * from stock where product_price=" + price + "";
-			}
-			else if (opt_selected == "Search by GST") {
-				float gst = float::Parse(data_textBox->Text);
-				MessageBox::Show("entered gst:"+gst+"");
-				sql_query = "select * from stock where product_gst=" + gst + "";
 			}
 			else if (opt_selected == "Search by Quantity") {
 				int quantity = Int32::Parse(data_textBox->Text);
@@ -205,13 +227,24 @@ namespace SupermarketInventoryandBillingSystem {
 			con->Open();
 			DataTable^ dt = gcnew DataTable();
 			cmd->Fill(dt);
-			bindingSource1->DataSource = dt;
-			dataGridView1->DataSource = bindingSource1;
-			MessageBox::Show("Database table fetched");
-			con->Close();
+			if (dt->Rows->Count == 0) {
+				MessageBox::Show("No data found for given search");
+				return;
+			}
+			else {
+				bindingSource1->DataSource = dt;
+				dataGridView1->DataSource = bindingSource1;
+				MessageBox::Show("Database table fetched");
+				con->Close();
+			}
 		}
 		catch (Exception^ ex) {
-				   MessageBox::Show(ex->Message);
+			if (ex->Message == "Input string was not in a correct format.") {
+				MessageBox::Show("Inputs given are incorrect!");
+			}
+			else {
+				MessageBox::Show(ex->Message);
+			}
 		}
 	}
 private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -219,21 +252,19 @@ private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, Sys
 	fetch_btn->Enabled = true;
 	data_textBox->Clear();
 	String^ opt_selected = (comboBox1->SelectedItem)->ToString();
+	data_textBox->Visible = true;
+	category_comboBox->Visible = false;
 
 	if (opt_selected == "Search by Name") {
 		new_data_label->Text = "fetch products \nof Name";
-	}
-	else if (opt_selected == "Search by Price") {
-		new_data_label->Text = "fetch products \nof Price";
 	}
 	else if (opt_selected == "Search by Description") {
 		new_data_label->Text = "fetch products \nof Description ";
 	}
 	else if (opt_selected == "Search by Category") {
+		data_textBox->Visible = false;
+		category_comboBox->Visible = true;
 		new_data_label->Text = "fetch products \nof Category ";
-	}
-	else if (opt_selected == "Search by Gst") {
-		new_data_label->Text = "fetch products \nof Gst";
 	}
 	else if (opt_selected == "Search by Quantity") {
 		new_data_label->Text = "fetch products \nof Quantity";
