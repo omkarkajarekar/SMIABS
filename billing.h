@@ -67,6 +67,7 @@ namespace SupermarketInventoryandBillingSystem {
 	private: System::Windows::Forms::Button^ button4;
 	private: System::Windows::Forms::Button^ button5;
 	private: System::Windows::Forms::Label^ label12;
+
 	private: System::ComponentModel::IContainer^ components;
 
 
@@ -465,7 +466,7 @@ namespace SupermarketInventoryandBillingSystem {
 		String^ ProductName;
 		String^ Category;
 		String^ BillID;
-		String^ BillDate = System::DateTime::Now.ToString("yyyy-MM-dd");
+		String^ BillDate = System::DateTime::Now.ToString("yyyy-MM-dd HH:MM:SS");
 
 	private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 		try
@@ -688,7 +689,6 @@ private: System::Void textBox10_TextChanged(System::Object^ sender, System::Even
 }
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
 	view_bill^ module1 = gcnew view_bill();
-	this->Hide();
 	module1->Visible = true;
 }
 };
