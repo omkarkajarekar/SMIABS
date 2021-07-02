@@ -52,7 +52,9 @@ namespace SupermarketInventoryandBillingSystem {
 	private: System::Windows::Forms::ComboBox^ comboBox1;
 
 
-	private: System::Windows::Forms::BindingSource^ bindingSource1;
+
+	private: System::Windows::Forms::DataVisualization::Charting::Chart^ chart1;
+
 
 
 
@@ -77,7 +79,9 @@ namespace SupermarketInventoryandBillingSystem {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->components = (gcnew System::ComponentModel::Container());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea1 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Legend^ legend1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
@@ -89,8 +93,8 @@ namespace SupermarketInventoryandBillingSystem {
 			this->dateTimePicker2 = (gcnew System::Windows::Forms::DateTimePicker());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
-			this->bindingSource1 = (gcnew System::Windows::Forms::BindingSource(this->components));
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->BeginInit();
+			this->chart1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// button1
@@ -137,7 +141,7 @@ namespace SupermarketInventoryandBillingSystem {
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(52, 152);
+			this->label3->Location = System::Drawing::Point(57, 122);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(102, 13);
 			this->label3->TabIndex = 13;
@@ -145,7 +149,7 @@ namespace SupermarketInventoryandBillingSystem {
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(179, 149);
+			this->textBox1->Location = System::Drawing::Point(184, 119);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->ReadOnly = true;
 			this->textBox1->Size = System::Drawing::Size(100, 20);
@@ -153,7 +157,7 @@ namespace SupermarketInventoryandBillingSystem {
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(179, 186);
+			this->textBox2->Location = System::Drawing::Point(184, 156);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->ReadOnly = true;
 			this->textBox2->Size = System::Drawing::Size(100, 20);
@@ -162,7 +166,7 @@ namespace SupermarketInventoryandBillingSystem {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(52, 189);
+			this->label4->Location = System::Drawing::Point(57, 159);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(99, 13);
 			this->label4->TabIndex = 15;
@@ -198,11 +202,36 @@ namespace SupermarketInventoryandBillingSystem {
 			this->comboBox1->TabIndex = 21;
 			this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &sales_report::comboBox1_SelectedIndexChanged);
 			// 
+			// chart1
+			// 
+			this->chart1->BackColor = System::Drawing::Color::Transparent;
+			chartArea1->Area3DStyle->Enable3D = true;
+			chartArea1->AxisX->MajorGrid->LineColor = System::Drawing::Color::LightGray;
+			chartArea1->AxisY->MajorGrid->LineColor = System::Drawing::Color::LightGray;
+			chartArea1->BackColor = System::Drawing::Color::Transparent;
+			chartArea1->Name = L"ChartArea1";
+			this->chart1->ChartAreas->Add(chartArea1);
+			legend1->Name = L"Legend1";
+			this->chart1->Legends->Add(legend1);
+			this->chart1->Location = System::Drawing::Point(384, 128);
+			this->chart1->Name = L"chart1";
+			series1->ChartArea = L"ChartArea1";
+			series1->IsValueShownAsLabel = true;
+			series1->IsVisibleInLegend = false;
+			series1->Legend = L"Legend1";
+			series1->Name = L"Series1";
+			this->chart1->Series->Add(series1);
+			this->chart1->Size = System::Drawing::Size(373, 290);
+			this->chart1->TabIndex = 22;
+			this->chart1->Text = L"chart1";
+			this->chart1->Visible = false;
+			// 
 			// sales_report
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(789, 395);
+			this->ClientSize = System::Drawing::Size(841, 440);
+			this->Controls->Add(this->chart1);
 			this->Controls->Add(this->comboBox1);
 			this->Controls->Add(this->label6);
 			this->Controls->Add(this->dateTimePicker2);
@@ -216,7 +245,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->Controls->Add(this->label1);
 			this->Name = L"sales_report";
 			this->Text = L"sales_report";
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -243,6 +272,7 @@ namespace SupermarketInventoryandBillingSystem {
 		}
 		else if (comboBox1->SelectedIndex == 1) {
 			try {
+				chart1->Visible=true;
 				String^ date1 = dateTimePicker1->Text;
 				String^ date2 = dateTimePicker2->Text;
 				String^ constr = "Server=127.0.0.1;Uid=root;Pwd=;Database=bill";
@@ -252,9 +282,31 @@ namespace SupermarketInventoryandBillingSystem {
 				MySqlDataReader^ dr = cmd->ExecuteReader();
 				while (dr->Read())
 				{
-					textBox2->Text = dr->GetString(0);
+					textBox2->Text = System::Convert::ToString(Math::Round(System::Convert::ToDouble(dr->GetString(0)),2));
 					textBox1->Text = dr->GetString(1);
 				}
+				con->Close();
+
+
+				cmd = gcnew MySqlCommand("select distinct(Date(Date)) FROM billing_index WHERE Date BETWEEN '" + date1 + "' AND '" + date2 + "'", con);
+				con->Open();
+				dr = cmd->ExecuteReader();
+				while (dr->Read())
+				{
+					DateTime date = System::Convert::ToDateTime(dr->GetString(0));
+					String^ formatted = date.ToString("yyyy-MM-dd");
+					MySqlConnection^ con1 = gcnew MySqlConnection(constr);
+					MySqlCommand^ cmd1 = gcnew MySqlCommand("select SUM(Total) AS sum_total FROM billing_index WHERE Date(Date)='" + formatted + "'", con1);
+					con1->Open();
+					MySqlDataReader^ dr1 = cmd1->ExecuteReader();
+					while (dr1->Read())
+					{
+						formatted = date.ToString("dd-MM-yyyy");
+						chart1->Series["Series1"]->Points->AddXY(formatted, Math::Round(System::Convert::ToDouble(dr1->GetString(0)),2));
+					}
+					con1->Close();
+				}
+				con->Close();
 			}
 			catch (Exception^ ex) {
 				MessageBox::Show(ex->Message);
@@ -263,26 +315,23 @@ namespace SupermarketInventoryandBillingSystem {
 	}
 
 
-private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
-	if (comboBox1->SelectedIndex == 0) {
-		label1->Text = "Select Date";
-		label1->Visible = true;
-		dateTimePicker1->Visible = true;
-		label2->Visible = false;
-		dateTimePicker2->Visible = false;
-		button1->Visible = true;
-	}
-	else if (comboBox1->SelectedIndex == 1) {
-		label1->Visible = true;
-		label2->Visible = true;
-		dateTimePicker1->Visible = true;
-		dateTimePicker2->Visible = true;
-		button1->Visible = true;
-		
-	}
-}
-private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+		if (comboBox1->SelectedIndex == 0) {
+			label1->Text = "Select Date";
+			label1->Visible = true;
+			dateTimePicker1->Visible = true;
+			label2->Visible = false;
+			dateTimePicker2->Visible = false;
+			button1->Visible = true;
+		}
+		else if (comboBox1->SelectedIndex == 1) {
+			label1->Visible = true;
+			label2->Visible = true;
+			dateTimePicker1->Visible = true;
+			dateTimePicker2->Visible = true;
+			button1->Visible = true;
 
-}
+		}
+	}
 };
 }

@@ -3,6 +3,7 @@
 //#include "Dashboard.h"
 #include "inventory.h"
 #include "billing.h"
+#include "sales_report.h"
 
 namespace SupermarketInventoryandBillingSystem {
 
@@ -71,6 +72,7 @@ namespace SupermarketInventoryandBillingSystem {
 	private: System::Windows::Forms::Button^ button4;
 	private: System::Windows::Forms::Button^ button5;
 	private: System::Windows::Forms::ComboBox^ comboBox1;
+	private: System::Windows::Forms::Button^ button6;
 
 
 
@@ -106,6 +108,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->textBox9 = (gcnew System::Windows::Forms::TextBox());
@@ -133,7 +136,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
-			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
+			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->panel2->SuspendLayout();
 			this->groupBox1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
@@ -186,6 +189,15 @@ namespace SupermarketInventoryandBillingSystem {
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(458, 615);
 			this->panel2->TabIndex = 3;
+			// 
+			// comboBox1
+			// 
+			this->comboBox1->FormattingEnabled = true;
+			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Manager", L"Sales Executive" });
+			this->comboBox1->Location = System::Drawing::Point(267, 287);
+			this->comboBox1->Name = L"comboBox1";
+			this->comboBox1->Size = System::Drawing::Size(137, 21);
+			this->comboBox1->TabIndex = 18;
 			// 
 			// button5
 			// 
@@ -516,14 +528,22 @@ namespace SupermarketInventoryandBillingSystem {
 			this->pictureBox1->TabIndex = 4;
 			this->pictureBox1->TabStop = false;
 			// 
-			// comboBox1
+			// button6
 			// 
-			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Location = System::Drawing::Point(267, 287);
-			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Manager", L"Sales Executive" });
-			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(137, 21);
-			this->comboBox1->TabIndex = 18;
+			this->button6->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(236)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				static_cast<System::Int32>(static_cast<System::Byte>(122)));
+			this->button6->FlatAppearance->BorderSize = 0;
+			this->button6->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button6->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button6->ForeColor = System::Drawing::SystemColors::Window;
+			this->button6->Location = System::Drawing::Point(100, 539);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(99, 35);
+			this->button6->TabIndex = 8;
+			this->button6->Text = L"Test Page";
+			this->button6->UseVisualStyleBackColor = false;
+			this->button6->Click += gcnew System::EventHandler(this, &login::button6_Click);
 			// 
 			// login
 			// 
@@ -531,6 +551,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Window;
 			this->ClientSize = System::Drawing::Size(919, 616);
+			this->Controls->Add(this->button6);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->groupBox1);
@@ -742,6 +763,10 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 			MessageBox::Show(ex->Message);
 		}
 	}
+}
+private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
+	sales_report^ module1 = gcnew sales_report();
+	module1->Show();
 }
 };
 }

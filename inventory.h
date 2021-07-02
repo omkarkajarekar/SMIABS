@@ -2,6 +2,7 @@
 #include "add_product.h"
 #include "update_product.h"
 #include "display_products.h"
+#include "inventory_report.h"
 
 
 namespace SupermarketInventoryandBillingSystem {
@@ -147,6 +148,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->button3->TabIndex = 7;
 			this->button3->Text = L"View Report";
 			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &inventory::button3_Click);
 			// 
 			// inventory
 			// 
@@ -200,5 +202,9 @@ namespace SupermarketInventoryandBillingSystem {
 			MessageBox::Show(ex->Message);
 		}
 	}
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	inventory_report^ module1 = gcnew inventory_report();
+	module1->Show();
+}
 };
 }
