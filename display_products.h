@@ -48,6 +48,7 @@ namespace SupermarketInventoryandBillingSystem {
 	private: System::Windows::Forms::Button^ fetch_btn;
 	private: System::Windows::Forms::BindingSource^ bindingSource1;
 	private: System::Windows::Forms::ComboBox^ category_comboBox;
+	private: System::Windows::Forms::Button^ back_btn;
 
 	private: System::ComponentModel::IContainer^ components;
 
@@ -73,6 +74,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->fetch_btn = (gcnew System::Windows::Forms::Button());
 			this->bindingSource1 = (gcnew System::Windows::Forms::BindingSource(this->components));
 			this->category_comboBox = (gcnew System::Windows::Forms::ComboBox());
+			this->back_btn = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->BeginInit();
 			this->SuspendLayout();
@@ -106,7 +108,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::DisableResizing;
 			this->dataGridView1->Location = System::Drawing::Point(66, 263);
 			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->Size = System::Drawing::Size(843, 170);
+			this->dataGridView1->Size = System::Drawing::Size(846, 170);
 			this->dataGridView1->TabIndex = 2;
 			// 
 			// new_data_label
@@ -151,12 +153,24 @@ namespace SupermarketInventoryandBillingSystem {
 			this->category_comboBox->TabIndex = 6;
 			this->category_comboBox->Visible = false;
 			// 
+			// back_btn
+			// 
+			this->back_btn->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->back_btn->Location = System::Drawing::Point(66, 27);
+			this->back_btn->Name = L"back_btn";
+			this->back_btn->Size = System::Drawing::Size(106, 24);
+			this->back_btn->TabIndex = 7;
+			this->back_btn->Text = L"<--- Back";
+			this->back_btn->UseVisualStyleBackColor = true;
+			this->back_btn->Click += gcnew System::EventHandler(this, &display_products::back_btn_Click);
+			// 
 			// display_products
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::DeepSkyBlue;
-			this->ClientSize = System::Drawing::Size(983, 472);
+			this->ClientSize = System::Drawing::Size(983, 467);
+			this->Controls->Add(this->back_btn);
 			this->Controls->Add(this->category_comboBox);
 			this->Controls->Add(this->fetch_btn);
 			this->Controls->Add(this->data_textBox);
@@ -276,6 +290,9 @@ private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, Sys
 		new_data_label->Text = "Data";
 		data_textBox->Enabled = false;
 	}
+}
+private: System::Void back_btn_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Visible = false;
 }
 };
 }
