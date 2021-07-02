@@ -56,6 +56,7 @@ namespace SupermarketInventoryandBillingSystem {
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
 	private: System::Windows::Forms::BindingSource^ bindingSource2;
 	private: System::Windows::Forms::ComboBox^ category_comboBox;
+	private: System::Windows::Forms::Button^ back_btn;
 
 	private: System::ComponentModel::IContainer^ components;
 
@@ -95,6 +96,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->bindingSource2 = (gcnew System::Windows::Forms::BindingSource(this->components));
 			this->category_comboBox = (gcnew System::Windows::Forms::ComboBox());
+			this->back_btn = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView_1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
@@ -105,7 +107,7 @@ namespace SupermarketInventoryandBillingSystem {
 			// 
 			this->update->Enabled = false;
 			this->update->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->update->Location = System::Drawing::Point(244, 313);
+			this->update->Location = System::Drawing::Point(237, 273);
 			this->update->Name = L"update";
 			this->update->Size = System::Drawing::Size(214, 23);
 			this->update->TabIndex = 0;
@@ -118,7 +120,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->comboBox1->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->comboBox1->Enabled = false;
 			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Location = System::Drawing::Point(418, 123);
+			this->comboBox1->Location = System::Drawing::Point(411, 115);
 			this->comboBox1->Name = L"comboBox1";
 			this->comboBox1->Size = System::Drawing::Size(274, 21);
 			this->comboBox1->TabIndex = 1;
@@ -129,7 +131,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(241, 124);
+			this->label1->Location = System::Drawing::Point(234, 116);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(127, 15);
 			this->label1->TabIndex = 2;
@@ -138,7 +140,7 @@ namespace SupermarketInventoryandBillingSystem {
 			// id_textBox
 			// 
 			this->id_textBox->Enabled = false;
-			this->id_textBox->Location = System::Drawing::Point(418, 183);
+			this->id_textBox->Location = System::Drawing::Point(411, 166);
 			this->id_textBox->Name = L"id_textBox";
 			this->id_textBox->Size = System::Drawing::Size(274, 20);
 			this->id_textBox->TabIndex = 3;
@@ -146,7 +148,7 @@ namespace SupermarketInventoryandBillingSystem {
 			// new_data_txtbox
 			// 
 			this->new_data_txtbox->Enabled = false;
-			this->new_data_txtbox->Location = System::Drawing::Point(418, 251);
+			this->new_data_txtbox->Location = System::Drawing::Point(411, 221);
 			this->new_data_txtbox->Name = L"new_data_txtbox";
 			this->new_data_txtbox->Size = System::Drawing::Size(274, 20);
 			this->new_data_txtbox->TabIndex = 4;
@@ -156,7 +158,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->id_label->AutoSize = true;
 			this->id_label->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->id_label->Location = System::Drawing::Point(244, 184);
+			this->id_label->Location = System::Drawing::Point(237, 167);
 			this->id_label->Name = L"id_label";
 			this->id_label->Size = System::Drawing::Size(19, 15);
 			this->id_label->TabIndex = 5;
@@ -167,7 +169,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->new_data_label->AutoSize = true;
 			this->new_data_label->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->new_data_label->Location = System::Drawing::Point(241, 252);
+			this->new_data_label->Location = System::Drawing::Point(234, 222);
 			this->new_data_label->Name = L"new_data_label";
 			this->new_data_label->Size = System::Drawing::Size(87, 15);
 			this->new_data_label->TabIndex = 6;
@@ -178,7 +180,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->operation_comboBox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->operation_comboBox->FormattingEnabled = true;
 			this->operation_comboBox->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Update", L"Remove" });
-			this->operation_comboBox->Location = System::Drawing::Point(418, 65);
+			this->operation_comboBox->Location = System::Drawing::Point(411, 65);
 			this->operation_comboBox->Name = L"operation_comboBox";
 			this->operation_comboBox->Size = System::Drawing::Size(274, 21);
 			this->operation_comboBox->TabIndex = 7;
@@ -189,7 +191,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->operation_label->AutoSize = true;
 			this->operation_label->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->operation_label->Location = System::Drawing::Point(241, 66);
+			this->operation_label->Location = System::Drawing::Point(234, 66);
 			this->operation_label->Name = L"operation_label";
 			this->operation_label->Size = System::Drawing::Size(98, 15);
 			this->operation_label->TabIndex = 8;
@@ -199,7 +201,7 @@ namespace SupermarketInventoryandBillingSystem {
 			// 
 			this->remove_button->Enabled = false;
 			this->remove_button->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->remove_button->Location = System::Drawing::Point(478, 313);
+			this->remove_button->Location = System::Drawing::Point(471, 273);
 			this->remove_button->Name = L"remove_button";
 			this->remove_button->Size = System::Drawing::Size(214, 23);
 			this->remove_button->TabIndex = 9;
@@ -211,7 +213,7 @@ namespace SupermarketInventoryandBillingSystem {
 			// 
 			this->dataGridView_1->BackgroundColor = System::Drawing::Color::DeepSkyBlue;
 			this->dataGridView_1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView_1->Location = System::Drawing::Point(58, 403);
+			this->dataGridView_1->Location = System::Drawing::Point(58, 359);
 			this->dataGridView_1->Name = L"dataGridView_1";
 			this->dataGridView_1->Size = System::Drawing::Size(846, 115);
 			this->dataGridView_1->TabIndex = 10;
@@ -221,7 +223,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->gridview_label->AutoSize = true;
 			this->gridview_label->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->gridview_label->Location = System::Drawing::Point(58, 372);
+			this->gridview_label->Location = System::Drawing::Point(58, 328);
 			this->gridview_label->Name = L"gridview_label";
 			this->gridview_label->Size = System::Drawing::Size(126, 15);
 			this->gridview_label->TabIndex = 11;
@@ -232,7 +234,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->after_operation_label->AutoSize = true;
 			this->after_operation_label->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->after_operation_label->Location = System::Drawing::Point(58, 559);
+			this->after_operation_label->Location = System::Drawing::Point(58, 504);
 			this->after_operation_label->Name = L"after_operation_label";
 			this->after_operation_label->Size = System::Drawing::Size(115, 15);
 			this->after_operation_label->TabIndex = 12;
@@ -242,7 +244,7 @@ namespace SupermarketInventoryandBillingSystem {
 			// 
 			this->dataGridView1->BackgroundColor = System::Drawing::Color::DeepSkyBlue;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(58, 587);
+			this->dataGridView1->Location = System::Drawing::Point(58, 532);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->Size = System::Drawing::Size(846, 125);
 			this->dataGridView1->TabIndex = 13;
@@ -256,18 +258,30 @@ namespace SupermarketInventoryandBillingSystem {
 					L"Speciality goods", L"Impulse goods", L"Emergancy goods", L"Raw materials", L"Installations", L"Accessory Equipments", L"Supplies",
 					L"Services"
 			});
-			this->category_comboBox->Location = System::Drawing::Point(418, 251);
+			this->category_comboBox->Location = System::Drawing::Point(411, 220);
 			this->category_comboBox->Name = L"category_comboBox";
 			this->category_comboBox->Size = System::Drawing::Size(274, 21);
 			this->category_comboBox->TabIndex = 14;
 			this->category_comboBox->Visible = false;
+			// 
+			// back_btn
+			// 
+			this->back_btn->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->back_btn->Location = System::Drawing::Point(58, 23);
+			this->back_btn->Name = L"back_btn";
+			this->back_btn->Size = System::Drawing::Size(106, 24);
+			this->back_btn->TabIndex = 15;
+			this->back_btn->Text = L"<--- Back";
+			this->back_btn->UseVisualStyleBackColor = true;
+			this->back_btn->Click += gcnew System::EventHandler(this, &update_product::back_btn_Click);
 			// 
 			// update_product
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::DeepSkyBlue;
-			this->ClientSize = System::Drawing::Size(972, 728);
+			this->ClientSize = System::Drawing::Size(972, 690);
+			this->Controls->Add(this->back_btn);
 			this->Controls->Add(this->category_comboBox);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->after_operation_label);
@@ -396,6 +410,7 @@ namespace SupermarketInventoryandBillingSystem {
 	}
 	private: System::Void update_Click(System::Object^ sender, System::EventArgs^ e) {
 		String^ opt_selected = (comboBox1->SelectedItem)->ToString();
+		String^ select_query;
 		if(opt_selected == "Category"){
 			if (id_textBox->Text == "" || category_comboBox->SelectedIndex == -1) {
 				MessageBox::Show("please fill all fields");
@@ -459,8 +474,13 @@ namespace SupermarketInventoryandBillingSystem {
 			else if (opt_selected == "ID") {
 				double new_data = double::Parse(new_data_txtbox->Text);
 				sql_query = "update stock set product_id=" + new_data + " WHERE product_id=" + product_id + "";
+				select_query = "; select* from stock where product_id ="+new_data+"";
 			}
-			MySqlDataAdapter^ cmd1 = gcnew MySqlDataAdapter(sql_query+";select * from stock where product_id="+product_id+"", con);
+			MySqlDataAdapter^ cmd1;
+			if (opt_selected != "ID") {
+				select_query = "; select* from stock where product_id ="+product_id +"";
+			}
+			cmd1 = gcnew MySqlDataAdapter(sql_query + select_query, con);
 			con->Open();
 			DataTable^ dt1 = gcnew DataTable();
 			cmd1->Fill(dt1);
@@ -560,10 +580,11 @@ namespace SupermarketInventoryandBillingSystem {
 		}
 	}
 	private: System::Void update_product_Load(System::Object^ sender, System::EventArgs^ e) {
-		after_operation_label->Visible = false;
-		dataGridView1->Visible = false;
 	}
 private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+}
+private: System::Void back_btn_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Visible = false;
 }
 };
 }
