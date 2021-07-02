@@ -131,9 +131,9 @@
     <ClCompile Include="billing.cpp" />
     <ClCompile Include="display_products.cpp" />
     <ClCompile Include="inventory.cpp" />
-    <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="login.cpp" />
     <ClCompile Include="MyForm1.cpp" />
-    <ClCompile Include="signup.cpp" />
+    <ClCompile Include="sales_report.cpp" />
     <ClCompile Include="update_product.cpp" />
     <ClCompile Include="view_bill.cpp" />
   </ItemGroup>
@@ -150,13 +150,13 @@
     <ClInclude Include="inventory.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="MyForm.h">
+    <ClInclude Include="login.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="MyForm1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="signup.h">
+    <ClInclude Include="sales_report.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="update_product.h">
@@ -179,14 +179,14 @@
     <EmbeddedResource Include="inventory.resx">
       <DependentUpon>inventory.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyForm.resx">
-      <DependentUpon>MyForm.h</DependentUpon>
+    <EmbeddedResource Include="login.resx">
+      <DependentUpon>login.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm1.resx">
       <DependentUpon>MyForm1.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="signup.resx">
-      <DependentUpon>signup.h</DependentUpon>
+    <EmbeddedResource Include="sales_report.resx">
+      <DependentUpon>sales_report.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="update_product.resx">
       <DependentUpon>update_product.h</DependentUpon>
