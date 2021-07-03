@@ -73,6 +73,28 @@ namespace SupermarketInventoryandBillingSystem {
 	private: System::Windows::Forms::Button^ button5;
 	private: System::Windows::Forms::ComboBox^ comboBox1;
 	private: System::Windows::Forms::Button^ button6;
+	private: System::Windows::Forms::Panel^ panel3;
+	private: System::Windows::Forms::Button^ button7;
+	private: System::Windows::Forms::Label^ label14;
+
+	private: System::Windows::Forms::TextBox^ textBox6;
+	private: System::Windows::Forms::Label^ label15;
+	private: System::Windows::Forms::TextBox^ textBox10;
+	private: System::Windows::Forms::Label^ label16;
+	private: System::Windows::Forms::Label^ label17;
+
+
+
+
+
+
+
+
+
+
+
+
+	private: System::ComponentModel::IContainer^ components;
 
 
 
@@ -96,7 +118,7 @@ namespace SupermarketInventoryandBillingSystem {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container^ components;
+
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -105,9 +127,16 @@ namespace SupermarketInventoryandBillingSystem {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(login::typeid));
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
+			this->label15 = (gcnew System::Windows::Forms::Label());
+			this->textBox10 = (gcnew System::Windows::Forms::TextBox());
+			this->label16 = (gcnew System::Windows::Forms::Label());
+			this->label17 = (gcnew System::Windows::Forms::Label());
+			this->label14 = (gcnew System::Windows::Forms::Label());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
@@ -137,16 +166,19 @@ namespace SupermarketInventoryandBillingSystem {
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->button6 = (gcnew System::Windows::Forms::Button());
+			this->panel3 = (gcnew System::Windows::Forms::Panel());
+			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->panel2->SuspendLayout();
 			this->groupBox1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			this->panel3->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// panel1
 			// 
 			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(245)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(87)));
-			this->panel1->Location = System::Drawing::Point(65, 122);
+			this->panel1->Location = System::Drawing::Point(65, 145);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(175, 3);
 			this->panel1->TabIndex = 0;
@@ -157,7 +189,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Franklin Gothic Medium Cond", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::Black;
-			this->label1->Location = System::Drawing::Point(62, 102);
+			this->label1->Location = System::Drawing::Point(62, 127);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(57, 17);
 			this->label1->TabIndex = 1;
@@ -167,6 +199,12 @@ namespace SupermarketInventoryandBillingSystem {
 			// 
 			this->panel2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
 				static_cast<System::Int32>(static_cast<System::Byte>(66)));
+			this->panel2->Controls->Add(this->textBox6);
+			this->panel2->Controls->Add(this->label15);
+			this->panel2->Controls->Add(this->textBox10);
+			this->panel2->Controls->Add(this->label16);
+			this->panel2->Controls->Add(this->label17);
+			this->panel2->Controls->Add(this->label14);
 			this->panel2->Controls->Add(this->comboBox1);
 			this->panel2->Controls->Add(this->button5);
 			this->panel2->Controls->Add(this->button3);
@@ -185,10 +223,75 @@ namespace SupermarketInventoryandBillingSystem {
 			this->panel2->Controls->Add(this->textBox3);
 			this->panel2->Controls->Add(this->label6);
 			this->panel2->Controls->Add(this->label5);
-			this->panel2->Location = System::Drawing::Point(460, 2);
+			this->panel2->Location = System::Drawing::Point(460, 27);
 			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(458, 615);
+			this->panel2->Size = System::Drawing::Size(458, 616);
 			this->panel2->TabIndex = 3;
+			// 
+			// textBox6
+			// 
+			this->textBox6->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->textBox6->Location = System::Drawing::Point(288, 257);
+			this->textBox6->Name = L"textBox6";
+			this->textBox6->Size = System::Drawing::Size(137, 20);
+			this->textBox6->TabIndex = 24;
+			// 
+			// label15
+			// 
+			this->label15->AutoSize = true;
+			this->label15->Font = (gcnew System::Drawing::Font(L"Impact", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label15->ForeColor = System::Drawing::SystemColors::Window;
+			this->label15->Location = System::Drawing::Point(64, 257);
+			this->label15->Name = L"label15";
+			this->label15->Size = System::Drawing::Size(187, 20);
+			this->label15->TabIndex = 23;
+			this->label15->Text = L"What\'s your favourite city \?";
+			// 
+			// textBox10
+			// 
+			this->textBox10->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->textBox10->Location = System::Drawing::Point(288, 207);
+			this->textBox10->Name = L"textBox10";
+			this->textBox10->Size = System::Drawing::Size(137, 20);
+			this->textBox10->TabIndex = 22;
+			// 
+			// label16
+			// 
+			this->label16->AutoSize = true;
+			this->label16->Font = (gcnew System::Drawing::Font(L"Impact", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label16->ForeColor = System::Drawing::SystemColors::Window;
+			this->label16->Location = System::Drawing::Point(64, 207);
+			this->label16->Name = L"label16";
+			this->label16->Size = System::Drawing::Size(197, 20);
+			this->label16->TabIndex = 21;
+			this->label16->Text = L"What\'s your birth city name \?";
+			// 
+			// label17
+			// 
+			this->label17->AutoSize = true;
+			this->label17->Font = (gcnew System::Drawing::Font(L"Impact", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label17->ForeColor = System::Drawing::SystemColors::Window;
+			this->label17->Location = System::Drawing::Point(64, 155);
+			this->label17->Name = L"label17";
+			this->label17->Size = System::Drawing::Size(135, 20);
+			this->label17->TabIndex = 20;
+			this->label17->Text = L"Security Questions:";
+			// 
+			// label14
+			// 
+			this->label14->Font = (gcnew System::Drawing::Font(L"Impact", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label14->ForeColor = System::Drawing::SystemColors::Window;
+			this->label14->Location = System::Drawing::Point(62, 79);
+			this->label14->Name = L"label14";
+			this->label14->Size = System::Drawing::Size(210, 44);
+			this->label14->TabIndex = 19;
+			this->label14->Text = L"Forgot  Password";
 			// 
 			// comboBox1
 			// 
@@ -208,7 +311,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->button5->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button5->ForeColor = System::Drawing::SystemColors::Window;
-			this->button5->Location = System::Drawing::Point(101, 567);
+			this->button5->Location = System::Drawing::Point(68, 328);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(115, 35);
 			this->button5->TabIndex = 17;
@@ -480,7 +583,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->groupBox1->Controls->Add(this->textBox1);
 			this->groupBox1->Controls->Add(this->label3);
 			this->groupBox1->Controls->Add(this->label2);
-			this->groupBox1->Location = System::Drawing::Point(65, 131);
+			this->groupBox1->Location = System::Drawing::Point(65, 154);
 			this->groupBox1->Name = L"groupBox1";
 			this->groupBox1->Size = System::Drawing::Size(340, 365);
 			this->groupBox1->TabIndex = 2;
@@ -522,9 +625,10 @@ namespace SupermarketInventoryandBillingSystem {
 			// 
 			// pictureBox1
 			// 
-			this->pictureBox1->Location = System::Drawing::Point(65, 12);
+			this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
+			this->pictureBox1->Location = System::Drawing::Point(65, 40);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(340, 75);
+			this->pictureBox1->Size = System::Drawing::Size(323, 72);
 			this->pictureBox1->TabIndex = 4;
 			this->pictureBox1->TabStop = false;
 			// 
@@ -537,7 +641,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->button6->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button6->ForeColor = System::Drawing::SystemColors::Window;
-			this->button6->Location = System::Drawing::Point(100, 539);
+			this->button6->Location = System::Drawing::Point(100, 553);
 			this->button6->Name = L"button6";
 			this->button6->Size = System::Drawing::Size(99, 35);
 			this->button6->TabIndex = 8;
@@ -545,12 +649,37 @@ namespace SupermarketInventoryandBillingSystem {
 			this->button6->UseVisualStyleBackColor = false;
 			this->button6->Click += gcnew System::EventHandler(this, &login::button6_Click);
 			// 
+			// panel3
+			// 
+			this->panel3->Controls->Add(this->button7);
+			this->panel3->Location = System::Drawing::Point(0, 1);
+			this->panel3->Name = L"panel3";
+			this->panel3->Size = System::Drawing::Size(918, 26);
+			this->panel3->TabIndex = 9;
+			// 
+			// button7
+			// 
+			this->button7->FlatAppearance->BorderSize = 0;
+			this->button7->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Red;
+			this->button7->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Red;
+			this->button7->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button7->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button7->Location = System::Drawing::Point(883, 0);
+			this->button7->Name = L"button7";
+			this->button7->Size = System::Drawing::Size(34, 22);
+			this->button7->TabIndex = 0;
+			this->button7->Text = L"X";
+			this->button7->UseVisualStyleBackColor = true;
+			this->button7->Click += gcnew System::EventHandler(this, &login::button7_Click);
+			// 
 			// login
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Window;
-			this->ClientSize = System::Drawing::Size(919, 616);
+			this->ClientSize = System::Drawing::Size(919, 640);
+			this->Controls->Add(this->panel3);
 			this->Controls->Add(this->button6);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->panel2);
@@ -567,6 +696,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			this->panel3->ResumeLayout(false);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -583,6 +713,10 @@ namespace SupermarketInventoryandBillingSystem {
 		label11->Visible = false;
 		label12->Visible = false;
 		label13->Visible = false;
+		label14->Visible = false;
+		label15->Visible = false;
+		label16->Visible = false;
+		label17->Visible = false;
 
 		button3->Visible = false;
 		button5->Visible = false;
@@ -590,10 +724,12 @@ namespace SupermarketInventoryandBillingSystem {
 		textBox3->Visible = false;
 		textBox4->Visible = false;
 		textBox5->Visible = false;
+		textBox6->Visible = false;
 		comboBox1->Visible = false;
 		textBox7->Visible = false;
 		textBox8->Visible = false;
 		textBox9->Visible = false;
+		textBox10->Visible = false;
 	}
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 		label5->Visible = true;
@@ -605,7 +741,12 @@ namespace SupermarketInventoryandBillingSystem {
 		label11->Visible = true;
 		label12->Visible = true;
 		label13->Visible = true;
+		label14->Visible = false;
+		label15->Visible = false;
+		label16->Visible = false;
+		label17->Visible = false;
 
+		button2->Visible = true;
 		button3->Visible = true;
 		button4->Visible = false;
 		button5->Visible = false;
@@ -614,9 +755,11 @@ namespace SupermarketInventoryandBillingSystem {
 		textBox4->Visible = true;
 		textBox5->Visible = true;
 		comboBox1->Visible = true;
+		textBox6->Visible = false;
 		textBox7->Visible = true;
 		textBox8->Visible = true;
 		textBox9->Visible = true;
+		textBox10->Visible = false;
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		try
@@ -670,20 +813,51 @@ namespace SupermarketInventoryandBillingSystem {
 	}
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 		
-			label12->Visible = true;
-			label13->Visible = true;
-			textBox8->Visible = true;
-			textBox9->Visible = true;
-			button5->Visible = true;
 			
+			label12->Visible = false;;
+			label13->Visible = false;
+			textBox8->Visible = false;
+			textBox9->Visible = false;;
+			button5->Visible = true;
+			button2->Visible = false;
+			button3->Visible = false;
+			button4->Visible = true;
+
+			label5->Visible = false;
+			label6->Visible = false;
+			label7->Visible = false;
+			label8->Visible = false;
+			label9->Visible = false;
+			label10->Visible = false;
+			label11->Visible = false;
+			label12->Visible = false;
+			label13->Visible = false;
+
+			textBox3->Visible = false;
+			textBox4->Visible = false;
+			textBox5->Visible = false;
+			textBox7->Visible = false;
+			textBox8->Visible = false;
+			textBox9->Visible = false;
+
+			comboBox1->Visible = false;
+			label14->Visible = true;
+
+			label15->Visible = true;
+			label16->Visible = true;
+			label17->Visible = true;
+
+			textBox6->Visible = true;
+			textBox10->Visible = true;
+
 	}
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
 	try
 	{
 		int result;
 		int UserID = Int32::Parse(textBox1->Text);
-		String^ SecurityQ1 = textBox8->Text;
-		String^ SecurityQ2 = textBox9->Text;
+		String^ SecurityQ1 = textBox10->Text;
+		String^ SecurityQ2 = textBox6->Text;
 		String^ DB_SecurityQ1;
 		String^ DB_SecurityQ2;
 		String^ constr = "Server=127.0.0.1;Uid=root;Pwd=;Database=users";
@@ -767,6 +941,9 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
 	sales_report^ module1 = gcnew sales_report();
 	module1->Show();
+}
+private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
 }
 };
 }
