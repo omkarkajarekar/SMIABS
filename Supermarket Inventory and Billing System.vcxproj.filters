@@ -45,6 +45,12 @@
     <ClCompile Include="inventory_report.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="delete_product.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="user_details.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm1.h">
@@ -75,6 +81,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="inventory_report.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="user_details.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
