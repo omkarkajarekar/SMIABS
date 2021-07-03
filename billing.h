@@ -89,6 +89,7 @@ namespace SupermarketInventoryandBillingSystem {
 	private: System::Windows::Forms::PictureBox^ pictureBox2;
 	private: System::Windows::Forms::Button^ button11;
 
+
 	private: System::ComponentModel::IContainer^ components;
 
 
@@ -298,6 +299,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->textBox7->ReadOnly = true;
 			this->textBox7->Size = System::Drawing::Size(91, 20);
 			this->textBox7->TabIndex = 13;
+			this->textBox7->TextChanged += gcnew System::EventHandler(this, &billing::textBox7_TextChanged);
 			// 
 			// groupBox1
 			// 
@@ -473,7 +475,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(117, 49);
 			this->button4->TabIndex = 25;
-			this->button4->Text = L"Save and Close";
+			this->button4->Text = L"Next Bill";
 			this->button4->UseVisualStyleBackColor = false;
 			this->button4->Visible = false;
 			this->button4->Click += gcnew System::EventHandler(this, &billing::button4_Click);
@@ -800,7 +802,7 @@ namespace SupermarketInventoryandBillingSystem {
 		}
 #pragma endregion
 		double ProductID;
-		int Quantity, other, Qty, support, db_qty,result,temp_total, temp_qty;
+		int other, Qty, support, db_qty,result,temp_total, temp_qty;
 		float UnitPrice, GST, Total, bill_Total, subtotal, TotalAmount;
 		String^ ProductName;
 		String^ Category;
@@ -826,6 +828,11 @@ namespace SupermarketInventoryandBillingSystem {
 				textBox5->Text = dr->GetString(3);
 				GST = float::Parse(textBox5->Text);
 			}
+			Qty = 1;
+			Total = UnitPrice * Qty;
+			Total = Total + (Total * GST / 100);
+			textBox7->Text = System::Convert::ToString(Total);
+			button1->Focus();
 			con->Close();
 		}
 		catch (Exception^ ex) {
@@ -837,25 +844,10 @@ namespace SupermarketInventoryandBillingSystem {
 			}
 		}
 	}
-	private: System::Void textBox6_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-		
+	private: System::Void textBox7_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		try
-		{
-			Quantity = 1;
-			Total = UnitPrice * Quantity;
-			Total = Total + (Total * GST / 100);
-			textBox7->Text = System::Convert::ToString(Total);
-		}
-		catch (Exception^ ex) {
-			if (System::Convert::ToString(ex->Message) == "Input string was not in a correct format.") {
-
-			}
-			else {
-				MessageBox::Show(ex->Message);
-			}
-		}
 		try
 		{
 			String^ constr = "Server=127.0.0.1;Uid=root;Pwd=;Database=bill";
@@ -865,8 +857,6 @@ namespace SupermarketInventoryandBillingSystem {
 			Category = textBox3->Text;
 			UnitPrice = float::Parse(textBox4->Text);
 			GST = float::Parse(textBox5->Text);
-			//Qty = Int32::Parse(textBox6->Text);
-			Qty = 1;
 			TotalAmount = float::Parse(textBox7->Text);
 
 			MySqlCommand^ cmd = gcnew MySqlCommand("select EXISTS(select * from " + BillID + " WHERE ProductId=" + ProductID + ")", con);
@@ -888,7 +878,7 @@ namespace SupermarketInventoryandBillingSystem {
 				Qty += temp_qty;
 				TotalAmount = UnitPrice * Qty;
 				TotalAmount = TotalAmount + (TotalAmount * GST / 100);
-				cmd = gcnew MySqlCommand("update " + BillID + " set Qty= " + "1" /* + Qty*/ + ",Total=" + TotalAmount + " WHERE ProductID=" + ProductID + "", con);
+				cmd = gcnew MySqlCommand("update " + BillID + " set Qty= " + Qty + ",Total=" + TotalAmount + " WHERE ProductID=" + ProductID + "", con);
 				con->Open();
 				dr = cmd->ExecuteReader();
 				con->Close();
@@ -905,7 +895,6 @@ namespace SupermarketInventoryandBillingSystem {
 			textBox3->Text = "";
 			textBox4->Text = "";
 			textBox5->Text = "";
-			//textBox6->Text = "";
 			textBox7->Text = "";
 			textBox8->Text = "";
 			
@@ -988,7 +977,6 @@ namespace SupermarketInventoryandBillingSystem {
 			static_cast<System::Int32>(static_cast<System::Byte>(42)));
 		groupBox4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(65)), static_cast<System::Int32>(static_cast<System::Byte>(65)),
 			static_cast<System::Int32>(static_cast<System::Byte>(65)));
-
 		label12->Text = System::DateTime::Now.ToString();
 	}
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -1006,6 +994,19 @@ namespace SupermarketInventoryandBillingSystem {
 		con->Close();
 		support += 1;
 		BillID = "bill_" + support;
+		cmd = gcnew MySqlCommand("select EXISTS(select * from information_schema.tables where table_name = '" + BillID + "')", con);
+		con->Open();
+		dr = cmd->ExecuteReader();
+		while (dr->Read()) {
+			result = Int32::Parse(dr->GetString(0));
+		}
+		con->Close();
+		if (result == 1) {
+			cmd = gcnew MySqlCommand("drop table " + BillID + "", con);
+			con->Open();
+			dr = cmd->ExecuteReader();
+			con->Close();
+		}
 		cmd = gcnew MySqlCommand("create table " + BillID + "(ProductId bigint(20) NOT NULL,ProductName varchar(30),Category varchar(30),UnitPrice int NOT NULL,Qty int NOT NULL,GST float NOT NULL,Total float NOT NULL)", con);
 		con->Open();
 		dr = cmd->ExecuteReader();
@@ -1017,7 +1018,9 @@ namespace SupermarketInventoryandBillingSystem {
 	catch (Exception^ ex)
 	{
 		MessageBox::Show(ex->Message);
+		//MessageBox::Show("Click on Generate BillID to start billing");
 	}
+	
 }
 private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 	try {
@@ -1079,5 +1082,6 @@ private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
 }
+
 };
 }

@@ -3,7 +3,7 @@
 //#include "Dashboard.h"
 #include "inventory.h"
 #include "billing.h"
-#include "sales_report.h"
+#include "inventory_report.h"
 
 namespace SupermarketInventoryandBillingSystem {
 
@@ -939,7 +939,7 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 	}
 }
 private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
-	sales_report^ module1 = gcnew sales_report();
+	inventory_report^ module1 = gcnew inventory_report();
 	module1->Show();
 }
 private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {

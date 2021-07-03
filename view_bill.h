@@ -145,6 +145,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView1->Location = System::Drawing::Point(16, 93);
 			this->dataGridView1->Name = L"dataGridView1";
+			this->dataGridView1->ReadOnly = true;
 			this->dataGridView1->Size = System::Drawing::Size(762, 154);
 			this->dataGridView1->TabIndex = 16;
 			// 
@@ -363,29 +364,38 @@ namespace SupermarketInventoryandBillingSystem {
 			}
 			con->Close();
 			if (result == 1) {
-				cmd = gcnew MySqlCommand("select * from " + BillID + "", con);
-				MySqlDataAdapter^ adapter = gcnew MySqlDataAdapter("select * from " + BillID + "", con);
-				con->Open();
-				DataTable^ table = gcnew DataTable();
-				adapter->Fill(table);
-				bindingSource1->DataSource = table;
-				dataGridView1->DataSource = bindingSource1;
-				con->Close();
-
-				cmd = gcnew MySqlCommand("select Total,Date from billing_index where BillID='" + BillID + "'", con);
+				cmd = gcnew MySqlCommand("select count(*) from " + BillID + "", con);
 				con->Open();
 				dr = cmd->ExecuteReader();
 				while (dr->Read()) {
-					textBox3->Text = dr->GetString(0);
-					textBox2->Text = dr->GetString(1);
+					result = Int32::Parse(dr->GetString(0));
 				}
 				con->Close();
+				if (result == 0) {
+					MessageBox::Show("BillID does not exist");
+				}
+				else {
+					cmd = gcnew MySqlCommand("select * from " + BillID + "", con);
+					MySqlDataAdapter^ adapter = gcnew MySqlDataAdapter("select * from " + BillID + "", con);
+					con->Open();
+					DataTable^ table = gcnew DataTable();
+					adapter->Fill(table);
+					bindingSource1->DataSource = table;
+					dataGridView1->DataSource = bindingSource1;
+					con->Close();
+
+					cmd = gcnew MySqlCommand("select Total,Date from billing_index where BillID='" + BillID + "'", con);
+					con->Open();
+					dr = cmd->ExecuteReader();
+					while (dr->Read()) {
+						textBox3->Text = dr->GetString(0);
+						textBox2->Text = dr->GetString(1);
+					}
+					con->Close();
+				}
 			}
 			else {
 				MessageBox::Show("BillID does not exist");
-				view_bill^ module1 = gcnew view_bill();
-				this->Hide();
-				module1->Visible = true;
 			}
 		}
 		catch(Exception^ ex){
