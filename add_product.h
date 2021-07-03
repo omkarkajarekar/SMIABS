@@ -70,9 +70,18 @@ namespace SupermarketInventoryandBillingSystem {
 
 	private: System::Windows::Forms::Label^ sell_price_label;
 	private: System::Windows::Forms::BindingSource^ bindingSource1;
+
+
+	private: System::Windows::Forms::Panel^ panel1;
+	private: System::Windows::Forms::Button^ button5;
+	private: System::Windows::Forms::Label^ label7;
+	private: System::Windows::Forms::GroupBox^ groupBox1;
+	private: System::Windows::Forms::Button^ button3;
+	private: System::Windows::Forms::Label^ label9;
+
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
-	private: System::Windows::Forms::Label^ label6;
-	private: System::Windows::Forms::Button^ back_btn;
+
 	private: System::ComponentModel::IContainer^ components;
 	protected:
 
@@ -91,6 +100,7 @@ namespace SupermarketInventoryandBillingSystem {
 		void InitializeComponent(void)
 		{
 			this->components = (gcnew System::ComponentModel::Container());
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(add_product::typeid));
 			this->save_btn = (gcnew System::Windows::Forms::Button());
 			this->id_textbox = (gcnew System::Windows::Forms::TextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
@@ -107,106 +117,131 @@ namespace SupermarketInventoryandBillingSystem {
 			this->sell_price_textbox = (gcnew System::Windows::Forms::TextBox());
 			this->sell_price_label = (gcnew System::Windows::Forms::Label());
 			this->bindingSource1 = (gcnew System::Windows::Forms::BindingSource(this->components));
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->button5 = (gcnew System::Windows::Forms::Button());
+			this->label7 = (gcnew System::Windows::Forms::Label());
+			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->back_btn = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->BeginInit();
+			this->panel1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			this->groupBox1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// save_btn
 			// 
+			this->save_btn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(227)), static_cast<System::Int32>(static_cast<System::Byte>(242)),
+				static_cast<System::Int32>(static_cast<System::Byte>(253)));
 			this->save_btn->Cursor = System::Windows::Forms::Cursors::Default;
-			this->save_btn->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->save_btn->Location = System::Drawing::Point(236, 409);
+			this->save_btn->FlatAppearance->BorderSize = 0;
+			this->save_btn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->save_btn->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->save_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(136)),
+				static_cast<System::Int32>(static_cast<System::Byte>(229)));
+			this->save_btn->Location = System::Drawing::Point(683, 92);
 			this->save_btn->Name = L"save_btn";
-			this->save_btn->Size = System::Drawing::Size(383, 23);
+			this->save_btn->Size = System::Drawing::Size(102, 27);
 			this->save_btn->TabIndex = 8;
-			this->save_btn->Text = L"Save";
-			this->save_btn->UseVisualStyleBackColor = true;
+			this->save_btn->Text = L"ADD PRODUCT";
+			this->save_btn->UseVisualStyleBackColor = false;
 			this->save_btn->Click += gcnew System::EventHandler(this, &add_product::button1_Click);
 			// 
 			// id_textbox
 			// 
-			this->id_textbox->Location = System::Drawing::Point(336, 63);
+			this->id_textbox->Location = System::Drawing::Point(15, 47);
 			this->id_textbox->Name = L"id_textbox";
-			this->id_textbox->Size = System::Drawing::Size(283, 20);
+			this->id_textbox->Size = System::Drawing::Size(131, 20);
 			this->id_textbox->TabIndex = 0;
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label1->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(233, 67);
+			this->label1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(120)), static_cast<System::Int32>(static_cast<System::Byte>(144)),
+				static_cast<System::Int32>(static_cast<System::Byte>(156)));
+			this->label1->Location = System::Drawing::Point(12, 16);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(19, 15);
+			this->label1->Size = System::Drawing::Size(79, 20);
 			this->label1->TabIndex = 9;
-			this->label1->Text = L"ID";
+			this->label1->Text = L"Product ID";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label2->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(233, 110);
+			this->label2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(120)), static_cast<System::Int32>(static_cast<System::Byte>(144)),
+				static_cast<System::Int32>(static_cast<System::Byte>(156)));
+			this->label2->Location = System::Drawing::Point(192, 16);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(41, 15);
+			this->label2->Size = System::Drawing::Size(104, 20);
 			this->label2->TabIndex = 10;
-			this->label2->Text = L"Name";
+			this->label2->Text = L"Product Name";
 			// 
 			// name_textbox
 			// 
-			this->name_textbox->Location = System::Drawing::Point(336, 106);
+			this->name_textbox->Location = System::Drawing::Point(197, 47);
 			this->name_textbox->Name = L"name_textbox";
-			this->name_textbox->Size = System::Drawing::Size(283, 20);
+			this->name_textbox->Size = System::Drawing::Size(161, 20);
 			this->name_textbox->TabIndex = 2;
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label3->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(233, 300);
+			this->label3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(120)), static_cast<System::Int32>(static_cast<System::Byte>(144)),
+				static_cast<System::Int32>(static_cast<System::Byte>(156)));
+			this->label3->Location = System::Drawing::Point(620, 16);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(55, 15);
+			this->label3->Size = System::Drawing::Size(70, 20);
 			this->label3->TabIndex = 14;
 			this->label3->Text = L"Category";
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label4->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label4->Location = System::Drawing::Point(233, 206);
+			this->label4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(120)), static_cast<System::Int32>(static_cast<System::Byte>(144)),
+				static_cast<System::Int32>(static_cast<System::Byte>(156)));
+			this->label4->Location = System::Drawing::Point(193, 91);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(90, 15);
+			this->label4->Size = System::Drawing::Size(103, 20);
 			this->label4->TabIndex = 12;
 			this->label4->Text = L"Purchase Price";
 			this->label4->Click += gcnew System::EventHandler(this, &add_product::label4_Click);
 			// 
 			// price_textbox
 			// 
-			this->price_textbox->Location = System::Drawing::Point(336, 203);
+			this->price_textbox->Location = System::Drawing::Point(197, 133);
 			this->price_textbox->Name = L"price_textbox";
-			this->price_textbox->Size = System::Drawing::Size(283, 20);
+			this->price_textbox->Size = System::Drawing::Size(161, 20);
 			this->price_textbox->TabIndex = 4;
 			// 
 			// qty_textbox
 			// 
-			this->qty_textbox->Location = System::Drawing::Point(336, 350);
+			this->qty_textbox->Location = System::Drawing::Point(16, 133);
 			this->qty_textbox->Name = L"qty_textbox";
-			this->qty_textbox->Size = System::Drawing::Size(283, 20);
+			this->qty_textbox->Size = System::Drawing::Size(131, 20);
 			this->qty_textbox->TabIndex = 7;
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label5->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(233, 354);
+			this->label5->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(120)), static_cast<System::Int32>(static_cast<System::Byte>(144)),
+				static_cast<System::Int32>(static_cast<System::Byte>(156)));
+			this->label5->Location = System::Drawing::Point(26, 92);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(51, 15);
+			this->label5->Size = System::Drawing::Size(65, 20);
 			this->label5->TabIndex = 15;
 			this->label5->Text = L"Quantity";
 			// 
@@ -218,106 +253,182 @@ namespace SupermarketInventoryandBillingSystem {
 				L"Convenience goods", L"Shopping goods", L"Speciality goods",
 					L"Impulse goods", L"Emergancy goods", L"Raw materials", L"Installations", L"Accessory Equipments", L"Supplies", L"Services"
 			});
-			this->comboBox1->Location = System::Drawing::Point(336, 297);
+			this->comboBox1->Location = System::Drawing::Point(624, 46);
 			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(283, 21);
+			this->comboBox1->Size = System::Drawing::Size(161, 21);
 			this->comboBox1->TabIndex = 6;
 			// 
 			// description_label
 			// 
 			this->description_label->AutoSize = true;
-			this->description_label->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->description_label->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->description_label->Location = System::Drawing::Point(233, 157);
+			this->description_label->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(120)),
+				static_cast<System::Int32>(static_cast<System::Byte>(144)), static_cast<System::Int32>(static_cast<System::Byte>(156)));
+			this->description_label->Location = System::Drawing::Point(403, 16);
 			this->description_label->Name = L"description_label";
-			this->description_label->Size = System::Drawing::Size(69, 15);
+			this->description_label->Size = System::Drawing::Size(85, 20);
 			this->description_label->TabIndex = 11;
 			this->description_label->Text = L"Description";
 			// 
 			// description_textBox
 			// 
-			this->description_textBox->Location = System::Drawing::Point(336, 154);
+			this->description_textBox->Location = System::Drawing::Point(407, 46);
 			this->description_textBox->Name = L"description_textBox";
-			this->description_textBox->Size = System::Drawing::Size(283, 20);
+			this->description_textBox->Size = System::Drawing::Size(161, 20);
 			this->description_textBox->TabIndex = 3;
 			// 
 			// sell_price_textbox
 			// 
-			this->sell_price_textbox->Location = System::Drawing::Point(336, 251);
+			this->sell_price_textbox->Location = System::Drawing::Point(407, 133);
 			this->sell_price_textbox->Name = L"sell_price_textbox";
-			this->sell_price_textbox->Size = System::Drawing::Size(283, 20);
+			this->sell_price_textbox->Size = System::Drawing::Size(161, 20);
 			this->sell_price_textbox->TabIndex = 5;
 			// 
 			// sell_price_label
 			// 
 			this->sell_price_label->AutoSize = true;
-			this->sell_price_label->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->sell_price_label->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->sell_price_label->Location = System::Drawing::Point(233, 252);
+			this->sell_price_label->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(120)),
+				static_cast<System::Int32>(static_cast<System::Byte>(144)), static_cast<System::Int32>(static_cast<System::Byte>(156)));
+			this->sell_price_label->Location = System::Drawing::Point(403, 91);
 			this->sell_price_label->Name = L"sell_price_label";
-			this->sell_price_label->Size = System::Drawing::Size(76, 15);
+			this->sell_price_label->Size = System::Drawing::Size(90, 20);
 			this->sell_price_label->TabIndex = 13;
 			this->sell_price_label->Text = L"Selling Price";
 			// 
+			// panel1
+			// 
+			this->panel1->BackColor = System::Drawing::SystemColors::Window;
+			this->panel1->Controls->Add(this->pictureBox1);
+			this->panel1->Controls->Add(this->button5);
+			this->panel1->Location = System::Drawing::Point(-3, 0);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(1179, 36);
+			this->panel1->TabIndex = 18;
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->BackColor = System::Drawing::Color::White;
+			this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
+			this->pictureBox1->Location = System::Drawing::Point(0, 0);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(35, 36);
+			this->pictureBox1->TabIndex = 25;
+			this->pictureBox1->TabStop = false;
+			// 
+			// button5
+			// 
+			this->button5->FlatAppearance->BorderSize = 0;
+			this->button5->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Red;
+			this->button5->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Red;
+			this->button5->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button5->Location = System::Drawing::Point(898, 2);
+			this->button5->Name = L"button5";
+			this->button5->Size = System::Drawing::Size(40, 33);
+			this->button5->TabIndex = 1;
+			this->button5->Text = L"X";
+			this->button5->UseVisualStyleBackColor = true;
+			this->button5->Click += gcnew System::EventHandler(this, &add_product::button5_Click);
+			// 
+			// label7
+			// 
+			this->label7->AutoSize = true;
+			this->label7->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label7->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(136)),
+				static_cast<System::Int32>(static_cast<System::Byte>(229)));
+			this->label7->Location = System::Drawing::Point(36, 53);
+			this->label7->Name = L"label7";
+			this->label7->Size = System::Drawing::Size(133, 30);
+			this->label7->TabIndex = 22;
+			this->label7->Text = L"New Product";
+			// 
+			// groupBox1
+			// 
+			this->groupBox1->BackColor = System::Drawing::Color::White;
+			this->groupBox1->Controls->Add(this->button3);
+			this->groupBox1->Controls->Add(this->sell_price_label);
+			this->groupBox1->Controls->Add(this->sell_price_textbox);
+			this->groupBox1->Controls->Add(this->description_textBox);
+			this->groupBox1->Controls->Add(this->description_label);
+			this->groupBox1->Controls->Add(this->comboBox1);
+			this->groupBox1->Controls->Add(this->qty_textbox);
+			this->groupBox1->Controls->Add(this->label5);
+			this->groupBox1->Controls->Add(this->label3);
+			this->groupBox1->Controls->Add(this->label4);
+			this->groupBox1->Controls->Add(this->price_textbox);
+			this->groupBox1->Controls->Add(this->name_textbox);
+			this->groupBox1->Controls->Add(this->label2);
+			this->groupBox1->Controls->Add(this->label1);
+			this->groupBox1->Controls->Add(this->id_textbox);
+			this->groupBox1->Controls->Add(this->save_btn);
+			this->groupBox1->Location = System::Drawing::Point(41, 106);
+			this->groupBox1->Name = L"groupBox1";
+			this->groupBox1->Size = System::Drawing::Size(849, 200);
+			this->groupBox1->TabIndex = 23;
+			this->groupBox1->TabStop = false;
+			// 
+			// button3
+			// 
+			this->button3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), static_cast<System::Int32>(static_cast<System::Byte>(228)),
+				static_cast<System::Int32>(static_cast<System::Byte>(236)));
+			this->button3->FlatAppearance->BorderSize = 0;
+			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(23)),
+				static_cast<System::Int32>(static_cast<System::Byte>(68)));
+			this->button3->Location = System::Drawing::Point(683, 148);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(102, 27);
+			this->button3->TabIndex = 34;
+			this->button3->Text = L"CANCEL";
+			this->button3->UseVisualStyleBackColor = false;
+			// 
+			// label9
+			// 
+			this->label9->AutoSize = true;
+			this->label9->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label9->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(136)),
+				static_cast<System::Int32>(static_cast<System::Byte>(229)));
+			this->label9->Location = System::Drawing::Point(52, 325);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(113, 20);
+			this->label9->TabIndex = 24;
+			this->label9->Text = L"Updated Stocks";
+			// 
 			// dataGridView1
 			// 
-			this->dataGridView1->BackgroundColor = System::Drawing::Color::DeepSkyBlue;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(27, 526);
+			this->dataGridView1->Location = System::Drawing::Point(56, 364);
 			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->Size = System::Drawing::Size(843, 135);
-			this->dataGridView1->TabIndex = 16;
-			// 
-			// label6
-			// 
-			this->label6->AutoSize = true;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label6->Location = System::Drawing::Point(24, 490);
-			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(145, 15);
-			this->label6->TabIndex = 17;
-			this->label6->Text = L"Data after adding product";
-			// 
-			// back_btn
-			// 
-			this->back_btn->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->back_btn->Location = System::Drawing::Point(27, 26);
-			this->back_btn->Name = L"back_btn";
-			this->back_btn->Size = System::Drawing::Size(106, 24);
-			this->back_btn->TabIndex = 18;
-			this->back_btn->Text = L"<--- Back";
-			this->back_btn->UseVisualStyleBackColor = true;
-			this->back_btn->Click += gcnew System::EventHandler(this, &add_product::back_btn_Click);
+			this->dataGridView1->Size = System::Drawing::Size(770, 158);
+			this->dataGridView1->TabIndex = 25;
 			// 
 			// add_product
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackColor = System::Drawing::Color::DeepSkyBlue;
-			this->ClientSize = System::Drawing::Size(912, 709);
-			this->Controls->Add(this->back_btn);
-			this->Controls->Add(this->label6);
+			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->ClientSize = System::Drawing::Size(933, 550);
 			this->Controls->Add(this->dataGridView1);
-			this->Controls->Add(this->sell_price_label);
-			this->Controls->Add(this->sell_price_textbox);
-			this->Controls->Add(this->description_textBox);
-			this->Controls->Add(this->description_label);
-			this->Controls->Add(this->comboBox1);
-			this->Controls->Add(this->qty_textbox);
-			this->Controls->Add(this->label5);
-			this->Controls->Add(this->label3);
-			this->Controls->Add(this->label4);
-			this->Controls->Add(this->price_textbox);
-			this->Controls->Add(this->name_textbox);
-			this->Controls->Add(this->label2);
-			this->Controls->Add(this->label1);
-			this->Controls->Add(this->id_textbox);
-			this->Controls->Add(this->save_btn);
+			this->Controls->Add(this->label9);
+			this->Controls->Add(this->groupBox1);
+			this->Controls->Add(this->label7);
+			this->Controls->Add(this->panel1);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"add_product";
 			this->Text = L"add_product";
 			this->Load += gcnew System::EventHandler(this, &add_product::add_product_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->EndInit();
+			this->panel1->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			this->groupBox1->ResumeLayout(false);
+			this->groupBox1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -325,6 +436,7 @@ namespace SupermarketInventoryandBillingSystem {
 		}
 
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		dataGridView1->Visible = true;
 		//declarations
 		float gst_array[10] = { 1.2,2.0,2.1,2.5,1.5,4.2,4.5,5,4.7,5.0 };
 		double product_id;
@@ -390,11 +502,15 @@ namespace SupermarketInventoryandBillingSystem {
 private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void add_product_Load(System::Object^ sender, System::EventArgs^ e) {
+	dataGridView1->Visible = false;
 }
 	private: System::Void back_btn_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Visible = false;
 	}
 
+private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+}
 };
 
 
