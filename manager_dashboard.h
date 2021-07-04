@@ -3,6 +3,7 @@
 #include "inventory.h"
 #include "billing.h"
 #include "add_employee.h"
+#include "update_employee.h"
 namespace SupermarketInventoryandBillingSystem {
 
 	using namespace MySql::Data::MySqlClient;
@@ -487,6 +488,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->button2->TabIndex = 3;
 			this->button2->Text = L"Delete/Update Employee";
 			this->button2->UseVisualStyleBackColor = false;
+			this->button2->Click += gcnew System::EventHandler(this, &manager_dashboard::button2_Click);
 			// 
 			// button1
 			// 
@@ -670,7 +672,7 @@ private: System::Void manager_dashboard_Load(System::Object^ sender, System::Eve
 	try {
 		String^ constr = "Server=127.0.0.1;Uid=root;Pwd=;Database=users";
 		MySqlConnection^ con = gcnew MySqlConnection(constr);
-		MySqlDataAdapter^ adapter = gcnew MySqlDataAdapter("select * from employee", con);
+		MySqlDataAdapter^ adapter = gcnew MySqlDataAdapter("select UserID,Name,Designation,Age,Contact from employee", con);
 		con->Open();
 		DataTable^ table = gcnew DataTable();
 		adapter->Fill(table);
@@ -724,7 +726,11 @@ private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e
 	module1->Show();
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	add_employee^ module1 = gcnew add_employee;
+	add_employee^ module1 = gcnew add_employee();
+	module1->Show();
+}
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	update_employee^ module1 = gcnew update_employee();
 	module1->Show();
 }
 };

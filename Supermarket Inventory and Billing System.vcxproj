@@ -210,6 +210,9 @@
     <EmbeddedResource Include="sales_report.resx">
       <DependentUpon>sales_report.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="update_employee.resx">
+      <DependentUpon>update_employee.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="update_product.resx">
       <DependentUpon>update_product.h</DependentUpon>
     </EmbeddedResource>
