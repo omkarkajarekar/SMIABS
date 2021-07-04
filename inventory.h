@@ -501,11 +501,12 @@ namespace SupermarketInventoryandBillingSystem {
 			this->comboBox3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(189)), static_cast<System::Int32>(static_cast<System::Byte>(189)),
 				static_cast<System::Int32>(static_cast<System::Byte>(189)));
 			this->comboBox3->FormattingEnabled = true;
-			this->comboBox3->Items->AddRange(gcnew cli::array< System::Object^  >(10) {
-				L"Convenience goods", L"Shopping goods", L"Speciality goods",
-					L"Impulse goods", L"Emergancy goods", L"Raw materials", L"Installations", L"Accessory Equipments", L"Supplies", L"Services"
+			this->comboBox3->Items->AddRange(gcnew cli::array< System::Object^  >(12) {
+				L"Grocery", L"Dairy & Beverages", L"Packaged Food",
+					L"Fruits & Vegetables", L"Home & Kitchen", L"Personal Care", L"Baby & Kids", L"Appliances", L"Footwear", L"Clothing & Accessories",
+					L"School Supplies", L"Specials"
 			});
-			this->comboBox3->Location = System::Drawing::Point(352, 68);
+			this->comboBox3->Location = System::Drawing::Point(352, 67);
 			this->comboBox3->Name = L"comboBox3";
 			this->comboBox3->Size = System::Drawing::Size(128, 25);
 			this->comboBox3->TabIndex = 20;
@@ -595,6 +596,7 @@ namespace SupermarketInventoryandBillingSystem {
 			// 
 			// textBox3
 			// 
+			this->textBox3->Enabled = false;
 			this->textBox3->Location = System::Drawing::Point(21, 210);
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(123, 20);
@@ -613,6 +615,7 @@ namespace SupermarketInventoryandBillingSystem {
 			// 
 			// textBox2
 			// 
+			this->textBox2->Enabled = false;
 			this->textBox2->Location = System::Drawing::Point(21, 122);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(123, 20);
@@ -684,7 +687,7 @@ namespace SupermarketInventoryandBillingSystem {
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		add_product^ obj = gcnew add_product();
-		obj->Visible = true;
+		obj->Show();
 	}
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 		update_product^ obj = gcnew update_product();
@@ -785,6 +788,17 @@ private: System::Void inventory_Load(System::Object^ sender, System::EventArgs^ 
 	groupBox5->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(42)), static_cast<System::Int32>(static_cast<System::Byte>(42)),
 		static_cast<System::Int32>(static_cast<System::Byte>(42)));
 
+	String^ constr = "Server=127.0.0.1;Uid=root;Pwd=;Database=inventory";
+	MySqlConnection^ con = gcnew MySqlConnection(constr);
+	MySqlCommand^ cmd = gcnew MySqlCommand("select count(product_id),count(distinct(product_category)) from stock", con);
+	con->Open();
+	MySqlDataReader^ dr = cmd->ExecuteReader();
+	while (dr->Read()) {
+		textBox2->Text = dr->GetString(0);
+		textBox3->Text = dr->GetString(1);
+	}
+	con->Close();
+
 }
 private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
 	inventory_report^ obj = gcnew inventory_report();
@@ -858,7 +872,6 @@ private: System::Void pictureBox6_Click(System::Object^ sender, System::EventArg
 		else {
 			bindingSource1->DataSource = dt;
 			dataGridView1->DataSource = bindingSource1;
-			MessageBox::Show("Database table fetched");
 			con->Close();
 		}
 	}
