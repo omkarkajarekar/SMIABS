@@ -45,9 +45,6 @@
     <ClCompile Include="inventory_report.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="delete_product.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="user_details.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

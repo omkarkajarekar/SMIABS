@@ -254,6 +254,8 @@ namespace SupermarketInventoryandBillingSystem {
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (comboBox1->SelectedIndex == 0) {
 			try {
+				chart1->Visible = true;
+				chart1->Series["Series1"]->Points->Clear();
 				String^ date1 = dateTimePicker1->Text;
 				String^ constr = "Server=127.0.0.1;Uid=root;Pwd=;Database=bill";
 				MySqlConnection^ con = gcnew MySqlConnection(constr);
@@ -265,6 +267,15 @@ namespace SupermarketInventoryandBillingSystem {
 					textBox2->Text = dr->GetString(0);
 					textBox1->Text = dr->GetString(1);
 				}
+				con->Close();
+				cmd = gcnew MySqlCommand("select BillID,Total FROM billing_index WHERE DATE(Date) = '" + date1 + "'", con);
+				con->Open();
+				dr = cmd->ExecuteReader();
+				while (dr->Read())
+				{
+					chart1->Series["Series1"]->Points->AddXY(dr->GetString(0), Math::Round(System::Convert::ToDouble(dr->GetString(1)), 2));
+				}
+				con->Close();
 			}
 			catch (Exception^ ex) {
 				MessageBox::Show(ex->Message);
@@ -273,6 +284,7 @@ namespace SupermarketInventoryandBillingSystem {
 		else if (comboBox1->SelectedIndex == 1) {
 			try {
 				chart1->Visible=true;
+				chart1->Series["Series1"]->Points->Clear();
 				String^ date1 = dateTimePicker1->Text;
 				String^ date2 = dateTimePicker2->Text;
 				String^ constr = "Server=127.0.0.1;Uid=root;Pwd=;Database=bill";

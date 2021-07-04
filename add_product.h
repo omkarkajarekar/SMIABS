@@ -317,6 +317,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->pictureBox1->Size = System::Drawing::Size(35, 36);
 			this->pictureBox1->TabIndex = 25;
 			this->pictureBox1->TabStop = false;
+			this->pictureBox1->Click += gcnew System::EventHandler(this, &add_product::pictureBox1_Click);
 			// 
 			// button5
 			// 
@@ -510,6 +511,8 @@ private: System::Void add_product_Load(System::Object^ sender, System::EventArgs
 
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
+}
+private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 

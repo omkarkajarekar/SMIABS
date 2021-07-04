@@ -295,6 +295,8 @@ namespace SupermarketInventoryandBillingSystem {
 		try
 		{
 			chart2->Series["Series1"]->IsVisibleInLegend = false;
+			chart1->Series["Series1"]->Points->Clear();
+			chart2->Series["Series1"]->Points->Clear();
 			int i = 0;
 			float total_products,percent;
 			String^ constr = "Server=127.0.0.1;Uid=root;Pwd=;Database=inventory";

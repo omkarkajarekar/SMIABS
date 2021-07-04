@@ -129,7 +129,6 @@
   <ItemGroup>
     <ClCompile Include="add_product.cpp" />
     <ClCompile Include="billing.cpp" />
-    <ClCompile Include="delete_product.cpp" />
     <ClCompile Include="display_products.cpp" />
     <ClCompile Include="inventory.cpp" />
     <ClCompile Include="inventory_report.cpp" />
