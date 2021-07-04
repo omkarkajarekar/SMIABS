@@ -547,11 +547,11 @@ namespace SupermarketInventoryandBillingSystem {
 			String^ constr = "Server=127.0.0.1;Uid=root;Pwd=;Database=inventory";
 			MySqlConnection^ con = gcnew MySqlConnection(constr);
 			double product_id = double::Parse(id_textBox->Text);
-
+			/*
 			MySqlDataAdapter^ cmd = gcnew MySqlDataAdapter("select * from stock where product_id = " + product_id + "", con);
 			con->Open();
 			DataTable^ dt = gcnew DataTable();
-			/*cmd->Fill(dt);
+			cmd->Fill(dt);
 			if (dt->Rows->Count == 0) {
 				MessageBox::Show("No data found for given ID");
 				return;
