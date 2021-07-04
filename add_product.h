@@ -76,7 +76,7 @@ namespace SupermarketInventoryandBillingSystem {
 	private: System::Windows::Forms::Button^ button5;
 	private: System::Windows::Forms::Label^ label7;
 	private: System::Windows::Forms::GroupBox^ groupBox1;
-
+	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Label^ label9;
 
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
@@ -122,6 +122,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->BeginInit();
@@ -142,9 +143,9 @@ namespace SupermarketInventoryandBillingSystem {
 				static_cast<System::Byte>(0)));
 			this->save_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(136)),
 				static_cast<System::Int32>(static_cast<System::Byte>(229)));
-			this->save_btn->Location = System::Drawing::Point(624, 126);
+			this->save_btn->Location = System::Drawing::Point(683, 92);
 			this->save_btn->Name = L"save_btn";
-			this->save_btn->Size = System::Drawing::Size(161, 27);
+			this->save_btn->Size = System::Drawing::Size(102, 27);
 			this->save_btn->TabIndex = 8;
 			this->save_btn->Text = L"ADD PRODUCT";
 			this->save_btn->UseVisualStyleBackColor = false;
@@ -156,8 +157,6 @@ namespace SupermarketInventoryandBillingSystem {
 			this->id_textbox->Name = L"id_textbox";
 			this->id_textbox->Size = System::Drawing::Size(131, 20);
 			this->id_textbox->TabIndex = 0;
-			this->id_textbox->TextChanged += gcnew System::EventHandler(this, &add_product::id_textbox_TextChanged);
-			this->id_textbox->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &add_product::id_textbox_KeyPress);
 			// 
 			// label1
 			// 
@@ -225,7 +224,6 @@ namespace SupermarketInventoryandBillingSystem {
 			this->price_textbox->Name = L"price_textbox";
 			this->price_textbox->Size = System::Drawing::Size(161, 20);
 			this->price_textbox->TabIndex = 4;
-			this->price_textbox->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &add_product::price_textbox_KeyPress);
 			// 
 			// qty_textbox
 			// 
@@ -233,7 +231,6 @@ namespace SupermarketInventoryandBillingSystem {
 			this->qty_textbox->Name = L"qty_textbox";
 			this->qty_textbox->Size = System::Drawing::Size(131, 20);
 			this->qty_textbox->TabIndex = 7;
-			this->qty_textbox->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &add_product::qty_textbox_KeyPress);
 			// 
 			// label5
 			// 
@@ -252,10 +249,9 @@ namespace SupermarketInventoryandBillingSystem {
 			// 
 			this->comboBox1->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(12) {
-				L"Grocery", L"Dairy & Beverages", L"Packaged Food",
-					L"Fruits & Vegetables", L"Home & Kitchen", L"Personal Care", L"Baby & Kids", L"Appliances", L"Footwear", L"Clothing & Accessories",
-					L"School Supplies", L"Specials"
+			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(10) {
+				L"Convenience goods", L"Shopping goods", L"Speciality goods",
+					L"Impulse goods", L"Emergancy goods", L"Raw materials", L"Installations", L"Accessory Equipments", L"Supplies", L"Services"
 			});
 			this->comboBox1->Location = System::Drawing::Point(624, 46);
 			this->comboBox1->Name = L"comboBox1";
@@ -288,7 +284,6 @@ namespace SupermarketInventoryandBillingSystem {
 			this->sell_price_textbox->Name = L"sell_price_textbox";
 			this->sell_price_textbox->Size = System::Drawing::Size(161, 20);
 			this->sell_price_textbox->TabIndex = 5;
-			this->sell_price_textbox->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &add_product::sell_price_textbox_KeyPress);
 			// 
 			// sell_price_label
 			// 
@@ -319,7 +314,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
 			this->pictureBox1->Location = System::Drawing::Point(0, 0);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(38, 36);
+			this->pictureBox1->Size = System::Drawing::Size(35, 36);
 			this->pictureBox1->TabIndex = 25;
 			this->pictureBox1->TabStop = false;
 			this->pictureBox1->Click += gcnew System::EventHandler(this, &add_product::pictureBox1_Click);
@@ -356,6 +351,7 @@ namespace SupermarketInventoryandBillingSystem {
 			// groupBox1
 			// 
 			this->groupBox1->BackColor = System::Drawing::Color::White;
+			this->groupBox1->Controls->Add(this->button3);
 			this->groupBox1->Controls->Add(this->sell_price_label);
 			this->groupBox1->Controls->Add(this->sell_price_textbox);
 			this->groupBox1->Controls->Add(this->description_textBox);
@@ -377,6 +373,21 @@ namespace SupermarketInventoryandBillingSystem {
 			this->groupBox1->TabIndex = 23;
 			this->groupBox1->TabStop = false;
 			// 
+			// button3
+			// 
+			this->button3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), static_cast<System::Int32>(static_cast<System::Byte>(228)),
+				static_cast<System::Int32>(static_cast<System::Byte>(236)));
+			this->button3->FlatAppearance->BorderSize = 0;
+			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(23)),
+				static_cast<System::Int32>(static_cast<System::Byte>(68)));
+			this->button3->Location = System::Drawing::Point(683, 148);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(102, 27);
+			this->button3->TabIndex = 34;
+			this->button3->Text = L"CANCEL";
+			this->button3->UseVisualStyleBackColor = false;
+			// 
 			// label9
 			// 
 			this->label9->AutoSize = true;
@@ -384,18 +395,18 @@ namespace SupermarketInventoryandBillingSystem {
 				static_cast<System::Byte>(0)));
 			this->label9->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(136)),
 				static_cast<System::Int32>(static_cast<System::Byte>(229)));
-			this->label9->Location = System::Drawing::Point(37, 326);
+			this->label9->Location = System::Drawing::Point(52, 325);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(159, 20);
+			this->label9->Size = System::Drawing::Size(113, 20);
 			this->label9->TabIndex = 24;
-			this->label9->Text = L"Added Product Details";
+			this->label9->Text = L"Updated Stocks";
 			// 
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(41, 364);
+			this->dataGridView1->Location = System::Drawing::Point(56, 364);
 			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->Size = System::Drawing::Size(849, 158);
+			this->dataGridView1->Size = System::Drawing::Size(770, 158);
 			this->dataGridView1->TabIndex = 25;
 			// 
 			// add_product
@@ -412,8 +423,8 @@ namespace SupermarketInventoryandBillingSystem {
 			this->Controls->Add(this->panel1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"add_product";
+			this->Text = L"add_product";
 			this->Load += gcnew System::EventHandler(this, &add_product::add_product_Load);
-			this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &add_product::add_product_KeyDown);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->EndInit();
 			this->panel1->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
@@ -479,13 +490,6 @@ namespace SupermarketInventoryandBillingSystem {
 				cmd->Fill(dt);
 				bindingSource1->DataSource = dt;
 				dataGridView1->DataSource = bindingSource1;
-				id_textbox->Text = "";
-				name_textbox->Text = "";
-				description_textBox->Text = "";
-				qty_textbox->Text = "";
-				price_textbox->Text = "";
-				sell_price_textbox->Text = "";
-				comboBox1->SelectedIndex = -1;
 				MessageBox::Show("Product Added sucessfully");
 				con->Close();
 			}
@@ -496,48 +500,19 @@ namespace SupermarketInventoryandBillingSystem {
 		}
 	}
 
-	private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void add_product_Load(System::Object^ sender, System::EventArgs^ e) {
-		dataGridView1->Visible = false;
-	}
+private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void add_product_Load(System::Object^ sender, System::EventArgs^ e) {
+	dataGridView1->Visible = false;
+}
 	private: System::Void back_btn_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Visible = false;
 	}
 
-	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->Hide();
-	}
-	private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->Hide();
-	}
-	private: System::Void add_product_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
-	}
-	private: System::Void id_textbox_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
-		char ch = e->KeyChar;
-		if (!Char::IsDigit(ch) && ch!=8 && ch!=46 ){
-			e->Handled = true;
-		}
-	}
-	private: System::Void qty_textbox_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
-		char ch = e->KeyChar;
-		if (!Char::IsDigit(ch) && ch != 8 && ch != 46) {
-			e->Handled = true;
-		}
-	}
-	private: System::Void price_textbox_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
-		char ch = e->KeyChar;
-		if (!Char::IsDigit(ch) && ch != 8 && ch != 46) {
-			e->Handled = true;
-		}
-	}
-	private: System::Void sell_price_textbox_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
-		char ch = e->KeyChar;
-		if (!Char::IsDigit(ch) && ch != 8 && ch != 46) {
-			e->Handled = true;
-		}
-	}
-private: System::Void id_textbox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+}
+private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 

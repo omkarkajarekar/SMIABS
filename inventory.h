@@ -489,12 +489,11 @@ namespace SupermarketInventoryandBillingSystem {
 			this->comboBox3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(189)), static_cast<System::Int32>(static_cast<System::Byte>(189)),
 				static_cast<System::Int32>(static_cast<System::Byte>(189)));
 			this->comboBox3->FormattingEnabled = true;
-			this->comboBox3->Items->AddRange(gcnew cli::array< System::Object^  >(12) {
-				L"Grocery", L"Dairy & Beverages", L"Packaged Food",
-					L"Fruits & Vegetables", L"Home & Kitchen", L"Personal Care", L"Baby & Kids", L"Appliances", L"Footwear", L"Clothing & Accessories",
-					L"School Supplies", L"Specials"
+			this->comboBox3->Items->AddRange(gcnew cli::array< System::Object^  >(10) {
+				L"Convenience goods", L"Shopping goods", L"Speciality goods",
+					L"Impulse goods", L"Emergancy goods", L"Raw materials", L"Installations", L"Accessory Equipments", L"Supplies", L"Services"
 			});
-			this->comboBox3->Location = System::Drawing::Point(352, 67);
+			this->comboBox3->Location = System::Drawing::Point(201, 114);
 			this->comboBox3->Name = L"comboBox3";
 			this->comboBox3->Size = System::Drawing::Size(128, 25);
 			this->comboBox3->TabIndex = 20;
@@ -504,7 +503,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->pictureBox6->BackColor = System::Drawing::Color::White;
 			this->pictureBox6->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox6.BackgroundImage")));
 			this->pictureBox6->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->pictureBox6->Location = System::Drawing::Point(486, 71);
+			this->pictureBox6->Location = System::Drawing::Point(475, 71);
 			this->pictureBox6->Name = L"pictureBox6";
 			this->pictureBox6->Size = System::Drawing::Size(24, 20);
 			this->pictureBox6->TabIndex = 19;
@@ -584,7 +583,6 @@ namespace SupermarketInventoryandBillingSystem {
 			// 
 			// textBox3
 			// 
-			this->textBox3->Enabled = false;
 			this->textBox3->Location = System::Drawing::Point(21, 210);
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(123, 20);
@@ -603,7 +601,6 @@ namespace SupermarketInventoryandBillingSystem {
 			// 
 			// textBox2
 			// 
-			this->textBox2->Enabled = false;
 			this->textBox2->Location = System::Drawing::Point(21, 122);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(123, 20);
@@ -676,7 +673,7 @@ namespace SupermarketInventoryandBillingSystem {
 		int UserID;
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		add_product^ obj = gcnew add_product();
-		obj->Show();
+		obj->Visible = true;
 	}
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 		update_product^ obj = gcnew update_product();
@@ -768,24 +765,16 @@ private: System::Void inventory_Load(System::Object^ sender, System::EventArgs^ 
 	panel6->Visible = false;
 	panel7->Visible = false;
 	comboBox3->Visible = false;
-	dataGridView1->Visible = true;
+	dataGridView1->Visible = false;
+	groupBox4->Enabled = false;
+	groupBox5->Enabled = false;
+
 	groupBox3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(65)), static_cast<System::Int32>(static_cast<System::Byte>(65)),
 		static_cast<System::Int32>(static_cast<System::Byte>(65)));
 	groupBox4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(42)), static_cast<System::Int32>(static_cast<System::Byte>(42)),
 		static_cast<System::Int32>(static_cast<System::Byte>(42)));
 	groupBox5->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(42)), static_cast<System::Int32>(static_cast<System::Byte>(42)),
 		static_cast<System::Int32>(static_cast<System::Byte>(42)));
-
-	String^ constr = "Server=127.0.0.1;Uid=root;Pwd=;Database=inventory";
-	MySqlConnection^ con = gcnew MySqlConnection(constr);
-	MySqlCommand^ cmd = gcnew MySqlCommand("select count(product_id),count(distinct(product_category)) from stock", con);
-	con->Open();
-	MySqlDataReader^ dr = cmd->ExecuteReader();
-	while (dr->Read()) {
-		textBox2->Text = dr->GetString(0);
-		textBox3->Text = dr->GetString(1);
-	}
-	con->Close();
 
 }
 private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -833,7 +822,7 @@ private: System::Void pictureBox6_Click(System::Object^ sender, System::EventArg
 			sql_query = "select * from stock where product_name='" + product_name + "'";
 		}
 		else if (opt_selected == "Search by Category") {
-			String^ category = (comboBox3->SelectedItem)->ToString();
+			String^ category = (comboBox2->SelectedItem)->ToString();
 			sql_query = "select * from stock where product_category='" + category + "'";
 		}
 		else if (opt_selected == "Search by Quantity") {
@@ -854,12 +843,12 @@ private: System::Void pictureBox6_Click(System::Object^ sender, System::EventArg
 		cmd->Fill(dt);
 		if (dt->Rows->Count == 0) {
 			MessageBox::Show("No data found for given search");
-			con->Close();
 			return;
 		}
 		else {
 			bindingSource1->DataSource = dt;
 			dataGridView1->DataSource = bindingSource1;
+			MessageBox::Show("Database table fetched");
 			con->Close();
 		}
 	}
