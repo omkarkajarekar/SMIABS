@@ -1,5 +1,6 @@
 #pragma once
 #include "view_bill.h"
+#include "user_details.h"
 
 namespace SupermarketInventoryandBillingSystem {
 
@@ -20,6 +21,16 @@ namespace SupermarketInventoryandBillingSystem {
 		billing(void)
 		{
 			InitializeComponent();
+			timer1->Start();
+			//
+			//TODO: Add the constructor code here
+			//
+		}
+		billing(int userid)
+		{
+			InitializeComponent();
+			timer1->Start();
+			UserID =userid;
 			//
 			//TODO: Add the constructor code here
 			//
@@ -87,7 +98,9 @@ namespace SupermarketInventoryandBillingSystem {
 	private: System::Windows::Forms::Panel^ panel4;
 	private: System::Windows::Forms::Button^ button10;
 	private: System::Windows::Forms::PictureBox^ pictureBox2;
-	private: System::Windows::Forms::Button^ button11;
+
+	private: System::Windows::Forms::Timer^ timer1;
+
 
 
 	private: System::ComponentModel::IContainer^ components;
@@ -157,7 +170,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->panel4 = (gcnew System::Windows::Forms::Panel());
 			this->button10 = (gcnew System::Windows::Forms::Button());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
-			this->button11 = (gcnew System::Windows::Forms::Button());
+			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
 			this->groupBox1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->BeginInit();
@@ -562,6 +575,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->pictureBox5->Size = System::Drawing::Size(29, 28);
 			this->pictureBox5->TabIndex = 6;
 			this->pictureBox5->TabStop = false;
+			this->pictureBox5->Click += gcnew System::EventHandler(this, &billing::pictureBox5_Click);
 			// 
 			// pictureBox1
 			// 
@@ -586,7 +600,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->button7->Name = L"button7";
 			this->button7->Size = System::Drawing::Size(90, 28);
 			this->button7->TabIndex = 5;
-			this->button7->Text = L"Contact Us";
+			this->button7->Text = L"Account";
 			this->button7->UseVisualStyleBackColor = false;
 			// 
 			// panel3
@@ -596,7 +610,6 @@ namespace SupermarketInventoryandBillingSystem {
 			this->panel3->Controls->Add(this->groupBox5);
 			this->panel3->Controls->Add(this->groupBox4);
 			this->panel3->Controls->Add(this->groupBox3);
-			this->panel3->Controls->Add(this->button11);
 			this->panel3->Location = System::Drawing::Point(0, 60);
 			this->panel3->Name = L"panel3";
 			this->panel3->Size = System::Drawing::Size(175, 428);
@@ -737,24 +750,9 @@ namespace SupermarketInventoryandBillingSystem {
 			this->pictureBox2->TabIndex = 17;
 			this->pictureBox2->TabStop = false;
 			// 
-			// button11
+			// timer1
 			// 
-			this->button11->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(65)), static_cast<System::Int32>(static_cast<System::Byte>(65)),
-				static_cast<System::Int32>(static_cast<System::Byte>(65)));
-			this->button11->Dock = System::Windows::Forms::DockStyle::Bottom;
-			this->button11->FlatAppearance->BorderSize = 0;
-			this->button11->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Red;
-			this->button11->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Red;
-			this->button11->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button11->Font = (gcnew System::Drawing::Font(L"MS Reference Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->button11->ForeColor = System::Drawing::SystemColors::Window;
-			this->button11->Location = System::Drawing::Point(0, 374);
-			this->button11->Name = L"button11";
-			this->button11->Size = System::Drawing::Size(175, 54);
-			this->button11->TabIndex = 3;
-			this->button11->Text = L"Log Out";
-			this->button11->UseVisualStyleBackColor = false;
+			this->timer1->Tick += gcnew System::EventHandler(this, &billing::timer1_Tick);
 			// 
 			// billing
 			// 
@@ -802,7 +800,7 @@ namespace SupermarketInventoryandBillingSystem {
 		}
 #pragma endregion
 		double ProductID;
-		int other, Qty, support, db_qty,result,temp_total, temp_qty;
+		int UserID,other, Qty, support, db_qty,result,temp_total, temp_qty;
 		float UnitPrice, GST, Total, bill_Total, subtotal, TotalAmount;
 		String^ ProductName;
 		String^ Category;
@@ -970,14 +968,15 @@ namespace SupermarketInventoryandBillingSystem {
 		panel4->Visible = false;
 		panel7->Visible = false;
 		panel6->Visible = true;
-
+		groupBox3->Enabled = false;
+		groupBox5->Enabled = false;
 		groupBox3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(42)), static_cast<System::Int32>(static_cast<System::Byte>(42)),
 			static_cast<System::Int32>(static_cast<System::Byte>(42)));
 		groupBox5->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(42)), static_cast<System::Int32>(static_cast<System::Byte>(42)),
 			static_cast<System::Int32>(static_cast<System::Byte>(42)));
 		groupBox4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(65)), static_cast<System::Int32>(static_cast<System::Byte>(65)),
 			static_cast<System::Int32>(static_cast<System::Byte>(65)));
-		label12->Text = System::DateTime::Now.ToString();
+
 	}
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 	try {
@@ -1044,6 +1043,7 @@ private: System::Void textBox10_TextChanged(System::Object^ sender, System::Even
 }
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
 	view_bill^ module1 = gcnew view_bill();
+	//this->Hide();
 	module1->Visible = true;
 }
 private: System::Void button10_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -1082,6 +1082,12 @@ private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
 }
-
+private: System::Void timer1_Tick(System::Object^ sender, System::EventArgs^ e) {
+	label12->Text = System::DateTime::Now.ToString();
+}
+private: System::Void pictureBox5_Click(System::Object^ sender, System::EventArgs^ e) {
+	user_details^ user = gcnew user_details(UserID);
+	user->Show();
+}
 };
 }
