@@ -505,7 +505,7 @@ namespace SupermarketInventoryandBillingSystem {
 				L"Convenience goods", L"Shopping goods", L"Speciality goods",
 					L"Impulse goods", L"Emergancy goods", L"Raw materials", L"Installations", L"Accessory Equipments", L"Supplies", L"Services"
 			});
-			this->comboBox3->Location = System::Drawing::Point(201, 114);
+			this->comboBox3->Location = System::Drawing::Point(352, 68);
 			this->comboBox3->Name = L"comboBox3";
 			this->comboBox3->Size = System::Drawing::Size(128, 25);
 			this->comboBox3->TabIndex = 20;
@@ -515,7 +515,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->pictureBox6->BackColor = System::Drawing::Color::White;
 			this->pictureBox6->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox6.BackgroundImage")));
 			this->pictureBox6->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->pictureBox6->Location = System::Drawing::Point(475, 71);
+			this->pictureBox6->Location = System::Drawing::Point(486, 71);
 			this->pictureBox6->Name = L"pictureBox6";
 			this->pictureBox6->Size = System::Drawing::Size(24, 20);
 			this->pictureBox6->TabIndex = 19;
@@ -776,7 +776,7 @@ private: System::Void inventory_Load(System::Object^ sender, System::EventArgs^ 
 	panel6->Visible = false;
 	panel7->Visible = false;
 	comboBox3->Visible = false;
-	dataGridView1->Visible = false;
+	dataGridView1->Visible = true;
 
 	groupBox3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(65)), static_cast<System::Int32>(static_cast<System::Byte>(65)),
 		static_cast<System::Int32>(static_cast<System::Byte>(65)));
@@ -831,7 +831,7 @@ private: System::Void pictureBox6_Click(System::Object^ sender, System::EventArg
 			sql_query = "select * from stock where product_name='" + product_name + "'";
 		}
 		else if (opt_selected == "Search by Category") {
-			String^ category = (comboBox2->SelectedItem)->ToString();
+			String^ category = (comboBox3->SelectedItem)->ToString();
 			sql_query = "select * from stock where product_category='" + category + "'";
 		}
 		else if (opt_selected == "Search by Quantity") {
@@ -852,6 +852,7 @@ private: System::Void pictureBox6_Click(System::Object^ sender, System::EventArg
 		cmd->Fill(dt);
 		if (dt->Rows->Count == 0) {
 			MessageBox::Show("No data found for given search");
+			con->Close();
 			return;
 		}
 		else {
