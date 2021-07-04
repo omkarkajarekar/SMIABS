@@ -129,7 +129,6 @@
   <ItemGroup>
     <ClCompile Include="add_product.cpp" />
     <ClCompile Include="billing.cpp" />
-    <ClCompile Include="display_products.cpp" />
     <ClCompile Include="inventory.cpp" />
     <ClCompile Include="inventory_report.cpp" />
     <ClCompile Include="login.cpp" />
@@ -144,9 +143,6 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="billing.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="display_products.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="inventory.h">
@@ -180,9 +176,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="billing.resx">
       <DependentUpon>billing.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="display_products.resx">
-      <DependentUpon>display_products.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="inventory.resx">
       <DependentUpon>inventory.h</DependentUpon>

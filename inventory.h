@@ -30,6 +30,15 @@ namespace SupermarketInventoryandBillingSystem {
 			//TODO: Add the constructor code here
 			//
 		}
+		inventory(int userid)
+		{
+			InitializeComponent();
+			//timer1->Start();
+			UserID = userid;
+			//
+			//TODO: Add the constructor code here
+			//
+		}
 
 	protected:
 		/// <summary>
@@ -71,7 +80,7 @@ namespace SupermarketInventoryandBillingSystem {
 	private: System::Windows::Forms::Panel^ panel4;
 	private: System::Windows::Forms::Button^ button8;
 	private: System::Windows::Forms::PictureBox^ pictureBox2;
-	private: System::Windows::Forms::Button^ button9;
+
 	private: System::Windows::Forms::GroupBox^ groupBox1;
 
 	private: System::Windows::Forms::Button^ button3;
@@ -135,7 +144,6 @@ namespace SupermarketInventoryandBillingSystem {
 			this->panel4 = (gcnew System::Windows::Forms::Panel());
 			this->button8 = (gcnew System::Windows::Forms::Button());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
-			this->button9 = (gcnew System::Windows::Forms::Button());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->comboBox3 = (gcnew System::Windows::Forms::ComboBox());
 			this->pictureBox6 = (gcnew System::Windows::Forms::PictureBox());
@@ -307,7 +315,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(90, 28);
 			this->button4->TabIndex = 5;
-			this->button4->Text = L"Contact Us";
+			this->button4->Text = L"Account";
 			this->button4->UseVisualStyleBackColor = false;
 			// 
 			// panel3
@@ -317,7 +325,6 @@ namespace SupermarketInventoryandBillingSystem {
 			this->panel3->Controls->Add(this->groupBox5);
 			this->panel3->Controls->Add(this->groupBox4);
 			this->panel3->Controls->Add(this->groupBox3);
-			this->panel3->Controls->Add(this->button9);
 			this->panel3->Location = System::Drawing::Point(-1, 59);
 			this->panel3->Name = L"panel3";
 			this->panel3->Size = System::Drawing::Size(175, 428);
@@ -455,25 +462,6 @@ namespace SupermarketInventoryandBillingSystem {
 			this->pictureBox2->Size = System::Drawing::Size(42, 40);
 			this->pictureBox2->TabIndex = 17;
 			this->pictureBox2->TabStop = false;
-			// 
-			// button9
-			// 
-			this->button9->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(65)), static_cast<System::Int32>(static_cast<System::Byte>(65)),
-				static_cast<System::Int32>(static_cast<System::Byte>(65)));
-			this->button9->Dock = System::Windows::Forms::DockStyle::Bottom;
-			this->button9->FlatAppearance->BorderSize = 0;
-			this->button9->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Red;
-			this->button9->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Red;
-			this->button9->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button9->Font = (gcnew System::Drawing::Font(L"MS Reference Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->button9->ForeColor = System::Drawing::SystemColors::Window;
-			this->button9->Location = System::Drawing::Point(0, 374);
-			this->button9->Name = L"button9";
-			this->button9->Size = System::Drawing::Size(175, 54);
-			this->button9->TabIndex = 3;
-			this->button9->Text = L"Log Out";
-			this->button9->UseVisualStyleBackColor = false;
 			// 
 			// groupBox1
 			// 
@@ -685,6 +673,7 @@ namespace SupermarketInventoryandBillingSystem {
 
 		}
 #pragma endregion
+		int UserID;
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		add_product^ obj = gcnew add_product();
 		obj->Show();
@@ -780,7 +769,6 @@ private: System::Void inventory_Load(System::Object^ sender, System::EventArgs^ 
 	panel7->Visible = false;
 	comboBox3->Visible = false;
 	dataGridView1->Visible = true;
-
 	groupBox3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(65)), static_cast<System::Int32>(static_cast<System::Byte>(65)),
 		static_cast<System::Int32>(static_cast<System::Byte>(65)));
 	groupBox4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(42)), static_cast<System::Int32>(static_cast<System::Byte>(42)),
@@ -897,8 +885,8 @@ private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e
 	this->Hide();
 }
 private: System::Void pictureBox5_Click(System::Object^ sender, System::EventArgs^ e) {
-	user_details^ obj = gcnew user_details();
-	obj->Visible = true;
+	user_details^ user = gcnew user_details(UserID);
+	user->Show();
 }
 };
 }

@@ -72,7 +72,7 @@ namespace SupermarketInventoryandBillingSystem {
 	private: System::Windows::Forms::Button^ button4;
 	private: System::Windows::Forms::Button^ button5;
 	private: System::Windows::Forms::ComboBox^ comboBox1;
-	private: System::Windows::Forms::Button^ button6;
+
 	private: System::Windows::Forms::Panel^ panel3;
 	private: System::Windows::Forms::Button^ button7;
 	private: System::Windows::Forms::Label^ label14;
@@ -165,7 +165,6 @@ namespace SupermarketInventoryandBillingSystem {
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
-			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
 			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->panel2->SuspendLayout();
@@ -236,6 +235,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->textBox6->Name = L"textBox6";
 			this->textBox6->Size = System::Drawing::Size(137, 20);
 			this->textBox6->TabIndex = 24;
+			this->textBox6->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &login::textBox6_KeyPress);
 			// 
 			// label15
 			// 
@@ -245,9 +245,9 @@ namespace SupermarketInventoryandBillingSystem {
 			this->label15->ForeColor = System::Drawing::SystemColors::Window;
 			this->label15->Location = System::Drawing::Point(64, 257);
 			this->label15->Name = L"label15";
-			this->label15->Size = System::Drawing::Size(187, 20);
+			this->label15->Size = System::Drawing::Size(204, 20);
 			this->label15->TabIndex = 23;
-			this->label15->Text = L"What\'s your favourite city \?";
+			this->label15->Text = L"What\'s your first Contact no. \?";
 			// 
 			// textBox10
 			// 
@@ -345,6 +345,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->textBox9->Name = L"textBox9";
 			this->textBox9->Size = System::Drawing::Size(137, 20);
 			this->textBox9->TabIndex = 15;
+			this->textBox9->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &login::textBox9_KeyPress);
 			// 
 			// label13
 			// 
@@ -354,9 +355,9 @@ namespace SupermarketInventoryandBillingSystem {
 			this->label13->ForeColor = System::Drawing::SystemColors::Window;
 			this->label13->Location = System::Drawing::Point(43, 524);
 			this->label13->Name = L"label13";
-			this->label13->Size = System::Drawing::Size(187, 20);
+			this->label13->Size = System::Drawing::Size(204, 20);
 			this->label13->TabIndex = 14;
-			this->label13->Text = L"What\'s your favourite city \?";
+			this->label13->Text = L"What\'s your first Contact no. \?";
 			// 
 			// textBox8
 			// 
@@ -399,6 +400,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->textBox7->Name = L"textBox7";
 			this->textBox7->Size = System::Drawing::Size(137, 20);
 			this->textBox7->TabIndex = 10;
+			this->textBox7->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &login::textBox7_KeyPress);
 			// 
 			// label10
 			// 
@@ -474,6 +476,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(137, 20);
 			this->textBox3->TabIndex = 2;
+			this->textBox3->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &login::textBox3_KeyPress);
 			// 
 			// label6
 			// 
@@ -532,6 +535,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(224, 20);
 			this->textBox1->TabIndex = 2;
+			this->textBox1->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &login::textBox1_KeyPress);
 			// 
 			// label4
 			// 
@@ -554,6 +558,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(224, 20);
 			this->textBox2->TabIndex = 4;
+			this->textBox2->UseSystemPasswordChar = true;
 			// 
 			// button1
 			// 
@@ -632,23 +637,6 @@ namespace SupermarketInventoryandBillingSystem {
 			this->pictureBox1->TabIndex = 4;
 			this->pictureBox1->TabStop = false;
 			// 
-			// button6
-			// 
-			this->button6->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(236)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
-				static_cast<System::Int32>(static_cast<System::Byte>(122)));
-			this->button6->FlatAppearance->BorderSize = 0;
-			this->button6->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button6->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->button6->ForeColor = System::Drawing::SystemColors::Window;
-			this->button6->Location = System::Drawing::Point(100, 553);
-			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(99, 35);
-			this->button6->TabIndex = 8;
-			this->button6->Text = L"Test Page";
-			this->button6->UseVisualStyleBackColor = false;
-			this->button6->Click += gcnew System::EventHandler(this, &login::button6_Click);
-			// 
 			// panel3
 			// 
 			this->panel3->Controls->Add(this->button7);
@@ -680,7 +668,6 @@ namespace SupermarketInventoryandBillingSystem {
 			this->BackColor = System::Drawing::SystemColors::Window;
 			this->ClientSize = System::Drawing::Size(919, 640);
 			this->Controls->Add(this->panel3);
-			this->Controls->Add(this->button6);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->groupBox1);
@@ -765,6 +752,9 @@ namespace SupermarketInventoryandBillingSystem {
 		try
 		{
 			int result;
+			if (textBox1->Text == "") {
+				MessageBox::Show("Enter UserID");
+			}
 			int UserID = Int32::Parse(textBox1->Text);
 			String^ Password = textBox2->Text;
 			String^ DB_Password;
@@ -791,24 +781,34 @@ namespace SupermarketInventoryandBillingSystem {
 					DB_Password = dr->GetString(0);
 					Designation = dr->GetString(1);
 				}
+				con->Close();
 				if (Password == DB_Password) {
 					if (Designation == "Manager") {
-						inventory^ module1 = gcnew inventory();
+						inventory^ module1 = gcnew inventory(UserID);
+						module1->Visible = true;
+					}
+					else if (Designation == "inventory Executive") {
+						inventory^ module1 = gcnew inventory(UserID);
 						module1->Visible = true;
 					}
 					else if (Designation == "Sales Executive") {
-						billing^ module1 = gcnew billing();
+						billing^ module1 = gcnew billing(UserID);
 						module1->Visible = true;
 					}
 				}
 				else {
 					MessageBox::Show("Invalid Password");
 				}
-				con->Close();
+				
 			}
 		}
 		catch (Exception^ ex) {
-			MessageBox::Show(ex->Message);
+			if (System::Convert::ToString(ex->Message) == "Input string was not in a correct format.") {
+				
+			}
+			else {
+				MessageBox::Show(ex->Message);
+			}
 		}
 	}
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -854,6 +854,7 @@ namespace SupermarketInventoryandBillingSystem {
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
 	try
 	{
+		textBox2->UseSystemPasswordChar = false;
 		int result;
 		int UserID = Int32::Parse(textBox1->Text);
 		String^ SecurityQ1 = textBox10->Text;
@@ -938,12 +939,30 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 		}
 	}
 }
-private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
-	inventory_report^ module1 = gcnew inventory_report();
-	module1->Show();
-}
+
 private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
+}
+Void isdigit(System::Windows::Forms::KeyPressEventArgs^ e) {
+	char ch = e->KeyChar;
+	if (!Char::IsDigit(ch) && ch != 8 && ch != 46) {
+		e->Handled = true;
+	}
+}
+private: System::Void textBox1_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+	isdigit(e);
+}
+private: System::Void textBox6_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+	isdigit(e);
+}
+private: System::Void textBox9_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+	isdigit(e);
+}
+private: System::Void textBox3_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+	isdigit(e);
+}
+private: System::Void textBox7_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+	isdigit(e);
 }
 };
 }

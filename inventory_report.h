@@ -173,6 +173,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->chart2->Size = System::Drawing::Size(373, 294);
 			this->chart2->TabIndex = 5;
 			this->chart2->Text = L"Invest per Category";
+			this->chart2->Click += gcnew System::EventHandler(this, &inventory_report::chart2_Click);
 			// 
 			// label3
 			// 
@@ -346,5 +347,7 @@ namespace SupermarketInventoryandBillingSystem {
 			}
 		}
 	}
+private: System::Void chart2_Click(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }
