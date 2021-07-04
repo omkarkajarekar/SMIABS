@@ -764,9 +764,7 @@ private: System::Void inventory_Load(System::Object^ sender, System::EventArgs^ 
 	panel6->Visible = false;
 	panel7->Visible = false;
 	comboBox3->Visible = false;
-	dataGridView1->Visible = false;
-	groupBox4->Enabled = false;
-	groupBox5->Enabled = false;
+	
 
 	groupBox3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(65)), static_cast<System::Int32>(static_cast<System::Byte>(65)),
 		static_cast<System::Int32>(static_cast<System::Byte>(65)));
