@@ -3,7 +3,7 @@
 //#include "Dashboard.h"
 #include "inventory.h"
 #include "billing.h"
-#include "inventory_report.h"
+#include "manager_dashboard.h"
 
 namespace SupermarketInventoryandBillingSystem {
 
@@ -784,10 +784,10 @@ namespace SupermarketInventoryandBillingSystem {
 				con->Close();
 				if (Password == DB_Password) {
 					if (Designation == "Manager") {
-						inventory^ module1 = gcnew inventory(UserID);
+						manager_dashboard^ module1 = gcnew manager_dashboard(UserID);
 						module1->Visible = true;
 					}
-					else if (Designation == "inventory Executive") {
+					else if (Designation == "Inventory Executive") {
 						inventory^ module1 = gcnew inventory(UserID);
 						module1->Visible = true;
 					}

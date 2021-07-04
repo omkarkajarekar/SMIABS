@@ -127,18 +127,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="add_employee.cpp" />
     <ClCompile Include="add_product.cpp" />
     <ClCompile Include="billing.cpp" />
     <ClCompile Include="inventory.cpp" />
     <ClCompile Include="inventory_report.cpp" />
     <ClCompile Include="login.cpp" />
+    <ClCompile Include="manager_dashboard.cpp" />
     <ClCompile Include="MyForm1.cpp" />
     <ClCompile Include="sales_report.cpp" />
+    <ClCompile Include="update_employee.cpp" />
     <ClCompile Include="update_product.cpp" />
     <ClCompile Include="user_details.cpp" />
     <ClCompile Include="view_bill.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="add_employee.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="add_product.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -154,10 +160,16 @@
     <ClInclude Include="login.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="manager_dashboard.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="MyForm1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="sales_report.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="update_employee.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="update_product.h">
@@ -171,6 +183,9 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="add_employee.resx">
+      <DependentUpon>add_employee.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="add_product.resx">
       <DependentUpon>add_product.h</DependentUpon>
     </EmbeddedResource>
@@ -185,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="manager_dashboard.resx">
+      <DependentUpon>manager_dashboard.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm1.resx">
       <DependentUpon>MyForm1.h</DependentUpon>

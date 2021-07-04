@@ -45,6 +45,15 @@
     <ClCompile Include="user_details.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="manager_dashboard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="add_employee.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="update_employee.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm1.h">
@@ -75,6 +84,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="user_details.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="manager_dashboard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="add_employee.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="update_employee.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,7 +1,6 @@
 #pragma once
 #include "add_product.h"
 #include "update_product.h"
-#include "display_products.h"
 #include "inventory_report.h"
 #include "billing.h"
 #include "user_details.h"
@@ -575,7 +574,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->groupBox2->Controls->Add(this->textBox2);
 			this->groupBox2->Controls->Add(this->label4);
 			this->groupBox2->Controls->Add(this->label3);
-			this->groupBox2->Location = System::Drawing::Point(910, 92);
+			this->groupBox2->Location = System::Drawing::Point(916, 92);
 			this->groupBox2->Name = L"groupBox2";
 			this->groupBox2->Size = System::Drawing::Size(176, 258);
 			this->groupBox2->TabIndex = 16;
