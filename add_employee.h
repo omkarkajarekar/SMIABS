@@ -359,7 +359,7 @@ namespace SupermarketInventoryandBillingSystem {
 				static_cast<System::Byte>(0)));
 			this->label7->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(136)),
 				static_cast<System::Int32>(static_cast<System::Byte>(229)));
-			this->label7->Location = System::Drawing::Point(36, 39);
+			this->label7->Location = System::Drawing::Point(71, 44);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(195, 30);
 			this->label7->TabIndex = 22;

@@ -98,8 +98,5 @@
     <ClInclude Include="update_employee.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Main_access_window.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

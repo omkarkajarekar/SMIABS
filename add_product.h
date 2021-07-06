@@ -392,7 +392,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView1->Location = System::Drawing::Point(71, 332);
 			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->Size = System::Drawing::Size(965, 158);
+			this->dataGridView1->Size = System::Drawing::Size(965, 192);
 			this->dataGridView1->TabIndex = 25;
 			// 
 			// add_product
@@ -400,7 +400,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::Gainsboro;
-			this->ClientSize = System::Drawing::Size(1100, 500);
+			this->ClientSize = System::Drawing::Size(1100, 550);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->label9);
 			this->Controls->Add(this->groupBox1);

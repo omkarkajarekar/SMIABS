@@ -163,14 +163,14 @@ namespace SupermarketInventoryandBillingSystem {
 			this->chart1->ChartAreas->Add(chartArea1);
 			legend1->Name = L"Legend1";
 			this->chart1->Legends->Add(legend1);
-			this->chart1->Location = System::Drawing::Point(142, 232);
+			this->chart1->Location = System::Drawing::Point(121, 244);
 			this->chart1->Name = L"chart1";
 			series1->ChartArea = L"ChartArea1";
 			series1->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Pie;
 			series1->Legend = L"Legend1";
 			series1->Name = L"Series1";
 			this->chart1->Series->Add(series1);
-			this->chart1->Size = System::Drawing::Size(328, 241);
+			this->chart1->Size = System::Drawing::Size(346, 269);
 			this->chart1->TabIndex = 4;
 			this->chart1->Text = L"Categories";
 			// 
@@ -185,7 +185,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->chart2->ChartAreas->Add(chartArea2);
 			legend2->Name = L"Legend1";
 			this->chart2->Legends->Add(legend2);
-			this->chart2->Location = System::Drawing::Point(694, 232);
+			this->chart2->Location = System::Drawing::Point(609, 244);
 			this->chart2->Name = L"chart2";
 			series2->ChartArea = L"ChartArea1";
 			series2->IsValueShownAsLabel = true;
@@ -194,7 +194,7 @@ namespace SupermarketInventoryandBillingSystem {
 			series2->Name = L"Series1";
 			series2->ShadowOffset = 1;
 			this->chart2->Series->Add(series2);
-			this->chart2->Size = System::Drawing::Size(336, 241);
+			this->chart2->Size = System::Drawing::Size(357, 283);
 			this->chart2->TabIndex = 5;
 			this->chart2->Text = L"Invest per Category";
 			this->chart2->Click += gcnew System::EventHandler(this, &inventory_report::chart2_Click);
@@ -372,7 +372,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::Gainsboro;
-			this->ClientSize = System::Drawing::Size(1100, 500);
+			this->ClientSize = System::Drawing::Size(1100, 550);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->label9);
 			this->Controls->Add(this->groupBox1);

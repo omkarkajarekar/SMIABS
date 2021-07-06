@@ -4,7 +4,6 @@
 #include "inventory.h"
 #include "billing.h"
 #include "manager_dashboard.h"
-#include "Main_access_window.h"
 
 namespace SupermarketInventoryandBillingSystem {
 
@@ -785,9 +784,6 @@ namespace SupermarketInventoryandBillingSystem {
 				}
 				con->Close();
 				if (Password == DB_Password) {
-					Main_access_window^ module1 = gcnew Main_access_window(UserID);
-					module1->ShowDialog();
-					/*
 					if (Designation == "Manager") {
 						manager_dashboard^ module1 = gcnew manager_dashboard(UserID);
 						module1->Visible = true;
@@ -800,7 +796,6 @@ namespace SupermarketInventoryandBillingSystem {
 						billing^ module1 = gcnew billing(UserID);
 						module1->Visible = true;
 					}
-					*/
 				}
 				else {
 					MessageBox::Show("Invalid Password");

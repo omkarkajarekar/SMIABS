@@ -161,9 +161,6 @@
     <ClInclude Include="login.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="Main_access_window.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
     <ClInclude Include="manager_dashboard.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -204,9 +201,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Main_access_window.resx">
-      <DependentUpon>Main_access_window.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="manager_dashboard.resx">
       <DependentUpon>manager_dashboard.h</DependentUpon>
