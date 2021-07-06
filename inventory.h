@@ -28,12 +28,16 @@ namespace SupermarketInventoryandBillingSystem {
 			//
 			//TODO: Add the constructor code here
 			//
+			this->StartPosition = FormStartPosition::CenterScreen;
+
 		}
 		inventory(int userid)
 		{
 			InitializeComponent();
 			//timer1->Start();
 			UserID = userid;
+			this->StartPosition = FormStartPosition::CenterScreen;
+
 			//
 			//TODO: Add the constructor code here
 			//
@@ -229,7 +233,7 @@ namespace SupermarketInventoryandBillingSystem {
 			// 
 			this->dataGridView1->BackgroundColor = System::Drawing::SystemColors::Control;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(197, 262);
+			this->dataGridView1->Location = System::Drawing::Point(197, 283);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersVisible = false;
 			this->dataGridView1->Size = System::Drawing::Size(693, 173);
@@ -252,7 +256,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->button5->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button5->Location = System::Drawing::Point(1063, -1);
+			this->button5->Location = System::Drawing::Point(1063, 0);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(40, 24);
 			this->button5->TabIndex = 1;
@@ -485,14 +489,14 @@ namespace SupermarketInventoryandBillingSystem {
 			this->comboBox3->BackColor = System::Drawing::SystemColors::Window;
 			this->comboBox3->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->comboBox3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(189)), static_cast<System::Int32>(static_cast<System::Byte>(189)),
-				static_cast<System::Int32>(static_cast<System::Byte>(189)));
+			this->comboBox3->ForeColor = System::Drawing::SystemColors::WindowText;
 			this->comboBox3->FormattingEnabled = true;
-			this->comboBox3->Items->AddRange(gcnew cli::array< System::Object^  >(10) {
-				L"Convenience goods", L"Shopping goods", L"Speciality goods",
-					L"Impulse goods", L"Emergancy goods", L"Raw materials", L"Installations", L"Accessory Equipments", L"Supplies", L"Services"
+			this->comboBox3->Items->AddRange(gcnew cli::array< System::Object^  >(13) {
+				L"Grocery", L"Dairy and Beverages", L"Packaged food",
+					L"Fruits and Vegetables", L"Home and Kitchen", L"Personal care", L"Baby and Kids", L"Appliances", L"Footwear", L"Clothing", L"Cloting accessories",
+					L"Stationary", L"Specials"
 			});
-			this->comboBox3->Location = System::Drawing::Point(201, 114);
+			this->comboBox3->Location = System::Drawing::Point(352, 67);
 			this->comboBox3->Name = L"comboBox3";
 			this->comboBox3->Size = System::Drawing::Size(128, 25);
 			this->comboBox3->TabIndex = 20;
@@ -502,18 +506,18 @@ namespace SupermarketInventoryandBillingSystem {
 			this->pictureBox6->BackColor = System::Drawing::Color::White;
 			this->pictureBox6->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox6.BackgroundImage")));
 			this->pictureBox6->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->pictureBox6->Location = System::Drawing::Point(475, 71);
+			this->pictureBox6->Location = System::Drawing::Point(486, 67);
 			this->pictureBox6->Name = L"pictureBox6";
-			this->pictureBox6->Size = System::Drawing::Size(24, 20);
+			this->pictureBox6->Size = System::Drawing::Size(24, 25);
 			this->pictureBox6->TabIndex = 19;
 			this->pictureBox6->TabStop = false;
 			this->pictureBox6->Click += gcnew System::EventHandler(this, &inventory::pictureBox6_Click);
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(364, 71);
+			this->textBox1->Location = System::Drawing::Point(352, 71);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(116, 20);
+			this->textBox1->Size = System::Drawing::Size(128, 20);
 			this->textBox1->TabIndex = 18;
 			// 
 			// comboBox2
@@ -537,8 +541,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->comboBox1->BackColor = System::Drawing::SystemColors::Window;
 			this->comboBox1->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->comboBox1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(189)), static_cast<System::Int32>(static_cast<System::Byte>(189)),
-				static_cast<System::Int32>(static_cast<System::Byte>(189)));
+			this->comboBox1->ForeColor = System::Drawing::SystemColors::WindowText;
 			this->comboBox1->FormattingEnabled = true;
 			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Display All", L"In Stock", L"Running out of stock" });
 			this->comboBox1->Location = System::Drawing::Point(27, 67);
@@ -582,6 +585,7 @@ namespace SupermarketInventoryandBillingSystem {
 			// 
 			// textBox3
 			// 
+			this->textBox3->Enabled = false;
 			this->textBox3->Location = System::Drawing::Point(21, 210);
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(123, 20);
@@ -600,6 +604,7 @@ namespace SupermarketInventoryandBillingSystem {
 			// 
 			// textBox2
 			// 
+			this->textBox2->Enabled = false;
 			this->textBox2->Location = System::Drawing::Point(21, 122);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(123, 20);
@@ -633,9 +638,8 @@ namespace SupermarketInventoryandBillingSystem {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->ClientSize = System::Drawing::Size(1104, 485);
+			this->BackColor = System::Drawing::Color::Gainsboro;
+			this->ClientSize = System::Drawing::Size(1100, 500);
 			this->Controls->Add(this->groupBox2);
 			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->panel3);
@@ -764,6 +768,23 @@ private: System::Void inventory_Load(System::Object^ sender, System::EventArgs^ 
 	panel6->Visible = false;
 	panel7->Visible = false;
 	comboBox3->Visible = false;
+
+	try {
+		String^ constr = "Server=127.0.0.1;Uid=root;Pwd=;Database=inventory";
+		MySqlConnection^ con = gcnew MySqlConnection(constr);
+		MySqlCommand^ cmd = gcnew MySqlCommand("select count(product_id),count(distinct(product_category)) from stock", con);
+		con->Open();
+		MySqlDataReader^ dr = cmd->ExecuteReader();
+		while (dr->Read()) {
+			textBox2->Text = dr->GetString(0);
+			textBox3->Text = dr->GetString(1);
+		}
+		con->Close();
+	}
+	catch (Exception^ ex) {
+		MessageBox::Show(ex->Message);
+	}
+	
 	
 
 	groupBox3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(65)), static_cast<System::Int32>(static_cast<System::Byte>(65)),
@@ -819,7 +840,7 @@ private: System::Void pictureBox6_Click(System::Object^ sender, System::EventArg
 			sql_query = "select * from stock where product_name='" + product_name + "'";
 		}
 		else if (opt_selected == "Search by Category") {
-			String^ category = (comboBox2->SelectedItem)->ToString();
+			String^ category = (comboBox3->SelectedItem)->ToString();
 			sql_query = "select * from stock where product_category='" + category + "'";
 		}
 		else if (opt_selected == "Search by Quantity") {

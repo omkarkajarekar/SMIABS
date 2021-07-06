@@ -133,6 +133,7 @@
     <ClCompile Include="inventory.cpp" />
     <ClCompile Include="inventory_report.cpp" />
     <ClCompile Include="login.cpp" />
+    <ClCompile Include="Main_access_window.cpp" />
     <ClCompile Include="manager_dashboard.cpp" />
     <ClCompile Include="MyForm1.cpp" />
     <ClCompile Include="sales_report.cpp" />
@@ -158,6 +159,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="login.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Main_access_window.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="manager_dashboard.h">
@@ -200,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main_access_window.resx">
+      <DependentUpon>Main_access_window.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="manager_dashboard.resx">
       <DependentUpon>manager_dashboard.h</DependentUpon>

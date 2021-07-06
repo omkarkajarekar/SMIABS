@@ -34,6 +34,7 @@ namespace SupermarketInventoryandBillingSystem {
 			//
 			//TODO: Add the constructor code here
 			//
+			this->StartPosition = FormStartPosition::CenterScreen;
 		}
 
 	protected:
@@ -218,7 +219,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->button5->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button5->Location = System::Drawing::Point(1063, -1);
+			this->button5->Location = System::Drawing::Point(1060, 0);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(40, 24);
 			this->button5->TabIndex = 1;
@@ -617,9 +618,8 @@ namespace SupermarketInventoryandBillingSystem {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->ClientSize = System::Drawing::Size(1104, 485);
+			this->BackColor = System::Drawing::Color::Gainsboro;
+			this->ClientSize = System::Drawing::Size(1100, 500);
 			this->Controls->Add(this->groupBox2);
 			this->Controls->Add(this->groupBox6);
 			this->Controls->Add(this->groupBox1);

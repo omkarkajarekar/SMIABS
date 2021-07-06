@@ -22,6 +22,7 @@ namespace SupermarketInventoryandBillingSystem {
 			//
 			//TODO: Add the constructor code here
 			//
+			this->StartPosition = FormStartPosition::CenterScreen;
 		}
 
 	protected:
@@ -52,6 +53,13 @@ namespace SupermarketInventoryandBillingSystem {
 	private: System::Windows::Forms::TextBox^ textBox6;
 	private: System::Windows::Forms::Label^ label7;
 	private: System::Windows::Forms::Label^ label8;
+	private: System::Windows::Forms::GroupBox^ groupBox1;
+	private: System::Windows::Forms::Label^ label9;
+	private: System::Windows::Forms::Panel^ panel1;
+	private: System::Windows::Forms::PictureBox^ back_pictureBox;
+	private: System::Windows::Forms::PictureBox^ close_pictureBox;
+
+
 
 
 
@@ -76,6 +84,7 @@ namespace SupermarketInventoryandBillingSystem {
 			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea2 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
 			System::Windows::Forms::DataVisualization::Charting::Legend^ legend2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
 			System::Windows::Forms::DataVisualization::Charting::Series^ series2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(inventory_report::typeid));
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
@@ -92,42 +101,57 @@ namespace SupermarketInventoryandBillingSystem {
 			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->label9 = (gcnew System::Windows::Forms::Label());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->close_pictureBox = (gcnew System::Windows::Forms::PictureBox());
+			this->back_pictureBox = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart2))->BeginInit();
+			this->groupBox1->SuspendLayout();
+			this->panel1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->close_pictureBox))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->back_pictureBox))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(35, 27);
+			this->label1->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->Location = System::Drawing::Point(30, 42);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(76, 13);
+			this->label1->Size = System::Drawing::Size(91, 17);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Total Products";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(322, 27);
+			this->label2->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label2->Location = System::Drawing::Point(339, 42);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(86, 13);
+			this->label2->Size = System::Drawing::Size(102, 17);
 			this->label2->TabIndex = 1;
 			this->label2->Text = L"Total Investment";
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(149, 24);
+			this->textBox1->Enabled = false;
+			this->textBox1->Location = System::Drawing::Point(144, 39);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->ReadOnly = true;
-			this->textBox1->Size = System::Drawing::Size(100, 20);
+			this->textBox1->Size = System::Drawing::Size(131, 20);
 			this->textBox1->TabIndex = 2;
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(436, 24);
+			this->textBox2->Enabled = false;
+			this->textBox2->Location = System::Drawing::Point(469, 39);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->ReadOnly = true;
-			this->textBox2->Size = System::Drawing::Size(100, 20);
+			this->textBox2->Size = System::Drawing::Size(131, 20);
 			this->textBox2->TabIndex = 3;
 			// 
 			// chart1
@@ -139,14 +163,14 @@ namespace SupermarketInventoryandBillingSystem {
 			this->chart1->ChartAreas->Add(chartArea1);
 			legend1->Name = L"Legend1";
 			this->chart1->Legends->Add(legend1);
-			this->chart1->Location = System::Drawing::Point(42, 128);
+			this->chart1->Location = System::Drawing::Point(142, 232);
 			this->chart1->Name = L"chart1";
 			series1->ChartArea = L"ChartArea1";
 			series1->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Pie;
 			series1->Legend = L"Legend1";
 			series1->Name = L"Series1";
 			this->chart1->Series->Add(series1);
-			this->chart1->Size = System::Drawing::Size(373, 294);
+			this->chart1->Size = System::Drawing::Size(328, 241);
 			this->chart1->TabIndex = 4;
 			this->chart1->Text = L"Categories";
 			// 
@@ -161,7 +185,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->chart2->ChartAreas->Add(chartArea2);
 			legend2->Name = L"Legend1";
 			this->chart2->Legends->Add(legend2);
-			this->chart2->Location = System::Drawing::Point(492, 128);
+			this->chart2->Location = System::Drawing::Point(694, 232);
 			this->chart2->Name = L"chart2";
 			series2->ChartArea = L"ChartArea1";
 			series2->IsValueShownAsLabel = true;
@@ -170,7 +194,7 @@ namespace SupermarketInventoryandBillingSystem {
 			series2->Name = L"Series1";
 			series2->ShadowOffset = 1;
 			this->chart2->Series->Add(series2);
-			this->chart2->Size = System::Drawing::Size(373, 294);
+			this->chart2->Size = System::Drawing::Size(336, 241);
 			this->chart2->TabIndex = 5;
 			this->chart2->Text = L"Invest per Category";
 			this->chart2->Click += gcnew System::EventHandler(this, &inventory_report::chart2_Click);
@@ -178,7 +202,7 @@ namespace SupermarketInventoryandBillingSystem {
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(118, 112);
+			this->label3->Location = System::Drawing::Point(118, 136);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(163, 13);
 			this->label3->TabIndex = 6;
@@ -187,7 +211,7 @@ namespace SupermarketInventoryandBillingSystem {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(585, 112);
+			this->label4->Location = System::Drawing::Point(585, 136);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(138, 13);
 			this->label4->TabIndex = 7;
@@ -195,98 +219,178 @@ namespace SupermarketInventoryandBillingSystem {
 			// 
 			// textBox3
 			// 
-			this->textBox3->Location = System::Drawing::Point(755, 61);
+			this->textBox3->Enabled = false;
+			this->textBox3->Location = System::Drawing::Point(838, 76);
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->ReadOnly = true;
-			this->textBox3->Size = System::Drawing::Size(100, 20);
+			this->textBox3->Size = System::Drawing::Size(131, 20);
 			this->textBox3->TabIndex = 11;
 			// 
 			// textBox4
 			// 
-			this->textBox4->Location = System::Drawing::Point(755, 25);
+			this->textBox4->Enabled = false;
+			this->textBox4->Location = System::Drawing::Point(838, 40);
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->ReadOnly = true;
-			this->textBox4->Size = System::Drawing::Size(100, 20);
+			this->textBox4->Size = System::Drawing::Size(131, 20);
 			this->textBox4->TabIndex = 10;
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(596, 64);
+			this->label5->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label5->Location = System::Drawing::Point(660, 79);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(138, 13);
+			this->label5->Size = System::Drawing::Size(169, 17);
 			this->label5->TabIndex = 9;
 			this->label5->Text = L"Estimated Profit Percentage";
 			// 
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(596, 28);
+			this->label6->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label6->Location = System::Drawing::Point(660, 43);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(80, 13);
+			this->label6->Size = System::Drawing::Size(100, 17);
 			this->label6->TabIndex = 8;
 			this->label6->Text = L"Estimated Profit";
 			// 
 			// textBox5
 			// 
-			this->textBox5->Location = System::Drawing::Point(436, 61);
+			this->textBox5->Enabled = false;
+			this->textBox5->Location = System::Drawing::Point(469, 76);
 			this->textBox5->Name = L"textBox5";
 			this->textBox5->ReadOnly = true;
-			this->textBox5->Size = System::Drawing::Size(100, 20);
+			this->textBox5->Size = System::Drawing::Size(131, 20);
 			this->textBox5->TabIndex = 15;
 			// 
 			// textBox6
 			// 
-			this->textBox6->Location = System::Drawing::Point(149, 61);
+			this->textBox6->Enabled = false;
+			this->textBox6->Location = System::Drawing::Point(144, 76);
 			this->textBox6->Name = L"textBox6";
 			this->textBox6->ReadOnly = true;
-			this->textBox6->Size = System::Drawing::Size(100, 20);
+			this->textBox6->Size = System::Drawing::Size(131, 20);
 			this->textBox6->TabIndex = 14;
 			// 
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(321, 61);
+			this->label7->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label7->Location = System::Drawing::Point(338, 76);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(103, 13);
+			this->label7->Size = System::Drawing::Size(124, 17);
 			this->label7->TabIndex = 13;
 			this->label7->Text = L"Estimated Sell Value";
 			// 
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(35, 61);
+			this->label8->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label8->Location = System::Drawing::Point(30, 76);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(84, 13);
+			this->label8->Size = System::Drawing::Size(103, 17);
 			this->label8->TabIndex = 12;
 			this->label8->Text = L"Total Categories";
+			// 
+			// groupBox1
+			// 
+			this->groupBox1->BackColor = System::Drawing::Color::White;
+			this->groupBox1->Controls->Add(this->label6);
+			this->groupBox1->Controls->Add(this->textBox5);
+			this->groupBox1->Controls->Add(this->label1);
+			this->groupBox1->Controls->Add(this->textBox6);
+			this->groupBox1->Controls->Add(this->label2);
+			this->groupBox1->Controls->Add(this->label7);
+			this->groupBox1->Controls->Add(this->textBox1);
+			this->groupBox1->Controls->Add(this->label8);
+			this->groupBox1->Controls->Add(this->textBox2);
+			this->groupBox1->Controls->Add(this->textBox3);
+			this->groupBox1->Controls->Add(this->label5);
+			this->groupBox1->Controls->Add(this->textBox4);
+			this->groupBox1->Location = System::Drawing::Point(42, 85);
+			this->groupBox1->Name = L"groupBox1";
+			this->groupBox1->Size = System::Drawing::Size(1001, 127);
+			this->groupBox1->TabIndex = 16;
+			this->groupBox1->TabStop = false;
+			// 
+			// label9
+			// 
+			this->label9->AutoSize = true;
+			this->label9->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label9->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(136)),
+				static_cast<System::Int32>(static_cast<System::Byte>(229)));
+			this->label9->Location = System::Drawing::Point(37, 43);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(193, 30);
+			this->label9->TabIndex = 17;
+			this->label9->Text = L"Inventory Overview";
+			// 
+			// panel1
+			// 
+			this->panel1->BackColor = System::Drawing::Color::White;
+			this->panel1->Controls->Add(this->close_pictureBox);
+			this->panel1->Controls->Add(this->back_pictureBox);
+			this->panel1->Location = System::Drawing::Point(0, 1);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(1099, 36);
+			this->panel1->TabIndex = 18;
+			// 
+			// close_pictureBox
+			// 
+			this->close_pictureBox->BackColor = System::Drawing::Color::White;
+			this->close_pictureBox->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"close_pictureBox.BackgroundImage")));
+			this->close_pictureBox->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->close_pictureBox->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"close_pictureBox.InitialImage")));
+			this->close_pictureBox->Location = System::Drawing::Point(1064, 0);
+			this->close_pictureBox->Name = L"close_pictureBox";
+			this->close_pictureBox->Size = System::Drawing::Size(35, 36);
+			this->close_pictureBox->TabIndex = 1;
+			this->close_pictureBox->TabStop = false;
+			this->close_pictureBox->Click += gcnew System::EventHandler(this, &inventory_report::pictureBox2_Click);
+			// 
+			// back_pictureBox
+			// 
+			this->back_pictureBox->BackColor = System::Drawing::Color::White;
+			this->back_pictureBox->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"back_pictureBox.BackgroundImage")));
+			this->back_pictureBox->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->back_pictureBox->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"back_pictureBox.InitialImage")));
+			this->back_pictureBox->Location = System::Drawing::Point(0, 0);
+			this->back_pictureBox->Name = L"back_pictureBox";
+			this->back_pictureBox->Size = System::Drawing::Size(35, 36);
+			this->back_pictureBox->TabIndex = 0;
+			this->back_pictureBox->TabStop = false;
+			this->back_pictureBox->Click += gcnew System::EventHandler(this, &inventory_report::back_pictureBox_Click);
 			// 
 			// inventory_report
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(908, 434);
-			this->Controls->Add(this->textBox5);
-			this->Controls->Add(this->textBox6);
-			this->Controls->Add(this->label7);
-			this->Controls->Add(this->label8);
-			this->Controls->Add(this->textBox3);
-			this->Controls->Add(this->textBox4);
-			this->Controls->Add(this->label5);
-			this->Controls->Add(this->label6);
+			this->BackColor = System::Drawing::Color::Gainsboro;
+			this->ClientSize = System::Drawing::Size(1100, 500);
+			this->Controls->Add(this->panel1);
+			this->Controls->Add(this->label9);
+			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->chart2);
 			this->Controls->Add(this->chart1);
-			this->Controls->Add(this->textBox2);
-			this->Controls->Add(this->textBox1);
-			this->Controls->Add(this->label2);
-			this->Controls->Add(this->label1);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"inventory_report";
 			this->Text = L"inventory_report";
 			this->Load += gcnew System::EventHandler(this, &inventory_report::inventory_report_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart2))->EndInit();
+			this->groupBox1->ResumeLayout(false);
+			this->groupBox1->PerformLayout();
+			this->panel1->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->close_pictureBox))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->back_pictureBox))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -348,6 +452,12 @@ namespace SupermarketInventoryandBillingSystem {
 		}
 	}
 private: System::Void chart2_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+}
+private: System::Void back_pictureBox_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
 }
 };
 }
