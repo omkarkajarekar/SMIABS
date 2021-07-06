@@ -559,6 +559,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->comboBox3->Name = L"comboBox3";
 			this->comboBox3->Size = System::Drawing::Size(162, 25);
 			this->comboBox3->TabIndex = 20;
+			this->comboBox3->SelectedIndexChanged += gcnew System::EventHandler(this, &inventory::comboBox3_SelectedIndexChanged);
 			// 
 			// textBox1
 			// 
@@ -883,7 +884,7 @@ private: System::Void pictureBox6_Click(System::Object^ sender, System::EventArg
 			sql_query = "select * from stock where product_name='" + product_name + "'";
 		}
 		else if (opt_selected == "Search by Category") {
-			String^ category = (comboBox3->SelectedItem)->ToString();
+			String^ category = comboBox3->Text;//(comboBox3->SelectedItem)->ToString();
 			sql_query = "select * from stock where product_category='" + category + "'";
 		}
 		else if (opt_selected == "Search by Quantity") {
@@ -950,6 +951,8 @@ private: System::Void button6_Click_2(System::Object^ sender, System::EventArgs^
 }
 private: System::Void timer1_Tick(System::Object^ sender, System::EventArgs^ e) {
 	timer_label->Text = System::DateTime::Now.ToString();
+}
+private: System::Void comboBox3_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

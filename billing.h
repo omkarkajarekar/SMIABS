@@ -920,6 +920,7 @@ namespace SupermarketInventoryandBillingSystem {
 		textBox8->Visible = true;
 		textBox9->Visible = true;
 		textBox10->Visible = true;
+		button2->Visible = false;
 		try {
 			String^ constr = "Server=127.0.0.1;Uid=root;Pwd=;Database=bill";
 			MySqlConnection^ con = gcnew MySqlConnection(constr);
