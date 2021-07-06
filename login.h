@@ -27,6 +27,7 @@ namespace SupermarketInventoryandBillingSystem {
 			//
 			//TODO: Add the constructor code here
 			//
+			this->StartPosition = FormStartPosition::CenterScreen;
 		}
 
 	protected:
@@ -50,28 +51,28 @@ namespace SupermarketInventoryandBillingSystem {
 	private: System::Windows::Forms::TextBox^ textBox2;
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::GroupBox^ groupBox1;
-	private: System::Windows::Forms::Label^ label5;
-	private: System::Windows::Forms::PictureBox^ pictureBox1;
-	private: System::Windows::Forms::Label^ label6;
-	private: System::Windows::Forms::TextBox^ textBox3;
-	private: System::Windows::Forms::TextBox^ textBox4;
-	private: System::Windows::Forms::Label^ label7;
-	private: System::Windows::Forms::TextBox^ textBox5;
-	private: System::Windows::Forms::Label^ label8;
 
-	private: System::Windows::Forms::Label^ label9;
-	private: System::Windows::Forms::TextBox^ textBox7;
-	private: System::Windows::Forms::Label^ label10;
-	private: System::Windows::Forms::Label^ label11;
-	private: System::Windows::Forms::Label^ label12;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
+
+
+
+
+
+
+
+
+
+
+
+
 	private: System::Windows::Forms::TextBox^ textBox9;
 	private: System::Windows::Forms::Label^ label13;
-	private: System::Windows::Forms::TextBox^ textBox8;
+
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Button^ button3;
-	private: System::Windows::Forms::Button^ button4;
+
 	private: System::Windows::Forms::Button^ button5;
-	private: System::Windows::Forms::ComboBox^ comboBox1;
+
 
 	private: System::Windows::Forms::Panel^ panel3;
 	private: System::Windows::Forms::Button^ button7;
@@ -81,7 +82,14 @@ namespace SupermarketInventoryandBillingSystem {
 	private: System::Windows::Forms::Label^ label15;
 	private: System::Windows::Forms::TextBox^ textBox10;
 	private: System::Windows::Forms::Label^ label16;
-	private: System::Windows::Forms::Label^ label17;
+
+	private: System::Windows::Forms::Panel^ panel4;
+	private: System::Windows::Forms::Label^ title_label;
+
+	private: System::Windows::Forms::Panel^ panel5;
+	private: System::Windows::Forms::Label^ createdby_label;
+
+	private: System::Windows::Forms::Label^ name_display_label;
 
 
 
@@ -131,30 +139,20 @@ namespace SupermarketInventoryandBillingSystem {
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
-			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
-			this->label15 = (gcnew System::Windows::Forms::Label());
-			this->textBox10 = (gcnew System::Windows::Forms::TextBox());
-			this->label16 = (gcnew System::Windows::Forms::Label());
-			this->label17 = (gcnew System::Windows::Forms::Label());
+			this->panel5 = (gcnew System::Windows::Forms::Panel());
+			this->name_display_label = (gcnew System::Windows::Forms::Label());
+			this->createdby_label = (gcnew System::Windows::Forms::Label());
+			this->title_label = (gcnew System::Windows::Forms::Label());
+			this->panel4 = (gcnew System::Windows::Forms::Panel());
 			this->label14 = (gcnew System::Windows::Forms::Label());
-			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
+			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
+			this->label16 = (gcnew System::Windows::Forms::Label());
+			this->textBox10 = (gcnew System::Windows::Forms::TextBox());
+			this->label15 = (gcnew System::Windows::Forms::Label());
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->textBox9 = (gcnew System::Windows::Forms::TextBox());
 			this->label13 = (gcnew System::Windows::Forms::Label());
-			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
-			this->label12 = (gcnew System::Windows::Forms::Label());
-			this->label11 = (gcnew System::Windows::Forms::Label());
-			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
-			this->label10 = (gcnew System::Windows::Forms::Label());
-			this->label9 = (gcnew System::Windows::Forms::Label());
-			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
-			this->label8 = (gcnew System::Windows::Forms::Label());
-			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
-			this->label7 = (gcnew System::Windows::Forms::Label());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
-			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
@@ -162,12 +160,13 @@ namespace SupermarketInventoryandBillingSystem {
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
-			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
 			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->panel2->SuspendLayout();
+			this->panel5->SuspendLayout();
+			this->panel4->SuspendLayout();
 			this->groupBox1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->panel3->SuspendLayout();
@@ -198,65 +197,97 @@ namespace SupermarketInventoryandBillingSystem {
 			// 
 			this->panel2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
 				static_cast<System::Int32>(static_cast<System::Byte>(66)));
-			this->panel2->Controls->Add(this->textBox6);
-			this->panel2->Controls->Add(this->label15);
-			this->panel2->Controls->Add(this->textBox10);
-			this->panel2->Controls->Add(this->label16);
-			this->panel2->Controls->Add(this->label17);
-			this->panel2->Controls->Add(this->label14);
-			this->panel2->Controls->Add(this->comboBox1);
-			this->panel2->Controls->Add(this->button5);
+			this->panel2->Controls->Add(this->panel5);
+			this->panel2->Controls->Add(this->title_label);
+			this->panel2->Controls->Add(this->panel4);
 			this->panel2->Controls->Add(this->button3);
 			this->panel2->Controls->Add(this->textBox9);
 			this->panel2->Controls->Add(this->label13);
-			this->panel2->Controls->Add(this->textBox8);
-			this->panel2->Controls->Add(this->label12);
-			this->panel2->Controls->Add(this->label11);
-			this->panel2->Controls->Add(this->textBox7);
-			this->panel2->Controls->Add(this->label10);
-			this->panel2->Controls->Add(this->label9);
-			this->panel2->Controls->Add(this->textBox5);
-			this->panel2->Controls->Add(this->label8);
-			this->panel2->Controls->Add(this->textBox4);
-			this->panel2->Controls->Add(this->label7);
-			this->panel2->Controls->Add(this->textBox3);
-			this->panel2->Controls->Add(this->label6);
-			this->panel2->Controls->Add(this->label5);
 			this->panel2->Location = System::Drawing::Point(460, 27);
 			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(458, 616);
+			this->panel2->Size = System::Drawing::Size(458, 550);
 			this->panel2->TabIndex = 3;
+			// 
+			// panel5
+			// 
+			this->panel5->Controls->Add(this->name_display_label);
+			this->panel5->Controls->Add(this->createdby_label);
+			this->panel5->Location = System::Drawing::Point(47, 118);
+			this->panel5->Name = L"panel5";
+			this->panel5->Size = System::Drawing::Size(397, 159);
+			this->panel5->TabIndex = 18;
+			// 
+			// name_display_label
+			// 
+			this->name_display_label->AutoSize = true;
+			this->name_display_label->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->name_display_label->ForeColor = System::Drawing::Color::White;
+			this->name_display_label->Location = System::Drawing::Point(158, 28);
+			this->name_display_label->Name = L"name_display_label";
+			this->name_display_label->Size = System::Drawing::Size(215, 90);
+			this->name_display_label->TabIndex = 1;
+			this->name_display_label->Text = L"1. Omkar Kajrekar\n2. prathamesh Jadhav\n3. Bhavya Oswal";
+			// 
+			// createdby_label
+			// 
+			this->createdby_label->AutoSize = true;
+			this->createdby_label->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->createdby_label->ForeColor = System::Drawing::Color::White;
+			this->createdby_label->Location = System::Drawing::Point(3, 26);
+			this->createdby_label->Name = L"createdby_label";
+			this->createdby_label->Size = System::Drawing::Size(136, 32);
+			this->createdby_label->TabIndex = 0;
+			this->createdby_label->Text = L"Created By:";
+			this->createdby_label->Click += gcnew System::EventHandler(this, &login::label6_Click);
+			// 
+			// title_label
+			// 
+			this->title_label->AutoSize = true;
+			this->title_label->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 24, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->title_label->ForeColor = System::Drawing::Color::White;
+			this->title_label->Location = System::Drawing::Point(39, 3);
+			this->title_label->Name = L"title_label";
+			this->title_label->Size = System::Drawing::Size(381, 90);
+			this->title_label->TabIndex = 17;
+			this->title_label->Text = L"Inventory Management \nand Billing System";
+			// 
+			// panel4
+			// 
+			this->panel4->Controls->Add(this->label14);
+			this->panel4->Controls->Add(this->textBox6);
+			this->panel4->Controls->Add(this->label16);
+			this->panel4->Controls->Add(this->textBox10);
+			this->panel4->Controls->Add(this->label15);
+			this->panel4->Controls->Add(this->button5);
+			this->panel4->Location = System::Drawing::Point(32, 127);
+			this->panel4->Name = L"panel4";
+			this->panel4->Size = System::Drawing::Size(399, 365);
+			this->panel4->TabIndex = 10;
+			this->panel4->Visible = false;
+			// 
+			// label14
+			// 
+			this->label14->Font = (gcnew System::Drawing::Font(L"Impact", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label14->ForeColor = System::Drawing::SystemColors::Window;
+			this->label14->Location = System::Drawing::Point(12, 28);
+			this->label14->Name = L"label14";
+			this->label14->Size = System::Drawing::Size(210, 44);
+			this->label14->TabIndex = 19;
+			this->label14->Text = L"Forgot  Password";
 			// 
 			// textBox6
 			// 
 			this->textBox6->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->textBox6->Location = System::Drawing::Point(288, 257);
+			this->textBox6->Location = System::Drawing::Point(236, 192);
 			this->textBox6->Name = L"textBox6";
 			this->textBox6->Size = System::Drawing::Size(137, 20);
 			this->textBox6->TabIndex = 24;
 			this->textBox6->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &login::textBox6_KeyPress);
-			// 
-			// label15
-			// 
-			this->label15->AutoSize = true;
-			this->label15->Font = (gcnew System::Drawing::Font(L"Impact", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label15->ForeColor = System::Drawing::SystemColors::Window;
-			this->label15->Location = System::Drawing::Point(64, 257);
-			this->label15->Name = L"label15";
-			this->label15->Size = System::Drawing::Size(204, 20);
-			this->label15->TabIndex = 23;
-			this->label15->Text = L"What\'s your first Contact no. \?";
-			// 
-			// textBox10
-			// 
-			this->textBox10->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->textBox10->Location = System::Drawing::Point(288, 207);
-			this->textBox10->Name = L"textBox10";
-			this->textBox10->Size = System::Drawing::Size(137, 20);
-			this->textBox10->TabIndex = 22;
 			// 
 			// label16
 			// 
@@ -264,43 +295,33 @@ namespace SupermarketInventoryandBillingSystem {
 			this->label16->Font = (gcnew System::Drawing::Font(L"Impact", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label16->ForeColor = System::Drawing::SystemColors::Window;
-			this->label16->Location = System::Drawing::Point(64, 207);
+			this->label16->Location = System::Drawing::Point(14, 120);
 			this->label16->Name = L"label16";
 			this->label16->Size = System::Drawing::Size(197, 20);
 			this->label16->TabIndex = 21;
 			this->label16->Text = L"What\'s your birth city name \?";
+			this->label16->Click += gcnew System::EventHandler(this, &login::label16_Click);
 			// 
-			// label17
+			// textBox10
 			// 
-			this->label17->AutoSize = true;
-			this->label17->Font = (gcnew System::Drawing::Font(L"Impact", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->textBox10->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->textBox10->Location = System::Drawing::Point(236, 120);
+			this->textBox10->Name = L"textBox10";
+			this->textBox10->Size = System::Drawing::Size(137, 20);
+			this->textBox10->TabIndex = 22;
+			// 
+			// label15
+			// 
+			this->label15->AutoSize = true;
+			this->label15->Font = (gcnew System::Drawing::Font(L"Impact", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label17->ForeColor = System::Drawing::SystemColors::Window;
-			this->label17->Location = System::Drawing::Point(64, 155);
-			this->label17->Name = L"label17";
-			this->label17->Size = System::Drawing::Size(135, 20);
-			this->label17->TabIndex = 20;
-			this->label17->Text = L"Security Questions:";
-			// 
-			// label14
-			// 
-			this->label14->Font = (gcnew System::Drawing::Font(L"Impact", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label14->ForeColor = System::Drawing::SystemColors::Window;
-			this->label14->Location = System::Drawing::Point(62, 79);
-			this->label14->Name = L"label14";
-			this->label14->Size = System::Drawing::Size(210, 44);
-			this->label14->TabIndex = 19;
-			this->label14->Text = L"Forgot  Password";
-			// 
-			// comboBox1
-			// 
-			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Manager", L"Sales Executive" });
-			this->comboBox1->Location = System::Drawing::Point(267, 287);
-			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(137, 21);
-			this->comboBox1->TabIndex = 18;
+			this->label15->ForeColor = System::Drawing::SystemColors::Window;
+			this->label15->Location = System::Drawing::Point(14, 192);
+			this->label15->Name = L"label15";
+			this->label15->Size = System::Drawing::Size(204, 20);
+			this->label15->TabIndex = 23;
+			this->label15->Text = L"What\'s your first Contact no. \?";
 			// 
 			// button5
 			// 
@@ -311,7 +332,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->button5->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button5->ForeColor = System::Drawing::SystemColors::Window;
-			this->button5->Location = System::Drawing::Point(68, 328);
+			this->button5->Location = System::Drawing::Point(27, 239);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(115, 35);
 			this->button5->TabIndex = 17;
@@ -335,7 +356,6 @@ namespace SupermarketInventoryandBillingSystem {
 			this->button3->TabIndex = 16;
 			this->button3->Text = L"Sign Up";
 			this->button3->UseVisualStyleBackColor = false;
-			this->button3->Click += gcnew System::EventHandler(this, &login::button3_Click);
 			// 
 			// textBox9
 			// 
@@ -358,148 +378,6 @@ namespace SupermarketInventoryandBillingSystem {
 			this->label13->Size = System::Drawing::Size(204, 20);
 			this->label13->TabIndex = 14;
 			this->label13->Text = L"What\'s your first Contact no. \?";
-			// 
-			// textBox8
-			// 
-			this->textBox8->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->textBox8->Location = System::Drawing::Point(267, 474);
-			this->textBox8->Name = L"textBox8";
-			this->textBox8->Size = System::Drawing::Size(137, 20);
-			this->textBox8->TabIndex = 13;
-			// 
-			// label12
-			// 
-			this->label12->AutoSize = true;
-			this->label12->Font = (gcnew System::Drawing::Font(L"Impact", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label12->ForeColor = System::Drawing::SystemColors::Window;
-			this->label12->Location = System::Drawing::Point(43, 474);
-			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(197, 20);
-			this->label12->TabIndex = 12;
-			this->label12->Text = L"What\'s your birth city name \?";
-			// 
-			// label11
-			// 
-			this->label11->AutoSize = true;
-			this->label11->Font = (gcnew System::Drawing::Font(L"Impact", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label11->ForeColor = System::Drawing::SystemColors::Window;
-			this->label11->Location = System::Drawing::Point(43, 422);
-			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(135, 20);
-			this->label11->TabIndex = 11;
-			this->label11->Text = L"Security Questions:";
-			// 
-			// textBox7
-			// 
-			this->textBox7->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->textBox7->Location = System::Drawing::Point(46, 371);
-			this->textBox7->Name = L"textBox7";
-			this->textBox7->Size = System::Drawing::Size(137, 20);
-			this->textBox7->TabIndex = 10;
-			this->textBox7->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &login::textBox7_KeyPress);
-			// 
-			// label10
-			// 
-			this->label10->AutoSize = true;
-			this->label10->Font = (gcnew System::Drawing::Font(L"Impact", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label10->ForeColor = System::Drawing::SystemColors::Window;
-			this->label10->Location = System::Drawing::Point(43, 334);
-			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(103, 20);
-			this->label10->TabIndex = 9;
-			this->label10->Text = L"Phone Number";
-			// 
-			// label9
-			// 
-			this->label9->AutoSize = true;
-			this->label9->Font = (gcnew System::Drawing::Font(L"Impact", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label9->ForeColor = System::Drawing::SystemColors::Window;
-			this->label9->Location = System::Drawing::Point(263, 242);
-			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(87, 20);
-			this->label9->TabIndex = 7;
-			this->label9->Text = L"Designation";
-			// 
-			// textBox5
-			// 
-			this->textBox5->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->textBox5->Location = System::Drawing::Point(46, 289);
-			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(137, 20);
-			this->textBox5->TabIndex = 6;
-			// 
-			// label8
-			// 
-			this->label8->AutoSize = true;
-			this->label8->Font = (gcnew System::Drawing::Font(L"Impact", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label8->ForeColor = System::Drawing::SystemColors::Window;
-			this->label8->Location = System::Drawing::Point(43, 245);
-			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(46, 20);
-			this->label8->TabIndex = 5;
-			this->label8->Text = L"Name";
-			// 
-			// textBox4
-			// 
-			this->textBox4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->textBox4->Location = System::Drawing::Point(267, 197);
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(137, 20);
-			this->textBox4->TabIndex = 4;
-			// 
-			// label7
-			// 
-			this->label7->AutoSize = true;
-			this->label7->Font = (gcnew System::Drawing::Font(L"Impact", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label7->ForeColor = System::Drawing::SystemColors::Window;
-			this->label7->Location = System::Drawing::Point(263, 157);
-			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(73, 20);
-			this->label7->TabIndex = 3;
-			this->label7->Text = L"Password";
-			// 
-			// textBox3
-			// 
-			this->textBox3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->textBox3->Location = System::Drawing::Point(46, 197);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(137, 20);
-			this->textBox3->TabIndex = 2;
-			this->textBox3->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &login::textBox3_KeyPress);
-			// 
-			// label6
-			// 
-			this->label6->AutoSize = true;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Impact", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label6->ForeColor = System::Drawing::SystemColors::Window;
-			this->label6->Location = System::Drawing::Point(43, 157);
-			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(57, 20);
-			this->label6->TabIndex = 1;
-			this->label6->Text = L"User ID";
-			// 
-			// label5
-			// 
-			this->label5->Font = (gcnew System::Drawing::Font(L"Impact", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label5->ForeColor = System::Drawing::SystemColors::Window;
-			this->label5->Location = System::Drawing::Point(40, 79);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(159, 44);
-			this->label5->TabIndex = 0;
-			this->label5->Text = L"Sign up Here";
 			// 
 			// label2
 			// 
@@ -580,7 +458,6 @@ namespace SupermarketInventoryandBillingSystem {
 			// groupBox1
 			// 
 			this->groupBox1->BackColor = System::Drawing::Color::White;
-			this->groupBox1->Controls->Add(this->button4);
 			this->groupBox1->Controls->Add(this->button2);
 			this->groupBox1->Controls->Add(this->button1);
 			this->groupBox1->Controls->Add(this->textBox2);
@@ -594,23 +471,6 @@ namespace SupermarketInventoryandBillingSystem {
 			this->groupBox1->TabIndex = 2;
 			this->groupBox1->TabStop = false;
 			// 
-			// button4
-			// 
-			this->button4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(236)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
-				static_cast<System::Int32>(static_cast<System::Byte>(122)));
-			this->button4->FlatAppearance->BorderSize = 0;
-			this->button4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button4->Font = (gcnew System::Drawing::Font(L"Calibri", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->button4->ForeColor = System::Drawing::SystemColors::Window;
-			this->button4->Location = System::Drawing::Point(35, 319);
-			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(99, 35);
-			this->button4->TabIndex = 7;
-			this->button4->Text = L"Sign Up";
-			this->button4->UseVisualStyleBackColor = false;
-			this->button4->Click += gcnew System::EventHandler(this, &login::button4_Click);
-			// 
 			// button2
 			// 
 			this->button2->FlatAppearance->BorderSize = 0;
@@ -619,7 +479,7 @@ namespace SupermarketInventoryandBillingSystem {
 				static_cast<System::Byte>(0)));
 			this->button2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(84)), static_cast<System::Int32>(static_cast<System::Byte>(110)),
 				static_cast<System::Int32>(static_cast<System::Byte>(122)));
-			this->button2->Location = System::Drawing::Point(25, 284);
+			this->button2->Location = System::Drawing::Point(35, 286);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(136, 29);
 			this->button2->TabIndex = 6;
@@ -666,7 +526,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Window;
-			this->ClientSize = System::Drawing::Size(919, 640);
+			this->ClientSize = System::Drawing::Size(919, 550);
 			this->Controls->Add(this->panel3);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->panel2);
@@ -680,6 +540,10 @@ namespace SupermarketInventoryandBillingSystem {
 			this->Load += gcnew System::EventHandler(this, &login::login_Load);
 			this->panel2->ResumeLayout(false);
 			this->panel2->PerformLayout();
+			this->panel5->ResumeLayout(false);
+			this->panel5->PerformLayout();
+			this->panel4->ResumeLayout(false);
+			this->panel4->PerformLayout();
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
@@ -691,60 +555,34 @@ namespace SupermarketInventoryandBillingSystem {
 #pragma endregion
 
 	private: System::Void login_Load(System::Object^ sender, System::EventArgs^ e) {
-		label5->Visible = false;
-		label6->Visible = false;
-		label7->Visible = false;
-		label8->Visible = false;
-		label9->Visible = false;
-		label10->Visible = false;
-		label11->Visible = false;
-		label12->Visible = false;
 		label13->Visible = false;
 		label14->Visible = false;
 		label15->Visible = false;
 		label16->Visible = false;
-		label17->Visible = false;
+		
 
 		button3->Visible = false;
 		button5->Visible = false;
 
-		textBox3->Visible = false;
-		textBox4->Visible = false;
-		textBox5->Visible = false;
+		
 		textBox6->Visible = false;
-		comboBox1->Visible = false;
-		textBox7->Visible = false;
-		textBox8->Visible = false;
+		
 		textBox9->Visible = false;
 		textBox10->Visible = false;
 	}
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
-		label5->Visible = true;
-		label6->Visible = true;
-		label7->Visible = true;
-		label8->Visible = true;
-		label9->Visible = true;
-		label10->Visible = true;
-		label11->Visible = true;
-		label12->Visible = true;
 		label13->Visible = true;
 		label14->Visible = false;
 		label15->Visible = false;
 		label16->Visible = false;
-		label17->Visible = false;
-
+		
 		button2->Visible = true;
 		button3->Visible = true;
-		button4->Visible = false;
 		button5->Visible = false;
 
-		textBox3->Visible = true;
-		textBox4->Visible = true;
-		textBox5->Visible = true;
-		comboBox1->Visible = true;
+		
 		textBox6->Visible = false;
-		textBox7->Visible = true;
-		textBox8->Visible = true;
+		
 		textBox9->Visible = true;
 		textBox10->Visible = false;
 	}
@@ -813,39 +651,24 @@ namespace SupermarketInventoryandBillingSystem {
 	}
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 		
-			
-			label12->Visible = false;;
+			panel4->Visible = true;
+			panel5->Visible = false;
 			label13->Visible = false;
-			textBox8->Visible = false;
 			textBox9->Visible = false;;
 			button5->Visible = true;
 			button2->Visible = false;
 			button3->Visible = false;
-			button4->Visible = true;
-
-			label5->Visible = false;
-			label6->Visible = false;
-			label7->Visible = false;
-			label8->Visible = false;
-			label9->Visible = false;
-			label10->Visible = false;
-			label11->Visible = false;
-			label12->Visible = false;
+			
 			label13->Visible = false;
 
-			textBox3->Visible = false;
-			textBox4->Visible = false;
-			textBox5->Visible = false;
-			textBox7->Visible = false;
-			textBox8->Visible = false;
+			
 			textBox9->Visible = false;
 
-			comboBox1->Visible = false;
+			
 			label14->Visible = true;
 
 			label15->Visible = true;
 			label16->Visible = true;
-			label17->Visible = true;
 
 			textBox6->Visible = true;
 			textBox10->Visible = true;
@@ -910,35 +733,7 @@ private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e
 		}
 	}
 }
-private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-	try
-	{
-		int UserID = Int32::Parse(textBox3->Text);
-		String^ Password = textBox4->Text;
-		String^ Name = textBox5->Text;
-		String^ Designation = (comboBox1->SelectedItem)->ToString();
-		String^ Contact = textBox7->Text;
-		String^ SecurityQ1 = textBox8->Text;
-		String^ SecurityQ2 = textBox9->Text;
 
-		String^ constr = "Server=127.0.0.1;Uid=root;Pwd=;Database=users";
-		MySqlConnection^ con = gcnew MySqlConnection(constr);
-		MySqlCommand^ cmd = gcnew MySqlCommand("insert into employee values(" + UserID + ",'" + Password + "','" + Name + "','" + Designation + "','" + Contact + "','" + SecurityQ1 + "','" + SecurityQ2 + "')", con);
-		MySqlDataReader^ dr;
-		con->Open();
-		dr = cmd->ExecuteReader();
-		MessageBox::Show("User Created");
-		con->Close();
-	}
-	catch (Exception^ ex) {
-		if (System::Convert::ToString(ex->Message) == "Input string was not in a correct format.") {
-			MessageBox::Show("Enter all Fields properly");
-		}
-		else {
-			MessageBox::Show(ex->Message);
-		}
-	}
-}
 
 private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
@@ -963,6 +758,10 @@ private: System::Void textBox3_KeyPress(System::Object^ sender, System::Windows:
 }
 private: System::Void textBox7_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
 	isdigit(e);
+}
+private: System::Void label16_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void label6_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

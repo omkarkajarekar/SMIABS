@@ -28,12 +28,17 @@ namespace SupermarketInventoryandBillingSystem {
 			//
 			//TODO: Add the constructor code here
 			//
+			this->StartPosition = FormStartPosition::CenterScreen;
+			timer1->Start();
+
 		}
 		inventory(int userid)
 		{
 			InitializeComponent();
 			//timer1->Start();
 			UserID = userid;
+			this->StartPosition = FormStartPosition::CenterScreen;
+			timer1->Start();
 			//
 			//TODO: Add the constructor code here
 			//
@@ -68,13 +73,13 @@ namespace SupermarketInventoryandBillingSystem {
 	private: System::Windows::Forms::Button^ button4;
 	private: System::Windows::Forms::Button^ button5;
 	private: System::Windows::Forms::Panel^ panel3;
-	private: System::Windows::Forms::GroupBox^ groupBox5;
-	private: System::Windows::Forms::PictureBox^ pictureBox4;
-	private: System::Windows::Forms::Button^ button6;
-	private: System::Windows::Forms::GroupBox^ groupBox4;
-	private: System::Windows::Forms::Panel^ panel6;
-	private: System::Windows::Forms::PictureBox^ pictureBox3;
-	private: System::Windows::Forms::Button^ button7;
+
+
+
+
+
+
+
 	private: System::Windows::Forms::GroupBox^ groupBox3;
 	private: System::Windows::Forms::Panel^ panel4;
 	private: System::Windows::Forms::Button^ button8;
@@ -93,9 +98,22 @@ namespace SupermarketInventoryandBillingSystem {
 	private: System::Windows::Forms::TextBox^ textBox2;
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::Panel^ panel7;
+
 	private: System::Windows::Forms::ComboBox^ comboBox3;
 	private: System::Windows::Forms::BindingSource^ bindingSource2;
+	private: System::Windows::Forms::GroupBox^ groupBox5;
+	private: System::Windows::Forms::GroupBox^ groupBox4;
+	private: System::Windows::Forms::PictureBox^ pictureBox3;
+	private: System::Windows::Forms::TextBox^ textBox4;
+	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::GroupBox^ groupBox6;
+	private: System::Windows::Forms::Panel^ panel6;
+	private: System::Windows::Forms::Button^ button6;
+	private: System::Windows::Forms::PictureBox^ pictureBox4;
+	private: System::Windows::Forms::Timer^ timer1;
+	private: System::Windows::Forms::Label^ timer_label;
+
+
 
 	private: System::ComponentModel::IContainer^ components;
 
@@ -124,6 +142,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->bindingSource1 = (gcnew System::Windows::Forms::BindingSource(this->components));
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->panel5 = (gcnew System::Windows::Forms::Panel());
@@ -131,46 +150,49 @@ namespace SupermarketInventoryandBillingSystem {
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
-			this->groupBox5 = (gcnew System::Windows::Forms::GroupBox());
-			this->panel7 = (gcnew System::Windows::Forms::Panel());
-			this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
-			this->button6 = (gcnew System::Windows::Forms::Button());
-			this->groupBox4 = (gcnew System::Windows::Forms::GroupBox());
+			this->groupBox6 = (gcnew System::Windows::Forms::GroupBox());
 			this->panel6 = (gcnew System::Windows::Forms::Panel());
-			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
-			this->button7 = (gcnew System::Windows::Forms::Button());
+			this->button6 = (gcnew System::Windows::Forms::Button());
+			this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
 			this->groupBox3 = (gcnew System::Windows::Forms::GroupBox());
 			this->panel4 = (gcnew System::Windows::Forms::Panel());
 			this->button8 = (gcnew System::Windows::Forms::Button());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
-			this->comboBox3 = (gcnew System::Windows::Forms::ComboBox());
-			this->pictureBox6 = (gcnew System::Windows::Forms::PictureBox());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
+			this->groupBox5 = (gcnew System::Windows::Forms::GroupBox());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
+			this->groupBox4 = (gcnew System::Windows::Forms::GroupBox());
+			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
+			this->pictureBox6 = (gcnew System::Windows::Forms::PictureBox());
+			this->comboBox3 = (gcnew System::Windows::Forms::ComboBox());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
+			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
+			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->bindingSource2 = (gcnew System::Windows::Forms::BindingSource(this->components));
+			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
+			this->timer_label = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->BeginInit();
 			this->panel1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			this->panel2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->panel3->SuspendLayout();
-			this->groupBox5->SuspendLayout();
+			this->groupBox6->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->BeginInit();
-			this->groupBox4->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			this->groupBox3->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->groupBox1->SuspendLayout();
+			this->groupBox5->SuspendLayout();
+			this->groupBox4->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->BeginInit();
 			this->groupBox2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource2))->BeginInit();
@@ -186,9 +208,9 @@ namespace SupermarketInventoryandBillingSystem {
 				static_cast<System::Byte>(0)));
 			this->button1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(136)),
 				static_cast<System::Int32>(static_cast<System::Byte>(229)));
-			this->button1->Location = System::Drawing::Point(569, 19);
+			this->button1->Location = System::Drawing::Point(545, 19);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(108, 29);
+			this->button1->Size = System::Drawing::Size(125, 40);
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"ADD PRODUCT";
 			this->button1->UseVisualStyleBackColor = false;
@@ -197,13 +219,13 @@ namespace SupermarketInventoryandBillingSystem {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Franklin Gothic Medium Cond", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label1->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(233)), static_cast<System::Int32>(static_cast<System::Byte>(30)),
 				static_cast<System::Int32>(static_cast<System::Byte>(99)));
-			this->label1->Location = System::Drawing::Point(22, 13);
+			this->label1->Location = System::Drawing::Point(191, 63);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(95, 30);
+			this->label1->Size = System::Drawing::Size(127, 32);
 			this->label1->TabIndex = 1;
 			this->label1->Text = L"Inventory";
 			// 
@@ -217,9 +239,9 @@ namespace SupermarketInventoryandBillingSystem {
 				static_cast<System::Byte>(0)));
 			this->button2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(23)),
 				static_cast<System::Int32>(static_cast<System::Byte>(68)));
-			this->button2->Location = System::Drawing::Point(569, 63);
+			this->button2->Location = System::Drawing::Point(545, 80);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(108, 29);
+			this->button2->Size = System::Drawing::Size(125, 40);
 			this->button2->TabIndex = 2;
 			this->button2->Text = L"DELETE";
 			this->button2->UseVisualStyleBackColor = false;
@@ -229,20 +251,32 @@ namespace SupermarketInventoryandBillingSystem {
 			// 
 			this->dataGridView1->BackgroundColor = System::Drawing::SystemColors::Control;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(197, 262);
+			this->dataGridView1->Location = System::Drawing::Point(197, 327);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersVisible = false;
-			this->dataGridView1->Size = System::Drawing::Size(693, 173);
+			this->dataGridView1->Size = System::Drawing::Size(693, 191);
 			this->dataGridView1->TabIndex = 5;
 			// 
 			// panel1
 			// 
 			this->panel1->BackColor = System::Drawing::SystemColors::Window;
+			this->panel1->Controls->Add(this->pictureBox3);
 			this->panel1->Controls->Add(this->button5);
 			this->panel1->Location = System::Drawing::Point(0, 0);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(1185, 26);
 			this->panel1->TabIndex = 8;
+			// 
+			// pictureBox3
+			// 
+			this->pictureBox3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.BackgroundImage")));
+			this->pictureBox3->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->pictureBox3->Location = System::Drawing::Point(-1, 0);
+			this->pictureBox3->Name = L"pictureBox3";
+			this->pictureBox3->Size = System::Drawing::Size(26, 26);
+			this->pictureBox3->TabIndex = 17;
+			this->pictureBox3->TabStop = false;
+			this->pictureBox3->Click += gcnew System::EventHandler(this, &inventory::pictureBox3_Click);
 			// 
 			// button5
 			// 
@@ -252,9 +286,9 @@ namespace SupermarketInventoryandBillingSystem {
 			this->button5->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button5->Location = System::Drawing::Point(1063, -1);
+			this->button5->Location = System::Drawing::Point(1059, 0);
 			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(40, 24);
+			this->button5->Size = System::Drawing::Size(40, 26);
 			this->button5->TabIndex = 1;
 			this->button5->Text = L"X";
 			this->button5->UseVisualStyleBackColor = true;
@@ -321,42 +355,34 @@ namespace SupermarketInventoryandBillingSystem {
 			// 
 			this->panel3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(42)), static_cast<System::Int32>(static_cast<System::Byte>(42)),
 				static_cast<System::Int32>(static_cast<System::Byte>(42)));
-			this->panel3->Controls->Add(this->groupBox5);
-			this->panel3->Controls->Add(this->groupBox4);
+			this->panel3->Controls->Add(this->groupBox6);
 			this->panel3->Controls->Add(this->groupBox3);
 			this->panel3->Location = System::Drawing::Point(-1, 59);
 			this->panel3->Name = L"panel3";
-			this->panel3->Size = System::Drawing::Size(175, 428);
+			this->panel3->Size = System::Drawing::Size(175, 459);
 			this->panel3->TabIndex = 10;
 			// 
-			// groupBox5
+			// groupBox6
 			// 
-			this->groupBox5->Controls->Add(this->panel7);
-			this->groupBox5->Controls->Add(this->pictureBox4);
-			this->groupBox5->Controls->Add(this->button6);
-			this->groupBox5->Location = System::Drawing::Point(1, 175);
-			this->groupBox5->Name = L"groupBox5";
-			this->groupBox5->Size = System::Drawing::Size(159, 78);
-			this->groupBox5->TabIndex = 18;
-			this->groupBox5->TabStop = false;
+			this->groupBox6->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(65)), static_cast<System::Int32>(static_cast<System::Byte>(65)),
+				static_cast<System::Int32>(static_cast<System::Byte>(65)));
+			this->groupBox6->Controls->Add(this->panel6);
+			this->groupBox6->Controls->Add(this->button6);
+			this->groupBox6->Controls->Add(this->pictureBox4);
+			this->groupBox6->Location = System::Drawing::Point(3, 101);
+			this->groupBox6->Name = L"groupBox6";
+			this->groupBox6->Size = System::Drawing::Size(160, 78);
+			this->groupBox6->TabIndex = 18;
+			this->groupBox6->TabStop = false;
 			// 
-			// panel7
+			// panel6
 			// 
-			this->panel7->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(245)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
+			this->panel6->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(245)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(87)));
-			this->panel7->Location = System::Drawing::Point(0, 12);
-			this->panel7->Name = L"panel7";
-			this->panel7->Size = System::Drawing::Size(5, 60);
-			this->panel7->TabIndex = 20;
-			// 
-			// pictureBox4
-			// 
-			this->pictureBox4->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox4.BackgroundImage")));
-			this->pictureBox4->Location = System::Drawing::Point(21, 28);
-			this->pictureBox4->Name = L"pictureBox4";
-			this->pictureBox4->Size = System::Drawing::Size(41, 40);
-			this->pictureBox4->TabIndex = 17;
-			this->pictureBox4->TabStop = false;
+			this->panel6->Location = System::Drawing::Point(0, 13);
+			this->panel6->Name = L"panel6";
+			this->panel6->Size = System::Drawing::Size(5, 60);
+			this->panel6->TabIndex = 17;
 			// 
 			// button6
 			// 
@@ -365,57 +391,23 @@ namespace SupermarketInventoryandBillingSystem {
 			this->button6->Font = (gcnew System::Drawing::Font(L"Malgun Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button6->ForeColor = System::Drawing::Color::White;
-			this->button6->Location = System::Drawing::Point(65, 27);
+			this->button6->Location = System::Drawing::Point(60, 23);
 			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(88, 40);
-			this->button6->TabIndex = 18;
-			this->button6->Text = L"Reports";
+			this->button6->Size = System::Drawing::Size(94, 40);
+			this->button6->TabIndex = 17;
+			this->button6->Text = L"Report";
+			this->button6->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->button6->UseVisualStyleBackColor = true;
-			this->button6->Click += gcnew System::EventHandler(this, &inventory::button6_Click);
+			this->button6->Click += gcnew System::EventHandler(this, &inventory::button6_Click_2);
 			// 
-			// groupBox4
+			// pictureBox4
 			// 
-			this->groupBox4->Controls->Add(this->panel6);
-			this->groupBox4->Controls->Add(this->pictureBox3);
-			this->groupBox4->Controls->Add(this->button7);
-			this->groupBox4->Location = System::Drawing::Point(0, 94);
-			this->groupBox4->Name = L"groupBox4";
-			this->groupBox4->Size = System::Drawing::Size(160, 78);
-			this->groupBox4->TabIndex = 17;
-			this->groupBox4->TabStop = false;
-			// 
-			// panel6
-			// 
-			this->panel6->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(245)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
-				static_cast<System::Int32>(static_cast<System::Byte>(87)));
-			this->panel6->Location = System::Drawing::Point(0, 12);
-			this->panel6->Name = L"panel6";
-			this->panel6->Size = System::Drawing::Size(5, 60);
-			this->panel6->TabIndex = 19;
-			// 
-			// pictureBox3
-			// 
-			this->pictureBox3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.BackgroundImage")));
-			this->pictureBox3->Location = System::Drawing::Point(13, 27);
-			this->pictureBox3->Name = L"pictureBox3";
-			this->pictureBox3->Size = System::Drawing::Size(52, 44);
-			this->pictureBox3->TabIndex = 17;
-			this->pictureBox3->TabStop = false;
-			// 
-			// button7
-			// 
-			this->button7->FlatAppearance->BorderSize = 0;
-			this->button7->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button7->Font = (gcnew System::Drawing::Font(L"Malgun Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->button7->ForeColor = System::Drawing::Color::White;
-			this->button7->Location = System::Drawing::Point(66, 27);
-			this->button7->Name = L"button7";
-			this->button7->Size = System::Drawing::Size(88, 44);
-			this->button7->TabIndex = 18;
-			this->button7->Text = L"Billing";
-			this->button7->UseVisualStyleBackColor = true;
-			this->button7->Click += gcnew System::EventHandler(this, &inventory::button7_Click);
+			this->pictureBox4->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox4.BackgroundImage")));
+			this->pictureBox4->Location = System::Drawing::Point(13, 23);
+			this->pictureBox4->Name = L"pictureBox4";
+			this->pictureBox4->Size = System::Drawing::Size(42, 40);
+			this->pictureBox4->TabIndex = 17;
+			this->pictureBox4->TabStop = false;
 			// 
 			// groupBox3
 			// 
@@ -451,12 +443,13 @@ namespace SupermarketInventoryandBillingSystem {
 			this->button8->Size = System::Drawing::Size(94, 40);
 			this->button8->TabIndex = 17;
 			this->button8->Text = L"Inventory";
+			this->button8->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->button8->UseVisualStyleBackColor = true;
 			// 
 			// pictureBox2
 			// 
 			this->pictureBox2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.BackgroundImage")));
-			this->pictureBox2->Location = System::Drawing::Point(21, 23);
+			this->pictureBox2->Location = System::Drawing::Point(13, 23);
 			this->pictureBox2->Name = L"pictureBox2";
 			this->pictureBox2->Size = System::Drawing::Size(42, 40);
 			this->pictureBox2->TabIndex = 17;
@@ -465,56 +458,62 @@ namespace SupermarketInventoryandBillingSystem {
 			// groupBox1
 			// 
 			this->groupBox1->BackColor = System::Drawing::Color::White;
-			this->groupBox1->Controls->Add(this->comboBox3);
-			this->groupBox1->Controls->Add(this->pictureBox6);
-			this->groupBox1->Controls->Add(this->textBox1);
-			this->groupBox1->Controls->Add(this->comboBox2);
-			this->groupBox1->Controls->Add(this->comboBox1);
+			this->groupBox1->Controls->Add(this->groupBox5);
+			this->groupBox1->Controls->Add(this->groupBox4);
 			this->groupBox1->Controls->Add(this->button3);
 			this->groupBox1->Controls->Add(this->button2);
-			this->groupBox1->Controls->Add(this->label1);
 			this->groupBox1->Controls->Add(this->button1);
-			this->groupBox1->Location = System::Drawing::Point(197, 92);
+			this->groupBox1->Location = System::Drawing::Point(197, 104);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Size = System::Drawing::Size(693, 155);
+			this->groupBox1->Size = System::Drawing::Size(693, 205);
 			this->groupBox1->TabIndex = 11;
 			this->groupBox1->TabStop = false;
 			// 
-			// comboBox3
+			// groupBox5
 			// 
-			this->comboBox3->BackColor = System::Drawing::SystemColors::Window;
-			this->comboBox3->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->groupBox5->BackColor = System::Drawing::Color::Transparent;
+			this->groupBox5->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
+			this->groupBox5->Controls->Add(this->comboBox1);
+			this->groupBox5->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->comboBox3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(189)), static_cast<System::Int32>(static_cast<System::Byte>(189)),
-				static_cast<System::Int32>(static_cast<System::Byte>(189)));
-			this->comboBox3->FormattingEnabled = true;
-			this->comboBox3->Items->AddRange(gcnew cli::array< System::Object^  >(10) {
-				L"Convenience goods", L"Shopping goods", L"Speciality goods",
-					L"Impulse goods", L"Emergancy goods", L"Raw materials", L"Installations", L"Accessory Equipments", L"Supplies", L"Services"
-			});
-			this->comboBox3->Location = System::Drawing::Point(201, 114);
-			this->comboBox3->Name = L"comboBox3";
-			this->comboBox3->Size = System::Drawing::Size(128, 25);
-			this->comboBox3->TabIndex = 20;
+			this->groupBox5->Location = System::Drawing::Point(32, 19);
+			this->groupBox5->Name = L"groupBox5";
+			this->groupBox5->Size = System::Drawing::Size(424, 81);
+			this->groupBox5->TabIndex = 22;
+			this->groupBox5->TabStop = false;
+			this->groupBox5->Text = L"Display options";
 			// 
-			// pictureBox6
+			// comboBox1
 			// 
-			this->pictureBox6->BackColor = System::Drawing::Color::White;
-			this->pictureBox6->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox6.BackgroundImage")));
-			this->pictureBox6->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->pictureBox6->Location = System::Drawing::Point(475, 71);
-			this->pictureBox6->Name = L"pictureBox6";
-			this->pictureBox6->Size = System::Drawing::Size(24, 20);
-			this->pictureBox6->TabIndex = 19;
-			this->pictureBox6->TabStop = false;
-			this->pictureBox6->Click += gcnew System::EventHandler(this, &inventory::pictureBox6_Click);
+			this->comboBox1->BackColor = System::Drawing::SystemColors::Window;
+			this->comboBox1->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->comboBox1->ForeColor = System::Drawing::SystemColors::WindowText;
+			this->comboBox1->FormattingEnabled = true;
+			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Display All", L"In Stock", L"Running out of stock" });
+			this->comboBox1->Location = System::Drawing::Point(78, 37);
+			this->comboBox1->Name = L"comboBox1";
+			this->comboBox1->Size = System::Drawing::Size(162, 25);
+			this->comboBox1->TabIndex = 10;
+			this->comboBox1->Text = L"In Stock";
+			this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &inventory::comboBox1_SelectedIndexChanged);
 			// 
-			// textBox1
+			// groupBox4
 			// 
-			this->textBox1->Location = System::Drawing::Point(364, 71);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(116, 20);
-			this->textBox1->TabIndex = 18;
+			this->groupBox4->BackColor = System::Drawing::Color::Transparent;
+			this->groupBox4->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
+			this->groupBox4->Controls->Add(this->comboBox2);
+			this->groupBox4->Controls->Add(this->pictureBox6);
+			this->groupBox4->Controls->Add(this->comboBox3);
+			this->groupBox4->Controls->Add(this->textBox1);
+			this->groupBox4->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->groupBox4->Location = System::Drawing::Point(32, 106);
+			this->groupBox4->Name = L"groupBox4";
+			this->groupBox4->Size = System::Drawing::Size(500, 74);
+			this->groupBox4->TabIndex = 21;
+			this->groupBox4->TabStop = false;
+			this->groupBox4->Text = L"Search Options";
 			// 
 			// comboBox2
 			// 
@@ -525,28 +524,48 @@ namespace SupermarketInventoryandBillingSystem {
 				L"Display All", L"Search by ID", L"Search by Name",
 					L"Search by Category", L"Search by Quantity"
 			});
-			this->comboBox2->Location = System::Drawing::Point(201, 66);
+			this->comboBox2->Location = System::Drawing::Point(78, 28);
 			this->comboBox2->Name = L"comboBox2";
-			this->comboBox2->Size = System::Drawing::Size(128, 25);
+			this->comboBox2->Size = System::Drawing::Size(162, 25);
 			this->comboBox2->TabIndex = 17;
-			this->comboBox2->Text = L"Search By";
+			this->comboBox2->Text = L"Search by ID";
 			this->comboBox2->SelectedIndexChanged += gcnew System::EventHandler(this, &inventory::comboBox2_SelectedIndexChanged);
 			// 
-			// comboBox1
+			// pictureBox6
 			// 
-			this->comboBox1->BackColor = System::Drawing::SystemColors::Window;
-			this->comboBox1->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->pictureBox6->BackColor = System::Drawing::Color::White;
+			this->pictureBox6->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox6.BackgroundImage")));
+			this->pictureBox6->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->pictureBox6->Location = System::Drawing::Point(430, 26);
+			this->pictureBox6->Name = L"pictureBox6";
+			this->pictureBox6->Size = System::Drawing::Size(24, 25);
+			this->pictureBox6->TabIndex = 19;
+			this->pictureBox6->TabStop = false;
+			this->pictureBox6->Click += gcnew System::EventHandler(this, &inventory::pictureBox6_Click);
+			// 
+			// comboBox3
+			// 
+			this->comboBox3->BackColor = System::Drawing::SystemColors::Window;
+			this->comboBox3->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->comboBox1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(189)), static_cast<System::Int32>(static_cast<System::Byte>(189)),
-				static_cast<System::Int32>(static_cast<System::Byte>(189)));
-			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Display All", L"In Stock", L"Running out of stock" });
-			this->comboBox1->Location = System::Drawing::Point(27, 67);
-			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(128, 25);
-			this->comboBox1->TabIndex = 10;
-			this->comboBox1->Text = L"IN STOCK";
-			this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &inventory::comboBox1_SelectedIndexChanged);
+			this->comboBox3->ForeColor = System::Drawing::SystemColors::WindowText;
+			this->comboBox3->FormattingEnabled = true;
+			this->comboBox3->Items->AddRange(gcnew cli::array< System::Object^  >(13) {
+				L"Grocery", L"Dairy and Beverages", L"Packaged food",
+					L"Fruits and Vegetables", L"Home and Kitchen", L"Personal care", L"Baby and Kids", L"Appliances", L"Footwear", L"Clothing", L"Cloting accessories",
+					L"Stationary", L"Specials"
+			});
+			this->comboBox3->Location = System::Drawing::Point(262, 25);
+			this->comboBox3->Name = L"comboBox3";
+			this->comboBox3->Size = System::Drawing::Size(162, 25);
+			this->comboBox3->TabIndex = 20;
+			// 
+			// textBox1
+			// 
+			this->textBox1->Location = System::Drawing::Point(262, 28);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(162, 23);
+			this->textBox1->TabIndex = 18;
 			// 
 			// button3
 			// 
@@ -558,9 +577,9 @@ namespace SupermarketInventoryandBillingSystem {
 				static_cast<System::Byte>(0)));
 			this->button3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(27)), static_cast<System::Int32>(static_cast<System::Byte>(94)),
 				static_cast<System::Int32>(static_cast<System::Byte>(32)));
-			this->button3->Location = System::Drawing::Point(569, 112);
+			this->button3->Location = System::Drawing::Point(545, 140);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(108, 29);
+			this->button3->Size = System::Drawing::Size(125, 40);
 			this->button3->TabIndex = 3;
 			this->button3->Text = L"UPDATE";
 			this->button3->UseVisualStyleBackColor = false;
@@ -569,22 +588,44 @@ namespace SupermarketInventoryandBillingSystem {
 			// groupBox2
 			// 
 			this->groupBox2->BackColor = System::Drawing::Color::White;
+			this->groupBox2->Controls->Add(this->textBox4);
+			this->groupBox2->Controls->Add(this->label2);
 			this->groupBox2->Controls->Add(this->textBox3);
 			this->groupBox2->Controls->Add(this->label5);
 			this->groupBox2->Controls->Add(this->textBox2);
 			this->groupBox2->Controls->Add(this->label4);
 			this->groupBox2->Controls->Add(this->label3);
-			this->groupBox2->Location = System::Drawing::Point(916, 92);
+			this->groupBox2->Location = System::Drawing::Point(916, 104);
 			this->groupBox2->Name = L"groupBox2";
-			this->groupBox2->Size = System::Drawing::Size(176, 258);
+			this->groupBox2->Size = System::Drawing::Size(176, 414);
 			this->groupBox2->TabIndex = 16;
 			this->groupBox2->TabStop = false;
+			// 
+			// textBox4
+			// 
+			this->textBox4->Location = System::Drawing::Point(21, 308);
+			this->textBox4->Name = L"textBox4";
+			this->textBox4->ReadOnly = true;
+			this->textBox4->Size = System::Drawing::Size(136, 20);
+			this->textBox4->TabIndex = 6;
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label2->Location = System::Drawing::Point(18, 271);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(131, 17);
+			this->label2->TabIndex = 5;
+			this->label2->Text = L"Total Investment (Rs.)";
 			// 
 			// textBox3
 			// 
 			this->textBox3->Location = System::Drawing::Point(21, 210);
 			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(123, 20);
+			this->textBox3->ReadOnly = true;
+			this->textBox3->Size = System::Drawing::Size(136, 20);
 			this->textBox3->TabIndex = 4;
 			// 
 			// label5
@@ -592,7 +633,7 @@ namespace SupermarketInventoryandBillingSystem {
 			this->label5->AutoSize = true;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(18, 180);
+			this->label5->Location = System::Drawing::Point(18, 177);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(152, 17);
 			this->label5->TabIndex = 3;
@@ -602,7 +643,8 @@ namespace SupermarketInventoryandBillingSystem {
 			// 
 			this->textBox2->Location = System::Drawing::Point(21, 122);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(123, 20);
+			this->textBox2->ReadOnly = true;
+			this->textBox2->Size = System::Drawing::Size(136, 20);
 			this->textBox2->TabIndex = 2;
 			// 
 			// label4
@@ -629,19 +671,35 @@ namespace SupermarketInventoryandBillingSystem {
 			this->label3->TabIndex = 0;
 			this->label3->Text = L"OVERVIEW";
 			// 
+			// timer1
+			// 
+			this->timer1->Tick += gcnew System::EventHandler(this, &inventory::timer1_Tick);
+			// 
+			// timer_label
+			// 
+			this->timer_label->AutoSize = true;
+			this->timer_label->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->timer_label->Location = System::Drawing::Point(913, 78);
+			this->timer_label->Name = L"timer_label";
+			this->timer_label->Size = System::Drawing::Size(41, 17);
+			this->timer_label->TabIndex = 17;
+			this->timer_label->Text = L"Timer";
+			// 
 			// inventory
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->ClientSize = System::Drawing::Size(1104, 485);
+			this->BackColor = System::Drawing::Color::Gainsboro;
+			this->ClientSize = System::Drawing::Size(1100, 550);
+			this->Controls->Add(this->timer_label);
 			this->Controls->Add(this->groupBox2);
 			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->panel3);
 			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->dataGridView1);
+			this->Controls->Add(this->label1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"inventory";
 			this->Text = L"inventory";
@@ -649,23 +707,25 @@ namespace SupermarketInventoryandBillingSystem {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->EndInit();
 			this->panel1->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			this->panel2->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->panel3->ResumeLayout(false);
-			this->groupBox5->ResumeLayout(false);
+			this->groupBox6->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->EndInit();
-			this->groupBox4->ResumeLayout(false);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			this->groupBox3->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			this->groupBox1->ResumeLayout(false);
-			this->groupBox1->PerformLayout();
+			this->groupBox5->ResumeLayout(false);
+			this->groupBox4->ResumeLayout(false);
+			this->groupBox4->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->EndInit();
 			this->groupBox2->ResumeLayout(false);
 			this->groupBox2->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource2))->EndInit();
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion
@@ -752,8 +812,6 @@ private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e
 	groupBox5->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(42)), static_cast<System::Int32>(static_cast<System::Byte>(42)),
 		static_cast<System::Int32>(static_cast<System::Byte>(42)));
 	panel4->Visible = false;
-	panel6->Visible = true;
-	panel7->Visible = false;
 	groupBox4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(65)), static_cast<System::Int32>(static_cast<System::Byte>(65)),
 		static_cast<System::Int32>(static_cast<System::Byte>(65)));
 	billing^ obj = gcnew billing();
@@ -761,17 +819,30 @@ private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e
 	obj->ShowDialog();
 }
 private: System::Void inventory_Load(System::Object^ sender, System::EventArgs^ e) {
-	panel6->Visible = false;
-	panel7->Visible = false;
+	
 	comboBox3->Visible = false;
+
+	try {
+		String^ constr = "Server=127.0.0.1;Uid=root;Pwd=;Database=inventory";
+		MySqlConnection^ con = gcnew MySqlConnection(constr);
+		MySqlCommand^ cmd = gcnew MySqlCommand("select count(product_id),count(distinct(product_category)),sum(product_purchase_price*product_qty) from stock", con);
+		con->Open();
+		MySqlDataReader^ dr = cmd->ExecuteReader();
+		while (dr->Read()) {
+			textBox2->Text = dr->GetString(0);
+			textBox3->Text = dr->GetString(1);
+			textBox4->Text = dr->GetString(2);
+		}
+		con->Close();
+	}
+	catch (Exception^ ex) {
+		MessageBox::Show(ex->Message);
+	}
+	
 	
 
 	groupBox3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(65)), static_cast<System::Int32>(static_cast<System::Byte>(65)),
 		static_cast<System::Int32>(static_cast<System::Byte>(65)));
-	groupBox4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(42)), static_cast<System::Int32>(static_cast<System::Byte>(42)),
-		static_cast<System::Int32>(static_cast<System::Byte>(42)));
-	groupBox5->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(42)), static_cast<System::Int32>(static_cast<System::Byte>(42)),
-		static_cast<System::Int32>(static_cast<System::Byte>(42)));
 
 }
 private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -779,15 +850,8 @@ private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e
 	obj->Visible = true;
 	groupBox3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(42)), static_cast<System::Int32>(static_cast<System::Byte>(42)),
 		static_cast<System::Int32>(static_cast<System::Byte>(42)));
-	groupBox4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(42)), static_cast<System::Int32>(static_cast<System::Byte>(42)),
-		static_cast<System::Int32>(static_cast<System::Byte>(42)));
 
 	panel4->Visible = false;
-	panel6->Visible = false;
-	panel7->Visible = true;
-
-	groupBox5->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(65)), static_cast<System::Int32>(static_cast<System::Byte>(65)),
-		static_cast<System::Int32>(static_cast<System::Byte>(65)));
 }
 private: System::Void pictureBox6_Click(System::Object^ sender, System::EventArgs^ e) {
 	String^ opt_selected = (comboBox2->SelectedItem)->ToString();
@@ -819,7 +883,7 @@ private: System::Void pictureBox6_Click(System::Object^ sender, System::EventArg
 			sql_query = "select * from stock where product_name='" + product_name + "'";
 		}
 		else if (opt_selected == "Search by Category") {
-			String^ category = (comboBox2->SelectedItem)->ToString();
+			String^ category = (comboBox3->SelectedItem)->ToString();
 			sql_query = "select * from stock where product_category='" + category + "'";
 		}
 		else if (opt_selected == "Search by Quantity") {
@@ -873,6 +937,19 @@ private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void pictureBox5_Click(System::Object^ sender, System::EventArgs^ e) {
 	user_details^ user = gcnew user_details(UserID);
 	user->Show();
+}
+private: System::Void button6_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+}
+private: System::Void pictureBox3_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Close();
+}
+private: System::Void button6_Click_2(System::Object^ sender, System::EventArgs^ e) {
+	inventory_report^ module1 = gcnew inventory_report();
+	module1->Show();
+}
+private: System::Void timer1_Tick(System::Object^ sender, System::EventArgs^ e) {
+	timer_label->Text = System::DateTime::Now.ToString();
 }
 };
 }
