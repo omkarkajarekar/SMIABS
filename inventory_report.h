@@ -57,7 +57,9 @@ namespace SupermarketInventoryandBillingSystem {
 	private: System::Windows::Forms::Label^ label9;
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::PictureBox^ back_pictureBox;
-	private: System::Windows::Forms::PictureBox^ close_pictureBox;
+	private: System::Windows::Forms::Button^ button1;
+
+
 
 
 
@@ -104,13 +106,12 @@ namespace SupermarketInventoryandBillingSystem {
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->close_pictureBox = (gcnew System::Windows::Forms::PictureBox());
 			this->back_pictureBox = (gcnew System::Windows::Forms::PictureBox());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart2))->BeginInit();
 			this->groupBox1->SuspendLayout();
 			this->panel1->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->close_pictureBox))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->back_pictureBox))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -138,7 +139,6 @@ namespace SupermarketInventoryandBillingSystem {
 			// 
 			// textBox1
 			// 
-			this->textBox1->Enabled = false;
 			this->textBox1->Location = System::Drawing::Point(144, 39);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->ReadOnly = true;
@@ -147,7 +147,6 @@ namespace SupermarketInventoryandBillingSystem {
 			// 
 			// textBox2
 			// 
-			this->textBox2->Enabled = false;
 			this->textBox2->Location = System::Drawing::Point(469, 39);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->ReadOnly = true;
@@ -219,7 +218,6 @@ namespace SupermarketInventoryandBillingSystem {
 			// 
 			// textBox3
 			// 
-			this->textBox3->Enabled = false;
 			this->textBox3->Location = System::Drawing::Point(838, 76);
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->ReadOnly = true;
@@ -228,7 +226,6 @@ namespace SupermarketInventoryandBillingSystem {
 			// 
 			// textBox4
 			// 
-			this->textBox4->Enabled = false;
 			this->textBox4->Location = System::Drawing::Point(838, 40);
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->ReadOnly = true;
@@ -259,7 +256,6 @@ namespace SupermarketInventoryandBillingSystem {
 			// 
 			// textBox5
 			// 
-			this->textBox5->Enabled = false;
 			this->textBox5->Location = System::Drawing::Point(469, 76);
 			this->textBox5->Name = L"textBox5";
 			this->textBox5->ReadOnly = true;
@@ -268,7 +264,6 @@ namespace SupermarketInventoryandBillingSystem {
 			// 
 			// textBox6
 			// 
-			this->textBox6->Enabled = false;
 			this->textBox6->Location = System::Drawing::Point(144, 76);
 			this->textBox6->Name = L"textBox6";
 			this->textBox6->ReadOnly = true;
@@ -334,25 +329,12 @@ namespace SupermarketInventoryandBillingSystem {
 			// panel1
 			// 
 			this->panel1->BackColor = System::Drawing::Color::White;
-			this->panel1->Controls->Add(this->close_pictureBox);
+			this->panel1->Controls->Add(this->button1);
 			this->panel1->Controls->Add(this->back_pictureBox);
 			this->panel1->Location = System::Drawing::Point(0, 1);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(1099, 36);
+			this->panel1->Size = System::Drawing::Size(1100, 36);
 			this->panel1->TabIndex = 18;
-			// 
-			// close_pictureBox
-			// 
-			this->close_pictureBox->BackColor = System::Drawing::Color::White;
-			this->close_pictureBox->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"close_pictureBox.BackgroundImage")));
-			this->close_pictureBox->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->close_pictureBox->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"close_pictureBox.InitialImage")));
-			this->close_pictureBox->Location = System::Drawing::Point(1064, 0);
-			this->close_pictureBox->Name = L"close_pictureBox";
-			this->close_pictureBox->Size = System::Drawing::Size(35, 36);
-			this->close_pictureBox->TabIndex = 1;
-			this->close_pictureBox->TabStop = false;
-			this->close_pictureBox->Click += gcnew System::EventHandler(this, &inventory_report::pictureBox2_Click);
 			// 
 			// back_pictureBox
 			// 
@@ -366,6 +348,21 @@ namespace SupermarketInventoryandBillingSystem {
 			this->back_pictureBox->TabIndex = 0;
 			this->back_pictureBox->TabStop = false;
 			this->back_pictureBox->Click += gcnew System::EventHandler(this, &inventory_report::back_pictureBox_Click);
+			// 
+			// button1
+			// 
+			this->button1->FlatAppearance->BorderSize = 0;
+			this->button1->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Red;
+			this->button1->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Red;
+			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button1->Location = System::Drawing::Point(1060, 0);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(40, 36);
+			this->button1->TabIndex = 19;
+			this->button1->Text = L"X";
+			this->button1->UseVisualStyleBackColor = true;
 			// 
 			// inventory_report
 			// 
@@ -389,7 +386,6 @@ namespace SupermarketInventoryandBillingSystem {
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
 			this->panel1->ResumeLayout(false);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->close_pictureBox))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->back_pictureBox))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -458,6 +454,8 @@ private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArg
 }
 private: System::Void back_pictureBox_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
+}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

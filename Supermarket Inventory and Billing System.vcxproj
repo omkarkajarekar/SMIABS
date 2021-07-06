@@ -133,7 +133,6 @@
     <ClCompile Include="inventory.cpp" />
     <ClCompile Include="inventory_report.cpp" />
     <ClCompile Include="login.cpp" />
-    <ClCompile Include="Main_access_window.cpp" />
     <ClCompile Include="manager_dashboard.cpp" />
     <ClCompile Include="MyForm1.cpp" />
     <ClCompile Include="sales_report.cpp" />

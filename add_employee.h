@@ -119,6 +119,7 @@ namespace SupermarketInventoryandBillingSystem {
 		void InitializeComponent(void)
 		{
 			this->components = (gcnew System::ComponentModel::Container());
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(add_employee::typeid));
 			this->save_btn = (gcnew System::Windows::Forms::Button());
 			this->textbox1 = (gcnew System::Windows::Forms::TextBox());
 			this->UserID_lbl = (gcnew System::Windows::Forms::Label());
@@ -323,15 +324,17 @@ namespace SupermarketInventoryandBillingSystem {
 			this->panel1->Controls->Add(this->button5);
 			this->panel1->Location = System::Drawing::Point(-3, 0);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(1179, 36);
+			this->panel1->Size = System::Drawing::Size(1100, 35);
 			this->panel1->TabIndex = 18;
 			// 
 			// pictureBox1
 			// 
 			this->pictureBox1->BackColor = System::Drawing::Color::White;
+			this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
+			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->pictureBox1->Location = System::Drawing::Point(0, 0);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(35, 36);
+			this->pictureBox1->Size = System::Drawing::Size(35, 35);
 			this->pictureBox1->TabIndex = 25;
 			this->pictureBox1->TabStop = false;
 			this->pictureBox1->Click += gcnew System::EventHandler(this, &add_employee::pictureBox1_Click);
@@ -344,9 +347,9 @@ namespace SupermarketInventoryandBillingSystem {
 			this->button5->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button5->Location = System::Drawing::Point(1063, 0);
+			this->button5->Location = System::Drawing::Point(1062, 0);
 			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(40, 33);
+			this->button5->Size = System::Drawing::Size(40, 35);
 			this->button5->TabIndex = 1;
 			this->button5->Text = L"X";
 			this->button5->UseVisualStyleBackColor = true;
